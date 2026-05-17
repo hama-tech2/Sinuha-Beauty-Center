@@ -1,403 +1,504 @@
-/* ============================================
-   SINUHA CENTER — INTERACTIONS & LOGIC
-   Minimal • Elegant • Performance-First
-   ============================================ */
-
 const translations = {
     ckb: {
-        siteTitle: "سینوها",
-        navHome: "ماڵەوە", navAbout: "دەربارە", navServices: "خزمەتگوزاریەکان",
-        navTech: "تەکنەلۆژیا", navReviews: "باوەڕکردن", navContact: "پەیوەندی",
-        bookBtn: "داواکردنی نۆرە",
-        heroLabel: "سەنتەری جوانکاری پێشکەوتوو",
-        heroTitle: "سینوها سەنتەری جوانکاری",
-        heroDesc: "باشترین خزمەتگوزاری جوانکاری و چاکسازی پێست لەگەڵ تەکنەلۆژیای جیهانی.",
-        catLabel: "بەشەکان", catTitle: "هەلبژاردەی خزمەتگوزاریەکان",
-        catWomen: "ژنان", catWomenDesc: "باشترین خزمەتگوزاریەکانی جوانکاری بۆ ژنان",
-        catMen: "پیاوان", catMenDesc: "خزمەتگوزاری تایبەت بە پیاوان",
-        catAll: "هەموو خزمەتگوزاریەکان", catAllDesc: "بینینی هەموو خزمەتگوزاریەکان",
-        servicesLabel: "خزمەتگوزاریەکان", servicesTitle: "چارەسەری پێشکەوتوو",
-        filterAll: "هەموو", filterWomen: "ژنان", filterMen: "پیاوان",
-        tagWomen: "ژنان", tagMen: "پیاوان", tagAll: "هەموو",
-        svcAcne: "چارەسەری ئەکنە", svcAcneDesc: "چارەسەری تایبەت بۆ دانە سوورەکان و پاککردنەوەی پێست.",
-        svcBeautyConsult: "ڕاوێژکاری جوانکاری", svcBeautyConsultDesc: "ڕاوێژکاری تایبەت لەگەڵ سپێشلیستی جوانکاری.",
-        svcBotox: "بۆتۆکس", svcBotoxDesc: "دەرمانکردنی هێڵ و چەنیەکان بە بۆتۆکسی پێشکەوتوو.",
-        svcConsult: "ڕاوێژکاری پزیشکی", svcConsultDesc: "شیکاری پیشەیی و پێشنیازی چارەسەری.",
-        svcFillers: "فیلەر", svcFillersDesc: "پڕکردنەوەی ڕوخسار و لێدان بە فیلەری ئەورووپی.",
-        svcFullBodyLaser: "لیزەری لەشی تەواو", svcFullBodyLaserDesc: "لیزەری ئەمانی بۆ لەشی تەواو بە ئامێری پێشکەوتوو.",
-        svcGlowSkin: "پێستی درەوشاوە", svcGlowSkinDesc: "دەرمانکردنی پێست بۆ درەوشاوەیی و تازەیی.",
-        svcVIP: "ئەزموونی VIP", svcVIPDesc: "خزمەتگوزاری تایبەت و ئەزموونی دڵخۆشی بێهاوتا.",
-        svcHollywood: "پێکەنی هۆلیوود", svcHollywoodDesc: "دروستکردنی پێکەنی جوان و درەوشاوە وەک ئەستێرەکان.",
-        svcHydro: "هایدرۆفەیشەڵ", svcHydroDesc: "پاککردنەوەی قووڵ و هیدراتەکردنی پێست بە تەکنەلۆژیای ئاو.",
-        svcMenLaser: "لیزەری پیاوان", svcMenLaserDesc: "لیزەری ئەمانی تایبەت بە پیاوان بە ئەنجامی بەرز.",
-        svcPDRN: "PDRN ساڵمۆن", svcPDRNDesc: "چارەسەری پێشکەوتوو بۆ نوێبوونەوەی پێست بە DNAی ساڵمۆن.",
-        svcProfhilo: "پڕۆفایلۆ", svcProfhiloDesc: "هیدراتەکردنی قووڵ و کشانەوەی پێست بە پڕۆفایلۆ.",
-        svcPRPMen: "PRP قژی پیاوان", svcPRPMenDesc: "چارەسەری PRP بۆ ڕێگری لە ڕەشوبوونی قژ و نوێبوونەوە.",
-        svcPRPWomen: "PRP قژی ژنان", svcPRPWomenDesc: "چارەسەری سروشتی بۆ بەهێزکردنی قژ و ڕێگری لە کۆچ.",
-        svcWhitening: "سپی کردنی پێست", svcWhiteningDesc: "چارەسەری تایبەت بۆ ڕووناکی و یەکسانکردنی ڕەنگی پێست.",
-        svcTattoo: "سڕینەوەی تاتۆ", svcTattooDesc: "سڕینەوەی تاتۆ بە لیزەری پێشکەوتوو بە بێ جێهێشتنی ئاسەوار.",
-        svcUnderarm: "ڕووناک کردنی بژێر", svcUnderarmDesc: "چارەسەری ئەمن بۆ ڕووناک کردنی هەرێمی بژێر.",
-        svcBook: "داواکردنی نۆرە",
-        aboutLabel: "بەخێربێن", aboutTitle: "سینوها سەنتەر",
-        aboutP1: "سینوها شوێنێکی شاهانەیە بۆ جوانکاری و چاکسازی پێست.",
-        aboutP2: "ستافی پیشەیی و تەکنەلۆژیای پێشکەوتوو بۆ ئەنجامی بەرز.",
-        feat1: "تەکنەلۆژیای پێشکەوتوو", feat2: "ستافی پیشەیی",
-        feat3: "چێژی شاهانە", feat4: "ئەنجامی دڵنیاکەرەوە",
-        aboutCta: "پەیوەندیمان پێوە بکە",
-        techLabel: "تەکنەلۆژیا", techTitle: "ئامێری پزیشکی پێشکەوتوو",
-        tech1Title: "لیزەری پێشکەوتوو", tech1Desc: "دواترین ئامێری لیزەری ئاڵمانی بۆ چارەسەری پێست و قژ.",
-        tech2Title: "هیدرۆفەیشەڵ", tech2Desc: "تەکنەلۆژیای سێ هەنگاو بۆ پاککردنەوەی قووڵ و هیدراتەکردن.",
-        tech3Title: "PRP / PDRN", tech3Desc: "چارەسەری سروشتی بە بەکارهێنانی پلاسمای خۆت بۆ نوێبوونەوە.",
-        tech4Title: "فیلەر و بۆتۆکس", tech4Desc: "باشترین مادەی ئەورووپی بۆ دەرمانکردنی ڕوخسار.",
-        reviewsLabel: "باوەڕکردن", reviewsTitle: "باوەڕ بە ئەنجامەکان",
-        test1Text: "ئەزموونێکی شاهانە. ستافەکە زۆر پیشەیی و میهرەبان بوو.",
-        test1Name: "سارا م.", test1Role: "کلیێنی دڵخۆش",
-        test2Text: "PRP بۆ قژم زۆر سەرکەوتوو بوو. سینوها باشترینە.",
-        test2Name: "محمد ر.", test2Role: "کلیێنی دڵخۆش",
-        test3Text: "پێستم دوای هایدرۆفەیشەڵ وەک منداڵ بووەوە. سەرسوڕهێنەر.",
-        test3Name: "لەیلا ع.", test3Role: "کلیێنی دڵخۆش",
-        test4Text: "فەزای سینوها جیاوازە. هەستێکی شاهانە و پێشکەوتوو.",
-        test4Name: "نەرگس ح.", test4Role: "کلیێنی دڵخۆش",
-        contactLabel: "پەیوەندی", contactTitle: "پەیوەندیمان پێوە بکە",
-        contactPhone: "تەلەفۆن", contactLocation: "شوێن",
-        contactMap: "بینین لە گووگڵ مەپ", contactSocial: "میدیای کۆمەڵایەتی",
-        footerDesc: "سەنتەری جوانکاری و پزیشکی ئێسێتیکی پێشکەوتوو.",
-        footerQuick: "خێراکان", footerContact: "پەیوەندی",
+        siteTitle: "سینوها سەنتەر",
+        siteSub: "Beauty Center",
+        navHome: "ماڵەوە",
+        navAbout: "دەربارە",
+        navServices: "خزمەتگوزارییەکان",
+        navTech: "تەکنەلۆژیا",
+        navReviews: "ئەنجامەکان",
+        navContact: "پەیوەندی",
+        navContactCta: "پەیوەندی",
+        heroLabel: "لە جوانییەوە بۆ چاودێری شاهانە",
+        heroTitle: "سینوها سەنتەر",
+        heroKicker: "جوانکاری، پێست و تەکنەلۆژیای پزیشکی پێشکەوتوو",
+        heroDesc: "شوێنێکی ئارام و پیشەیی بۆ ئەوەی سروشتی جوانییەکەت بە شێوەیەکی دڵنیا و ناسک دەرکەوێت.",
+        heroFeatureLaser: "لیزەر",
+        heroFeatureSkin: "پێست",
+        heroFeatureDental: "دەم و ددان",
+        heroFeatureAesthetic: "جوانکاری",
+        heroCta: "خزمەتگوزارییەکان ببینە",
+        trust1Title: "ستافی شارەزا",
+        trust1Desc: "چاودێری پڕۆفێشناڵ",
+        trust2Title: "تەکنەلۆژیای پریمیم",
+        trust2Desc: "ئامێری نوێ و دڵنیا",
+        trust3Title: "سەلامەت و کاریگەر",
+        trust3Desc: "ستانداردی بەرز",
+        trust4Title: "ئەنجامی سروشتی",
+        trust4Desc: "جوانییەکەت بە ناسکی",
+        catLabel: "بەشەکان",
+        catTitle: "خزمەتگوزارییەکان بە خێرایی بدۆزەوە",
+        catWomen: "ژنان",
+        catWomenDesc: "پێست، جوانکاری و چاودێری تایبەت",
+        catMen: "پیاوان",
+        catMenDesc: "لیزەر و چارەسەری قژ بۆ پیاوان",
+        catAll: "هەموو خزمەتگوزارییەکان",
+        catAllDesc: "هەموو بەشەکان لە یەک شوێن",
+        servicesLabel: "خزمەتگوزارییەکان",
+        servicesTitle: "چارەسەری پێشکەوتوو بە دیزاینی ناسک",
+        filterAll: "هەموو",
+        filterWomen: "ژنان",
+        filterMen: "پیاوان",
+        tagWomen: "ژنان",
+        tagMen: "پیاوان",
+        tagAll: "هەموو",
+        svcAcne: "چارەسەری ئەکنە",
+        svcAcneDesc: "پاککردنەوە و چارەسەری دانەکان بە پلانی گونجاو بۆ جۆری پێستت.",
+        svcBotox: "بۆتۆکس",
+        svcBotoxDesc: "کەمکردنەوەی هێڵ و چرووک بە ئەنجامێکی ئارام و سروشتی.",
+        svcFillers: "فیلەر",
+        svcFillersDesc: "پڕکردنەوە و هاوسەنگکردنی ڕوخسار بە ستایلی ناسک و مۆدێرن.",
+        svcFullBodyLaser: "لیزەری لەشی تەواو",
+        svcFullBodyLaserDesc: "لیزەری خێرا و دڵنیا بۆ لەشی تەواو بە ئامێری پێشکەوتوو.",
+        svcGlowSkin: "پێستی درەوشاوە",
+        svcGlowSkinDesc: "چارەسەری تازەبوونەوە بۆ ڕووناکی و شادابی پێست.",
+        svcHollywood: "پێکەنی هۆلیوود",
+        svcHollywoodDesc: "دیزاینی پێکەنینێکی ڕوون، پاک و گونجاو بە ڕوخسارت.",
+        svcHydro: "هایدرۆفەیشەڵ",
+        svcHydroDesc: "پاککردنەوەی قووڵ، هیدراتەکردن و درەوشاندنەوەی پێست.",
+        svcMenLaser: "لیزەری پیاوان",
+        svcMenLaserDesc: "لیزەری تایبەت بە پیاوان، بە پلانی ڕێک و ئەنجامی باش.",
+        svcPDRN: "PDRN ساڵمۆن",
+        svcPDRNDesc: "یارمەتیدانی نوێبوونەوە و باشترکردنی شێوازی پێست.",
+        svcProfhilo: "پڕۆفایلۆ",
+        svcProfhiloDesc: "هیدراتەکردنی قووڵ و تازەکردنەوەی نەرمی پێست.",
+        svcPRPMen: "PRP قژی پیاوان",
+        svcPRPMenDesc: "پلانی چاودێری قژ بۆ بەهێزکردن و پشتگیری نوێبوونەوە.",
+        svcPRPWomen: "PRP قژی ژنان",
+        svcPRPWomenDesc: "چارەسەری پشتگیری قژ بۆ بەهێزی و تازەبوونەوە.",
+        aboutLabel: "دەربارەی سینوها",
+        aboutTitle: "شوێنێک بۆ جوانی، دڵنیایی و ئارامی",
+        aboutP1: "سینوها سەنتەر فەزایەکی پریمیمە بۆ جوانکاری، چاودێری پێست و چارەسەری پزیشکی ئێستێتیک.",
+        aboutP2: "ئامانجمان ئەنجامی سروشتییە: کاری پاک، ڕاوێژکاری ڕوون و ئەزموونێک کە هەست بە بایەخ پێدەکات.",
+        feat1: "تەکنەلۆژیای پێشکەوتوو",
+        feat2: "ستافی شارەزا",
+        feat3: "فەزای پریمیم",
+        feat4: "ئەنجامی سروشتی",
+        aboutCta: "پەیوەندی بکە",
+        techLabel: "تەکنەلۆژیا",
+        techTitle: "ئامێر و ڕێکارەکانی بە دڵنیایی هەڵبژێردراون",
+        tech1Title: "لیزەری پێشکەوتوو",
+        tech1Desc: "بۆ ئەنجامی ورد و خێرا.",
+        tech2Title: "هایدرۆفەیشەڵ",
+        tech2Desc: "پاککردنەوە و هیدراتەکردن.",
+        tech3Title: "PRP / PDRN",
+        tech3Desc: "پشتگیری نوێبوونەوە.",
+        tech4Title: "فیلەر و بۆتۆکس",
+        tech4Desc: "بە ستایلی سروشتی.",
+        reviewsLabel: "ئەنجامەکان",
+        reviewsTitle: "هەستێکی باش، ئەنجامێکی دڵنیا",
+        test1Text: "فەزاکە ئارام و ستافەکە زۆر شارەزا بوو. ئەنجامەکەم زۆر سروشتی دەرچوو.",
+        test1Name: "سارا م.",
+        test1Role: "کلیێنی دڵخۆش",
+        test2Text: "بۆ قژم PRPم کرد، ڕاوێژکارییەکە ڕوون و ئەزموونەکە زۆر پاک بوو.",
+        test2Name: "محمد ر.",
+        test2Role: "کلیێنی دڵخۆش",
+        test3Text: "دوای هایدرۆفەیشەڵ پێستم ڕوونتر و تازەتر بوو. زۆر پێم باش بوو.",
+        test3Name: "لەیلا ع.",
+        test3Role: "کلیێنی دڵخۆش",
+        contactLabel: "پەیوەندی",
+        contactTitle: "بە ئاسانی پەیوەندیمان پێوە بکە",
+        contactPhone: "تەلەفۆن",
+        contactLocation: "شوێن",
+        contactMap: "بینین لە گووگڵ مەپ",
+        contactSocial: "سۆشیال میدیا",
+        footerDesc: "سەنتەری جوانکاری و پزیشکی ئێستێتیکی پێشکەوتوو.",
         footerCopy: "© 2026 سینوها سەنتەر. هەموو مافەکان پارێزراون."
     },
     ar: {
-        siteTitle: "سينوها",
-        navHome: "الرئيسية", navAbout: "من نحن", navServices: "الخدمات",
-        navTech: "التقنيات", navReviews: "الآراء", navContact: "تواصل معنا",
-        bookBtn: "حجز موعد",
-        heroLabel: "مركز تجميل متطور",
-        heroTitle: "مركز سينوها للتجميل",
-        heroDesc: "أفضل خدمات التجميل وعلاج البشرة مع التقنيات العالمية.",
-        catLabel: "الأقسام", catTitle: "اختيار الخدمات",
-        catWomen: "النساء", catWomenDesc: "أفضل خدمات التجميل للنساء",
-        catMen: "الرجال", catMenDesc: "خدمات خاصة بالرجال",
-        catAll: "جميع الخدمات", catAllDesc: "عرض جميع الخدمات المتوفرة",
-        servicesLabel: "الخدمات", servicesTitle: "علاجات متطورة",
-        filterAll: "الكل", filterWomen: "النساء", filterMen: "الرجال",
-        tagWomen: "نساء", tagMen: "رجال", tagAll: "الكل",
-        svcAcne: "علاج حب الشباب", svcAcneDesc: "علاج متخصص لحب الشباب وتنظيف البشرة.",
-        svcBeautyConsult: "استشارة التجميل", svcBeautyConsultDesc: "استشارة خاصة مع أخصائي التجميل.",
-        svcBotox: "بوتوكس", svcBotoxDesc: "علاج الخطوط والتجاعيد بأحدث تقنيات البوتوكس.",
-        svcConsult: "الاستشارة الطبية", svcConsultDesc: "تحليل احترافي وتوصية علاجية.",
-        svcFillers: "الفيلر", svcFillersDesc: "تعبئة الوجنتين والوجه بفيلر أوروبي.",
-        svcFullBodyLaser: "ليزر الجسم الكامل", svcFullBodyLaserDesc: "ليزر إزالة الشعر للجسم كله بأحدث الأجهزة.",
-        svcGlowSkin: "بشرة متوهجة", svcGlowSkinDesc: "علاج البشرة للحصول على إشراقة وحيوية.",
-        svcVIP: "تجربة VIP", svcVIPDesc: "خدمة خاصة وتجربة رضا فريدة من نوعها.",
-        svcHollywood: "ابتسامة هوليوود", svcHollywoodDesc: "ابتسامة جميلة ومشرقة مثل النجوم.",
-        svcHydro: "هيدروفيشيال", svcHydroDesc: "تنظيف عميق وترطيب البشرة بتقنية الماء.",
-        svcMenLaser: "ليزر الرجال", svcMenLaserDesc: "ليزر إزالة الشعر الخاص بالرجال بنتائج عالية.",
-        svcPDRN: "PDRN السالمون", svcPDRNDesc: "علاج متطور لتجديد البشرة بـ DNA السالمون.",
-        svcProfhilo: "بروفايلو", svcProfhiloDesc: "ترطيب عميق وشد البشرة ببروفايلو.",
-        svcPRPMen: "PRP شعر الرجال", svcPRPMenDesc: "علاج PRP لمنع الصلع وتجديد الشعر.",
-        svcPRPWomen: "PRP شعر النساء", svcPRPWomenDesc: "علاج طبيعي لتقوية الشعر ومنع التساقط.",
-        svcWhitening: "تبييض البشرة", svcWhiteningDesc: "علاج خاص لتفتيح وتجانس لون البشرة.",
-        svcTattoo: "إزالة الوشم", svcTattooDesc: "إزالة الوشم بالليزر المتطور بدون آثار.",
-        svcUnderarm: "تفتيح الإبط", svcUnderarmDesc: "علاج آمن لتفتيح منطقة الإبط.",
-        svcBook: "حجز موعد",
-        aboutLabel: "أهلاً بك", aboutTitle: "مركز سينوها",
-        aboutP1: "سينوها مكان ملكي للتجميل وعلاج البشرة.",
-        aboutP2: "فريق محترف وتقنيات متطورة لنتائج عالية.",
-        feat1: "تقنيات متطورة", feat2: "فريق محترف",
-        feat3: "رفاهية ملكية", feat4: "نتائج مضمونة",
+        siteTitle: "مركز سينوها",
+        siteSub: "Beauty Center",
+        navHome: "الرئيسية",
+        navAbout: "من نحن",
+        navServices: "الخدمات",
+        navTech: "التقنيات",
+        navReviews: "النتائج",
+        navContact: "التواصل",
+        navContactCta: "تواصل",
+        heroLabel: "حيث يلتقي الجمال بالعناية الراقية",
+        heroTitle: "مركز سينوها",
+        heroKicker: "تجميل، بشرة وتقنيات طبية متقدمة",
+        heroDesc: "مساحة هادئة واحترافية لإظهار جمالك الطبيعي بثقة ولمسة ناعمة.",
+        heroFeatureLaser: "ليزر",
+        heroFeatureSkin: "بشرة",
+        heroFeatureDental: "أسنان",
+        heroFeatureAesthetic: "تجميل",
+        heroCta: "اكتشف الخدمات",
+        trust1Title: "فريق مختص",
+        trust1Desc: "رعاية احترافية",
+        trust2Title: "تقنيات فاخرة",
+        trust2Desc: "أجهزة حديثة وآمنة",
+        trust3Title: "آمن وفعال",
+        trust3Desc: "معايير عالية",
+        trust4Title: "نتائج طبيعية",
+        trust4Desc: "جمالك بلمسة ناعمة",
+        catLabel: "الأقسام",
+        catTitle: "اعثر على الخدمة بسرعة",
+        catWomen: "النساء",
+        catWomenDesc: "البشرة، التجميل والعناية الخاصة",
+        catMen: "الرجال",
+        catMenDesc: "الليزر وعلاجات الشعر للرجال",
+        catAll: "جميع الخدمات",
+        catAllDesc: "كل الأقسام في مكان واحد",
+        servicesLabel: "الخدمات",
+        servicesTitle: "علاجات متقدمة بتصميم ناعم",
+        filterAll: "الكل",
+        filterWomen: "النساء",
+        filterMen: "الرجال",
+        tagWomen: "نساء",
+        tagMen: "رجال",
+        tagAll: "الكل",
+        svcAcne: "علاج حب الشباب",
+        svcAcneDesc: "تنظيف وعلاج الحبوب بخطة تناسب نوع بشرتك.",
+        svcBotox: "بوتوكس",
+        svcBotoxDesc: "تخفيف الخطوط والتجاعيد بنتيجة هادئة وطبيعية.",
+        svcFillers: "فيلر",
+        svcFillersDesc: "تعبئة وتوازن الوجه بأسلوب ناعم وحديث.",
+        svcFullBodyLaser: "ليزر الجسم الكامل",
+        svcFullBodyLaserDesc: "ليزر سريع وآمن للجسم الكامل بأجهزة متقدمة.",
+        svcGlowSkin: "نضارة البشرة",
+        svcGlowSkinDesc: "علاج تجديدي لإشراقة وحيوية البشرة.",
+        svcHollywood: "ابتسامة هوليوود",
+        svcHollywoodDesc: "تصميم ابتسامة مشرقة ونظيفة تناسب ملامحك.",
+        svcHydro: "هيدروفيشل",
+        svcHydroDesc: "تنظيف عميق، ترطيب وإعادة نضارة البشرة.",
+        svcMenLaser: "ليزر الرجال",
+        svcMenLaserDesc: "ليزر خاص للرجال بخطة منظمة ونتائج جيدة.",
+        svcPDRN: "PDRN السالمون",
+        svcPDRNDesc: "دعم تجديد البشرة وتحسين ملمسها.",
+        svcProfhilo: "بروفايلو",
+        svcProfhiloDesc: "ترطيب عميق وإعادة نعومة البشرة.",
+        svcPRPMen: "PRP شعر الرجال",
+        svcPRPMenDesc: "خطة عناية بالشعر للتقوية ودعم التجدد.",
+        svcPRPWomen: "PRP شعر النساء",
+        svcPRPWomenDesc: "علاج داعم للشعر من أجل القوة والتجدد.",
+        aboutLabel: "عن سينوها",
+        aboutTitle: "مكان للجمال، الثقة والراحة",
+        aboutP1: "مركز سينوها مساحة فاخرة للتجميل والعناية بالبشرة والطب التجميلي.",
+        aboutP2: "هدفنا نتيجة طبيعية: عمل نظيف، استشارة واضحة وتجربة تشعرك بالاهتمام.",
+        feat1: "تقنيات متقدمة",
+        feat2: "فريق مختص",
+        feat3: "أجواء فاخرة",
+        feat4: "نتائج طبيعية",
         aboutCta: "تواصل معنا",
-        techLabel: "التقنيات", techTitle: "أجهزة طبية متطورة",
-        tech1Title: "ليزر متطور", tech1Desc: "أحدث أجهزة الليزر الألمانية لعلاج البشرة والشعر.",
-        tech2Title: "هيدروفيشيال", tech2Desc: "تقنية الخطوات الثلاث للتنظيف العميق والترطيب.",
-        tech3Title: "PRP / PDRN", tech3Desc: "علاج طبيعي باستخدام بلازما دمك للتجديد.",
-        tech4Title: "فيلر وبوتوكس", tech4Desc: "أفضل المواد الأوروبية لعلاج الوجه.",
-        reviewsLabel: "الآراء", reviewsTitle: "ثق بالنتائج",
-        test1Text: "تجربة ملكية. الفريق محترف ولطيف للغاية.",
-        test1Name: "سارة م.", test1Role: "عميلة سعيدة",
-        test2Text: "علاج PRP للشعر ناجح جداً. سينوها الأفضل.",
-        test2Name: "محمد ر.", test2Role: "عميل سعيد",
-        test3Text: "بشرتي عادت كطفلة بعد الهيدروفيشيال. مذهل.",
-        test3Name: "ليلى ع.", test3Role: "عميلة سعيدة",
-        test4Text: "أجواء سينوها فريدة. شعور ملكي ومتطور.",
-        test4Name: "نرجس ح.", test4Role: "عميلة سعيدة",
-        contactLabel: "تواصل معنا", contactTitle: "تواصل معنا",
-        contactPhone: "هاتف", contactLocation: "الموقع",
-        contactMap: "عرض على خرائط جوجل", contactSocial: "وسائل التواصل",
-        footerDesc: "مركز تجميل وطب تجميلي متطور.",
-        footerQuick: "روابط سريعة", footerContact: "تواصل",
+        techLabel: "التقنيات",
+        techTitle: "أجهزة وإجراءات مختارة بعناية",
+        tech1Title: "ليزر متقدم",
+        tech1Desc: "لنتائج دقيقة وسريعة.",
+        tech2Title: "هيدروفيشل",
+        tech2Desc: "تنظيف وترطيب.",
+        tech3Title: "PRP / PDRN",
+        tech3Desc: "دعم التجدد.",
+        tech4Title: "فيلر وبوتوكس",
+        tech4Desc: "بأسلوب طبيعي.",
+        reviewsLabel: "النتائج",
+        reviewsTitle: "شعور جيد ونتيجة موثوقة",
+        test1Text: "المكان هادئ والفريق مختص جداً. النتيجة ظهرت طبيعية وجميلة.",
+        test1Name: "سارة م.",
+        test1Role: "عميلة سعيدة",
+        test2Text: "جربت PRP للشعر، الاستشارة كانت واضحة والتجربة نظيفة جداً.",
+        test2Name: "محمد ر.",
+        test2Role: "عميل سعيد",
+        test3Text: "بعد الهيدروفيشل أصبحت بشرتي أنقى وأكثر نضارة. تجربة ممتازة.",
+        test3Name: "ليلى ع.",
+        test3Role: "عميلة سعيدة",
+        contactLabel: "التواصل",
+        contactTitle: "تواصل معنا بسهولة",
+        contactPhone: "الهاتف",
+        contactLocation: "الموقع",
+        contactMap: "عرض على خرائط جوجل",
+        contactSocial: "وسائل التواصل",
+        footerDesc: "مركز تجميل وطب تجميلي متقدم.",
         footerCopy: "© 2026 مركز سينوها. جميع الحقوق محفوظة."
     },
     en: {
-        siteTitle: "Sinuha",
-        navHome: "Home", navAbout: "About", navServices: "Services",
-        navTech: "Technologies", navReviews: "Reviews", navContact: "Contact",
-        bookBtn: "Book Appointment",
-        heroLabel: "Advanced Aesthetic Center",
-        heroTitle: "Sinuha Beauty Center",
-        heroDesc: "The finest aesthetic and skin treatments with world-class technology.",
-        catLabel: "Categories", catTitle: "Explore Our Services",
-        catWomen: "Women", catWomenDesc: "Premium beauty services for women",
-        catMen: "Men", catMenDesc: "Specialized services for men",
-        catAll: "All Services", catAllDesc: "View all available services",
-        servicesLabel: "Services", servicesTitle: "Advanced Treatments",
-        filterAll: "All", filterWomen: "Women", filterMen: "Men",
-        tagWomen: "Women", tagMen: "Men", tagAll: "All",
-        svcAcne: "Acne Treatment", svcAcneDesc: "Specialized treatment for acne and deep skin cleansing.",
-        svcBeautyConsult: "Beauty Consultation", svcBeautyConsultDesc: "Personal consultation with beauty specialists.",
-        svcBotox: "Botox", svcBotoxDesc: "Treatment of lines and wrinkles with advanced Botox.",
-        svcConsult: "Medical Consultation", svcConsultDesc: "Professional analysis and treatment recommendation.",
-        svcFillers: "Dermal Fillers", svcFillersDesc: "Face contouring with premium European fillers.",
-        svcFullBodyLaser: "Full Body Laser", svcFullBodyLaserDesc: "Advanced laser hair removal for the entire body.",
-        svcGlowSkin: "Glow Skin", svcGlowSkinDesc: "Skin treatment for radiance and freshness.",
-        svcVIP: "VIP Experience", svcVIPDesc: "Exclusive service and unparalleled satisfaction.",
-        svcHollywood: "Hollywood Smile", svcHollywoodDesc: "Create a beautiful, star-like bright smile.",
-        svcHydro: "Hydrofacial", svcHydroDesc: "Deep cleansing and hydration with water technology.",
-        svcMenLaser: "Men's Laser", svcMenLaserDesc: "Specialized laser hair removal for men with high results.",
-        svcPDRN: "PDRN Salmon", svcPDRNDesc: "Advanced skin renewal treatment with Salmon DNA.",
-        svcProfhilo: "Profhilo", svcProfhiloDesc: "Deep hydration and skin tightening with Profhilo.",
-        svcPRPMen: "PRP Hair (Men)", svcPRPMenDesc: "PRP treatment to prevent hair loss and renewal.",
-        svcPRPWomen: "PRP Hair (Women)", svcPRPWomenDesc: "Natural treatment to strengthen hair and prevent fall.",
-        svcWhitening: "Skin Whitening", svcWhiteningDesc: "Special treatment for brightening and evening skin tone.",
-        svcTattoo: "Tattoo Removal", svcTattooDesc: "Advanced laser tattoo removal without scarring.",
-        svcUnderarm: "Underarm Brightening", svcUnderarmDesc: "Safe treatment for brightening underarm area.",
-        svcBook: "Book Now",
-        aboutLabel: "Welcome", aboutTitle: "Sinuha Center",
-        aboutP1: "Sinuha is a royal destination for beauty and skin treatments.",
-        aboutP2: "Professional staff and advanced technology for superior results.",
-        feat1: "Advanced Technology", feat2: "Professional Staff",
-        feat3: "Royal Luxury", feat4: "Guaranteed Results",
-        aboutCta: "Contact Us",
-        techLabel: "Technology", techTitle: "Advanced Medical Equipment",
-        tech1Title: "Advanced Laser", tech1Desc: "Latest German laser devices for skin and hair treatment.",
-        tech2Title: "Hydrofacial", tech2Desc: "Three-step technology for deep cleansing and hydration.",
-        tech3Title: "PRP / PDRN", tech3Desc: "Natural treatment using your own plasma for renewal.",
-        tech4Title: "Fillers & Botox", tech4Desc: "Premium European materials for facial treatment.",
-        reviewsLabel: "Reviews", reviewsTitle: "Trust the Results",
-        test1Text: "A royal experience. The team was incredibly professional and kind.",
-        test1Name: "Sara M.", test1Role: "Happy Client",
-        test2Text: "PRP hair treatment was very successful. Sinuha is the best.",
-        test2Name: "Mohammed R.", test2Role: "Happy Client",
-        test3Text: "My skin became like a baby's after Hydrofacial. Amazing.",
-        test3Name: "Layla A.", test3Role: "Happy Client",
-        test4Text: "Sinuha's atmosphere is unique. A royal and advanced feeling.",
-        test4Name: "Narges H.", test4Role: "Happy Client",
-        contactLabel: "Contact", contactTitle: "Get in Touch",
-        contactPhone: "Phone", contactLocation: "Location",
-        contactMap: "View on Google Maps", contactSocial: "Social Media",
-        footerDesc: "Advanced aesthetic and cosmetic medical center.",
-        footerQuick: "Quick Links", footerContact: "Contact",
+        siteTitle: "Sinuha Center",
+        siteSub: "Beauty Center",
+        navHome: "Home",
+        navAbout: "About",
+        navServices: "Services",
+        navTech: "Technologies",
+        navReviews: "Results",
+        navContact: "Contact",
+        navContactCta: "Contact",
+        heroLabel: "Where beauty meets royal care",
+        heroTitle: "Sinuha Center",
+        heroKicker: "Advanced beauty and aesthetic medicine",
+        heroDesc: "A calm, professional space for confident skin, refined treatments and naturally beautiful results.",
+        heroFeatureLaser: "Laser",
+        heroFeatureSkin: "Skin care",
+        heroFeatureDental: "Dental care",
+        heroFeatureAesthetic: "Aesthetic",
+        heroCta: "Discover Services",
+        trust1Title: "Expert Team",
+        trust1Desc: "Professional care",
+        trust2Title: "Premium Technology",
+        trust2Desc: "Modern safe devices",
+        trust3Title: "Safe & Effective",
+        trust3Desc: "High standards",
+        trust4Title: "Natural Results",
+        trust4Desc: "Soft refined beauty",
+        catLabel: "Categories",
+        catTitle: "Find the right service quickly",
+        catWomen: "Women",
+        catWomenDesc: "Skin, beauty and personal care",
+        catMen: "Men",
+        catMenDesc: "Laser and hair treatments for men",
+        catAll: "All Services",
+        catAllDesc: "Every department in one place",
+        servicesLabel: "Services",
+        servicesTitle: "Advanced treatments with a refined touch",
+        filterAll: "All",
+        filterWomen: "Women",
+        filterMen: "Men",
+        tagWomen: "Women",
+        tagMen: "Men",
+        tagAll: "All",
+        svcAcne: "Acne Treatment",
+        svcAcneDesc: "Cleansing and acne care planned around your skin type.",
+        svcBotox: "Botox",
+        svcBotoxDesc: "Softening lines and wrinkles with a calm, natural finish.",
+        svcFillers: "Dermal Fillers",
+        svcFillersDesc: "Facial balance and contouring with a subtle modern style.",
+        svcFullBodyLaser: "Full Body Laser",
+        svcFullBodyLaserDesc: "Fast, safe laser care for the full body using advanced devices.",
+        svcGlowSkin: "Glow Skin",
+        svcGlowSkinDesc: "Refreshing skin treatments for brightness and vitality.",
+        svcHollywood: "Hollywood Smile",
+        svcHollywoodDesc: "A clean, bright smile design made to suit your face.",
+        svcHydro: "Hydrofacial",
+        svcHydroDesc: "Deep cleansing, hydration and renewed skin glow.",
+        svcMenLaser: "Men's Laser",
+        svcMenLaserDesc: "Dedicated laser care for men with a clear treatment plan.",
+        svcPDRN: "PDRN Salmon",
+        svcPDRNDesc: "Renewal support for smoother, healthier-looking skin.",
+        svcProfhilo: "Profhilo",
+        svcProfhiloDesc: "Deep hydration and improved skin softness.",
+        svcPRPMen: "PRP Hair for Men",
+        svcPRPMenDesc: "Hair care planning to support strength and renewal.",
+        svcPRPWomen: "PRP Hair for Women",
+        svcPRPWomenDesc: "Supportive hair treatment for strength and renewal.",
+        aboutLabel: "About Sinuha",
+        aboutTitle: "A place for beauty, confidence and calm",
+        aboutP1: "Sinuha Center is a premium space for beauty, skin care and aesthetic medicine.",
+        aboutP2: "Our aim is natural results: clean work, clear consultation and an experience that feels considered.",
+        feat1: "Advanced technology",
+        feat2: "Expert team",
+        feat3: "Premium atmosphere",
+        feat4: "Natural results",
+        aboutCta: "Contact us",
+        techLabel: "Technology",
+        techTitle: "Devices and procedures chosen with care",
+        tech1Title: "Advanced Laser",
+        tech1Desc: "For precise, fast results.",
+        tech2Title: "Hydrofacial",
+        tech2Desc: "Cleansing and hydration.",
+        tech3Title: "PRP / PDRN",
+        tech3Desc: "Renewal support.",
+        tech4Title: "Fillers & Botox",
+        tech4Desc: "With a natural style.",
+        reviewsLabel: "Results",
+        reviewsTitle: "Good feeling, trusted results",
+        test1Text: "The space was calm and the team was very skilled. My result looked natural and beautiful.",
+        test1Name: "Sara M.",
+        test1Role: "Happy client",
+        test2Text: "I tried PRP for hair. The consultation was clear and the whole experience felt very clean.",
+        test2Name: "Mohammed R.",
+        test2Role: "Happy client",
+        test3Text: "After Hydrofacial my skin looked clearer and fresher. A beautiful experience.",
+        test3Name: "Layla A.",
+        test3Role: "Happy client",
+        contactLabel: "Contact",
+        contactTitle: "Reach us easily",
+        contactPhone: "Phone",
+        contactLocation: "Location",
+        contactMap: "View on Google Maps",
+        contactSocial: "Social media",
+        footerDesc: "Advanced beauty and aesthetic medical center.",
         footerCopy: "© 2026 Sinuha Center. All rights reserved."
     }
 };
 
-let currentLang = 'ckb';
+let currentLang = localStorage.getItem("sinuhaLang") || "ckb";
 
-/* ---------- INIT ---------- */
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
     initLoading();
     initScrollProgress();
     initNavbar();
     initMobileMenu();
-    initLangSwitch();
+    initLanguage();
     initReveal();
-    initServiceFilter();
-    initParallax();
-    initParticles();
-    initMagnetic();
+    initFilters();
     initSmoothScroll();
 });
 
-/* ---------- LOADING ---------- */
 function initLoading() {
-    const loader = document.getElementById('loadingScreen');
+    const loader = document.getElementById("loadingScreen");
     if (!loader) return;
-    const done = () => loader.classList.add('done');
-    if (document.readyState === 'complete') setTimeout(done, 600);
-    else window.addEventListener('load', () => setTimeout(done, 600));
-    setTimeout(done, 2000);
+    const hide = () => loader.classList.add("done");
+    window.addEventListener("load", () => setTimeout(hide, 420), { once: true });
+    setTimeout(hide, 1600);
 }
 
-/* ---------- SCROLL PROGRESS ---------- */
 function initScrollProgress() {
-    const fill = document.getElementById('scrollFill');
+    const fill = document.getElementById("scrollFill");
     if (!fill) return;
-    window.addEventListener('scroll', () => {
-        const st = window.scrollY;
-        const dh = document.documentElement.scrollHeight - window.innerHeight;
-        fill.style.width = dh > 0 ? (st / dh * 100) + '%' : '0%';
-    }, { passive: true });
+    const update = () => {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        fill.style.width = max > 0 ? `${(window.scrollY / max) * 100}%` : "0%";
+    };
+    update();
+    window.addEventListener("scroll", update, { passive: true });
 }
 
-/* ---------- NAVBAR ---------- */
 function initNavbar() {
-    const nav = document.getElementById('navbar');
-    if (!nav) return;
-    window.addEventListener('scroll', () => {
-        nav.classList.toggle('scrolled', window.scrollY > 50);
-    }, { passive: true });
+    const navbar = document.getElementById("navbar");
+    if (!navbar) return;
+    const update = () => navbar.classList.toggle("scrolled", window.scrollY > 24);
+    update();
+    window.addEventListener("scroll", update, { passive: true });
 }
 
-/* ---------- MOBILE MENU ---------- */
 function initMobileMenu() {
-    const toggle = document.getElementById('navToggle');
-    const menu = document.getElementById('navMenu');
-    if (!toggle || !menu) return;
-    toggle.addEventListener('click', () => {
-        toggle.classList.toggle('active');
-        menu.classList.toggle('active');
-        document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+    const toggle = document.getElementById("navToggle");
+    const menu = document.getElementById("navMenu");
+    const backdrop = document.getElementById("navBackdrop");
+    if (!toggle || !menu || !backdrop) return;
+
+    const close = () => {
+        toggle.classList.remove("active");
+        menu.classList.remove("active");
+        backdrop.classList.remove("active");
+        toggle.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+    };
+
+    toggle.addEventListener("click", () => {
+        const open = !menu.classList.contains("active");
+        toggle.classList.toggle("active", open);
+        menu.classList.toggle("active", open);
+        backdrop.classList.toggle("active", open);
+        toggle.setAttribute("aria-expanded", String(open));
+        document.body.style.overflow = open ? "hidden" : "";
     });
-    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-        toggle.classList.remove('active');
-        menu.classList.remove('active');
-        document.body.style.overflow = '';
-    }));
+
+    backdrop.addEventListener("click", close);
+    menu.querySelectorAll("a").forEach((link) => link.addEventListener("click", close));
+    window.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") close();
+    });
 }
 
-/* ---------- LANGUAGE SWITCH ---------- */
-function initLangSwitch() {
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const lang = btn.dataset.lang;
-            if (lang === currentLang) return;
-            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            setLang(lang);
-        });
+function initLanguage() {
+    document.querySelectorAll(".lang-btn").forEach((button) => {
+        button.addEventListener("click", () => setLang(button.dataset.lang));
     });
+    setLang(currentLang);
 }
 
 function setLang(lang) {
+    const t = translations[lang] || translations.ckb;
     currentLang = lang;
-    const html = document.documentElement;
-    const t = translations[lang];
-    html.lang = lang;
-    html.dir = lang === 'en' ? 'ltr' : 'rtl';
-    document.querySelectorAll('[data-key]').forEach(el => {
-        const k = el.dataset.key;
-        if (t[k]) el.textContent = t[k];
-    });
+    localStorage.setItem("sinuhaLang", lang);
+
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === "en" ? "ltr" : "rtl";
     document.title = t.siteTitle;
+
+    document.querySelectorAll("[data-key]").forEach((element) => {
+        const key = element.dataset.key;
+        if (Object.prototype.hasOwnProperty.call(t, key)) {
+            element.textContent = t[key];
+        }
+    });
+
+    document.querySelectorAll(".lang-btn").forEach((button) => {
+        button.classList.toggle("active", button.dataset.lang === lang);
+    });
 }
 
-/* ---------- REVEAL ON SCROLL ---------- */
 function initReveal() {
-    const obs = new IntersectionObserver((entries) => {
-        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { rootMargin: '0px 0px -50px 0px', threshold: 0.08 });
-    document.querySelectorAll('.reveal-item').forEach(el => obs.observe(el));
-}
-
-/* ---------- SERVICE FILTER ---------- */
-function initServiceFilter() {
-    const buttons = document.querySelectorAll('.filter-btn');
-    const cards = document.querySelectorAll('.service-card');
-    buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const filter = btn.dataset.filter;
-            buttons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            cards.forEach((card, i) => {
-                const cat = card.dataset.category;
-                const match = filter === 'all' || cat === filter || cat === 'all';
-                if (match) {
-                    card.classList.remove('hidden');
-                    setTimeout(() => card.classList.remove('exiting'), i * 25);
-                } else {
-                    card.classList.add('exiting');
-                    setTimeout(() => { if (card.classList.contains('exiting')) card.classList.add('hidden'); }, 400);
-                }
-            });
-        });
-    });
-}
-
-/* ---------- PARALLAX (desktop only) ---------- */
-function initParallax() {
-    if (window.innerWidth < 1024 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const heroImg = document.querySelector('.hero-media img');
-    if (!heroImg) return;
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            requestAnimationFrame(() => {
-                const y = window.scrollY * 0.12;
-                heroImg.style.transform = `translateY(${y}px) scale(1.08)`;
-                ticking = false;
-            });
-            ticking = true;
-        }
-    }, { passive: true });
-}
-
-/* ---------- PARTICLES (desktop only, minimal) ---------- */
-function initParticles() {
-    const canvas = document.getElementById('heroParticles');
-    if (!canvas || window.innerWidth < 1024) return;
-    const ctx = canvas.getContext('2d');
-    let W, H, particles = [];
-    const count = 16;
-    function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
-    resize();
-    window.addEventListener('resize', resize, { passive: true });
-    for (let i = 0; i < count; i++) {
-        particles.push({
-            x: Math.random() * W, y: Math.random() * H,
-            r: Math.random() * 1.2 + 0.3, d: Math.random() * 0.15 + 0.05,
-            o: Math.random() * 0.35 + 0.1
-        });
+    const items = document.querySelectorAll(".reveal-item");
+    if (!("IntersectionObserver" in window)) {
+        items.forEach((item) => item.classList.add("visible"));
+        return;
     }
-    let frame = 0, req;
-    function draw() {
-        frame++;
-        if (frame % 2 === 0) {
-            ctx.clearRect(0, 0, W, H);
-            particles.forEach(p => {
-                p.y -= p.d;
-                if (p.y < -10) { p.y = H + 10; p.x = Math.random() * W; }
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(212,176,106,${p.o})`;
-                ctx.fill();
-            });
-        }
-        req = requestAnimationFrame(draw);
-    }
-    draw();
-    document.addEventListener('visibilitychange', () => {
-        if (document.hidden) cancelAnimationFrame(req); else draw();
-    });
-}
 
-/* ---------- MAGNETIC BUTTONS ---------- */
-function initMagnetic() {
-    if (window.matchMedia('(pointer: coarse)').matches) return;
-    document.querySelectorAll('.magnetic-btn').forEach(btn => {
-        btn.addEventListener('mousemove', e => {
-            const r = btn.getBoundingClientRect();
-            btn.style.transform = `translate(${(e.clientX - r.left - r.width/2) * 0.15}px, ${(e.clientY - r.top - r.height/2) * 0.15}px)`;
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+            }
         });
-        btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+    }, { threshold: 0.08, rootMargin: "0px 0px -40px 0px" });
+
+    items.forEach((item) => observer.observe(item));
+}
+
+function initFilters() {
+    const buttons = document.querySelectorAll(".filter-btn");
+    const cards = document.querySelectorAll(".service-card");
+    const categoryLinks = document.querySelectorAll(".category-card[data-filter]");
+
+    const applyFilter = (filter) => {
+        buttons.forEach((button) => {
+            button.classList.toggle("active", button.dataset.filter === filter);
+        });
+
+        cards.forEach((card) => {
+            const category = card.dataset.category;
+            const visible = filter === "all" || category === filter || category === "all";
+            if (visible) {
+                card.classList.remove("hidden");
+                requestAnimationFrame(() => card.classList.remove("exiting"));
+            } else {
+                card.classList.add("exiting");
+                setTimeout(() => {
+                    if (card.classList.contains("exiting")) card.classList.add("hidden");
+                }, 220);
+            }
+        });
+    };
+
+    buttons.forEach((button) => {
+        button.addEventListener("click", () => applyFilter(button.dataset.filter));
+    });
+
+    categoryLinks.forEach((link) => {
+        link.addEventListener("click", () => applyFilter(link.dataset.filter));
     });
 }
 
-/* ---------- SMOOTH SCROLL + ACTIVE LINK ---------- */
 function initSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', e => {
-            const id = a.getAttribute('href');
-            if (id === '#') return;
-            e.preventDefault();
-            const el = document.querySelector(id);
-            if (el) window.scrollTo({ top: el.offsetTop - 80, behavior: 'smooth' });
+    const links = document.querySelectorAll('a[href^="#"]');
+    const navLinks = document.querySelectorAll(".nav-link");
+    const sections = document.querySelectorAll("main section[id]");
+
+    links.forEach((link) => {
+        link.addEventListener("click", (event) => {
+            const selector = link.getAttribute("href");
+            if (!selector || selector === "#") return;
+            const target = document.querySelector(selector);
+            if (!target) return;
+            event.preventDefault();
+            window.scrollTo({
+                top: target.offsetTop - 78,
+                behavior: "smooth"
+            });
         });
     });
-    const sections = document.querySelectorAll('section[id]');
-    const links = document.querySelectorAll('.nav-link');
-    window.addEventListener('scroll', () => {
-        let cur = '';
-        sections.forEach(s => { if (window.scrollY >= s.offsetTop - 150) cur = s.id; });
-        links.forEach(l => {
-            l.classList.toggle('active', l.getAttribute('href') === `#${cur}`);
+
+    const updateActiveLink = () => {
+        let current = "home";
+        sections.forEach((section) => {
+            if (window.scrollY >= section.offsetTop - 150) current = section.id;
         });
-    }, { passive: true });
+        navLinks.forEach((link) => {
+            link.classList.toggle("active", link.getAttribute("href") === `#${current}`);
+        });
+    };
+
+    updateActiveLink();
+    window.addEventListener("scroll", updateActiveLink, { passive: true });
 }
