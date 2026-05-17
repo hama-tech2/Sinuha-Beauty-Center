@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="Sinuha Center - Premium Luxury Beauty & Aesthetic Clinic">
-    <meta name="theme-color" content="#0A0806">
+    <meta name="description" content="Sinuha Center — Premium Luxury Aesthetic Clinic">
+    <meta name="theme-color" content="#050505">
     <title data-key="siteTitle">سینوها سەنتەر</title>
-    
     <link rel="preconnect" href="https://raw.githubusercontent.com">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -14,32 +13,25 @@
 
     <!-- ========== LOADING SCREEN ========== -->
     <div class="loading-screen" id="loadingScreen">
-        <div class="loading-content">
+        <div class="loading-inner">
             <div class="loading-logo" data-key="siteTitle">سینوها</div>
-            <div class="loading-line">
-                <div class="loading-line-glow"></div>
+            <div class="loading-track">
+                <div class="loading-fill"></div>
             </div>
         </div>
     </div>
 
     <!-- ========== SCROLL PROGRESS ========== -->
-    <div class="scroll-progress" id="scrollProgress" aria-hidden="true">
-        <div class="scroll-progress-bar"></div>
+    <div class="scroll-track" id="scrollTrack" aria-hidden="true">
+        <div class="scroll-fill" id="scrollFill"></div>
     </div>
-
-    <!-- ========== WHATSAPP FLOAT ========== -->
-    <a href="https://wa.me/9647717007560" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
-        <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-    </a>
 
     <!-- ========== NAVBAR ========== -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <a href="#" class="nav-logo" data-key="siteTitle">سینوها سەنتەر</a>
-            
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <a href="#" class="nav-logo" data-key="siteTitle">سینوها</a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle Menu">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
@@ -51,17 +43,17 @@
                     <li><a href="#about" class="nav-link" data-key="navAbout">دەربارە</a></li>
                     <li><a href="#services" class="nav-link" data-key="navServices">خزمەتگوزاریەکان</a></li>
                     <li><a href="#technology" class="nav-link" data-key="navTech">تەکنەلۆژیا</a></li>
-                    <li><a href="#results" class="nav-link" data-key="navResults">ئەنجامەکان</a></li>
+                    <li><a href="#reviews" class="nav-link" data-key="navReviews">باوەڕکردن</a></li>
                     <li><a href="#contact" class="nav-link" data-key="navContact">پەیوەندی</a></li>
                 </ul>
-                
+
                 <div class="nav-actions">
                     <div class="lang-switcher">
-                        <button class="lang-btn active" data-lang="ckb" aria-label="Kurdish Sorani">CKB</button>
-                        <button class="lang-btn" data-lang="ar" aria-label="Arabic">AR</button>
-                        <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+                        <button class="lang-btn active" data-lang="ckb">CKB</button>
+                        <button class="lang-btn" data-lang="ar">AR</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
                     </div>
-                    <a href="tel:07717007560" class="btn btn-gold nav-cta" data-key="bookBtn">داتنەنی ماوە</a>
+                    <a href="tel:07717007560" class="btn btn-gold btn-sm" data-key="bookBtn">داواکردنی نۆرە</a>
                 </div>
             </div>
         </div>
@@ -69,92 +61,64 @@
 
     <!-- ========== HERO SECTION ========== -->
     <section class="hero" id="home">
-        <canvas class="particles-canvas" id="particlesCanvas" aria-hidden="true"></canvas>
-        <div class="hero-bg" id="heroBg">
-            <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-cinematic-hero.jpg.png" alt="Sinuha Center Cinematic" loading="eager">
+        <canvas class="hero-particles" id="heroParticles" aria-hidden="true"></canvas>
+        <div class="hero-media">
+            <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-cinematic-hero.jpg.png" alt="Sinuha Center" loading="eager">
         </div>
-        <div class="hero-overlay"></div>
-        
-        <div class="container hero-content">
-            <div class="hero-text">
-                <p class="hero-label reveal-text" data-key="heroLabel">سەنتەری جوانکاری پێشکەوتوو</p>
-                <h1 class="hero-title reveal-text" data-key="heroTitle">سینوها سەنتەری جوانکاری</h1>
-                <h2 class="hero-subtitle reveal-text" data-key="heroSubtitle">شوێنێک کە جوانیت لێدەستێنێ</h2>
-                <p class="hero-description reveal-text" data-key="heroDesc">
-                    ئێمە باشترین خزمەتگوزاریەکانی جوانکاری و چاکسازی پێشکەش دەکەین بە تەکنەلۆژیای پێشکەوتوو و ستافێکی پیشەیی.
-                </p>
-                <div class="hero-buttons reveal-text">
-                    <a href="tel:07717007560" class="btn btn-gold btn-lg magnetic-btn">
-                        <span data-key="bookBtn">داتنەنی ماوە</span>
-                    </a>
-                    <a href="#services" class="btn btn-outline btn-lg magnetic-btn">
-                        <span data-key="exploreBtn">بینینی خزمەتگوزاریەکان</span>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="hero-highlights">
-                <div class="highlight-card reveal-item">
-                    <span class="highlight-number">+10</span>
-                    <span class="highlight-text" data-key="highlightYears">ساڵ ئەزموون</span>
-                </div>
-                <div class="highlight-card reveal-item">
-                    <span class="highlight-number">+50</span>
-                    <span class="highlight-text" data-key="highlightServices">خزمەتگوزاری</span>
-                </div>
-                <div class="highlight-card reveal-item">
-                    <span class="highlight-number">+5000</span>
-                    <span class="highlight-text" data-key="highlightClients">کلیێنی دڵخۆش</span>
-                </div>
+        <div class="hero-shade"></div>
+
+        <div class="container hero-wrap">
+            <div class="hero-content">
+                <span class="hero-eyebrow reveal-item" data-key="heroLabel">سەنتەری جوانکاری پێشکەوتوو</span>
+                <h1 class="hero-title reveal-item" data-key="heroTitle">سینوها سەنتەری جوانکاری</h1>
+                <p class="hero-desc reveal-item" data-key="heroDesc">باشترین خزمەتگوزاری جوانکاری و چاکسازی پێست لەگەڵ تەکنەلۆژیای جیهانی.</p>
+                <a href="tel:07717007560" class="btn btn-gold magnetic-btn reveal-item" data-key="bookBtn">داواکردنی نۆرە</a>
             </div>
         </div>
     </section>
 
     <!-- ========== SECTION SEPARATOR ========== -->
-    <div class="section-separator" aria-hidden="true"></div>
+    <div class="separator" aria-hidden="true"></div>
 
     <!-- ========== CATEGORIES SECTION ========== -->
     <section class="categories section" id="categories">
         <div class="container">
-            <div class="section-header reveal-item">
-                <span class="section-label" data-key="catLabel">بەشەکان</span>
+            <header class="section-header reveal-item">
+                <span class="section-eyebrow" data-key="catLabel">بەشەکان</span>
                 <h2 class="section-title" data-key="catTitle">هەلبژاردەی خزمەتگوزاریەکان</h2>
-            </div>
-            
+            </header>
+
             <div class="categories-grid">
                 <a href="#services" class="category-card reveal-item" data-filter="women">
-                    <div class="category-image">
-                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/category-women-cover.jpg.jpeg" alt="Women Category" loading="lazy">
+                    <div class="category-media">
+                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/category-women-cover.jpg.jpeg" alt="Women" loading="lazy">
                     </div>
-                    <div class="category-overlay"></div>
-                    <div class="category-content">
+                    <div class="category-shade"></div>
+                    <div class="category-text">
                         <h3 data-key="catWomen">ژنان</h3>
                         <p data-key="catWomenDesc">باشترین خزمەتگوزاریەکانی جوانکاری بۆ ژنان</p>
-                        <span class="category-link" data-key="catExplore">بینین</span>
                     </div>
                 </a>
-                
+
                 <a href="#services" class="category-card reveal-item" data-filter="men">
-                    <div class="category-image">
-                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/category-men-cover.jpg.jpeg" alt="Men Category" loading="lazy">
+                    <div class="category-media">
+                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/category-men-cover.jpg.jpeg" alt="Men" loading="lazy">
                     </div>
-                    <div class="category-overlay"></div>
-                    <div class="category-content">
+                    <div class="category-shade"></div>
+                    <div class="category-text">
                         <h3 data-key="catMen">پیاوان</h3>
                         <p data-key="catMenDesc">خزمەتگوزاری تایبەت بە پیاوان</p>
-                        <span class="category-link" data-key="catExplore">بینین</span>
                     </div>
                 </a>
-                
+
                 <a href="#services" class="category-card reveal-item" data-filter="all">
-                    <div class="category-image category-mixed">
-                        <div class="mixed-gradient"></div>
+                    <div class="category-media category-mixed">
+                        <div class="mixed-bg"></div>
                     </div>
-                    <div class="category-overlay"></div>
-                    <div class="category-content">
+                    <div class="category-shade"></div>
+                    <div class="category-text">
                         <h3 data-key="catAll">هەموو خزمەتگوزاریەکان</h3>
                         <p data-key="catAllDesc">بینینی هەموو خزمەتگوزاریەکان</p>
-                        <span class="category-link" data-key="catExplore">بینین</span>
                     </div>
                 </a>
             </div>
@@ -162,255 +126,237 @@
     </section>
 
     <!-- ========== SECTION SEPARATOR ========== -->
-    <div class="section-separator" aria-hidden="true"></div>
+    <div class="separator" aria-hidden="true"></div>
 
     <!-- ========== SERVICES SECTION ========== -->
     <section class="services section" id="services">
         <div class="container">
-            <div class="section-header reveal-item">
-                <span class="section-label" data-key="servicesLabel">خزمەتگوزاریەکان</span>
+            <header class="section-header reveal-item">
+                <span class="section-eyebrow" data-key="servicesLabel">خزمەتگوزاریەکان</span>
                 <h2 class="section-title" data-key="servicesTitle">چارەسەری پێشکەوتوو</h2>
-            </div>
-            
-            <div class="services-filter reveal-item">
+            </header>
+
+            <div class="filter-bar reveal-item">
                 <button class="filter-btn active" data-filter="all" data-key="filterAll">هەموو</button>
                 <button class="filter-btn" data-filter="women" data-key="filterWomen">ژنان</button>
                 <button class="filter-btn" data-filter="men" data-key="filterMen">پیاوان</button>
             </div>
-            
+
             <div class="services-grid" id="servicesGrid">
-                <!-- Women Services -->
+                <!-- Women -->
                 <article class="service-card reveal-item" data-category="women">
-                    <div class="service-image">
-                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-acne-treatment.jpg" alt="Acne Treatment" loading="lazy">
-                        <div class="service-glow"></div>
+                    <div class="service-media">
+                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-acne-treatment.jpg" alt="Acne" loading="lazy">
                     </div>
-                    <div class="service-content">
+                    <div class="service-body">
                         <span class="service-tag" data-key="tagWomen">ژنان</span>
                         <h3 data-key="svcAcne">چارەسەری ئەکنە</h3>
                         <p data-key="svcAcneDesc">چارەسەری تایبەت بۆ دانە سوورەکان و پاککردنەوەی پێست.</p>
-                        <a href="tel:07717007560" class="service-btn" data-key="svcBook">داتنەنی ماوە</a>
+                        <a href="tel:07717007560" class="service-link" data-key="svcBook">داواکردنی نۆرە</a>
                     </div>
                 </article>
-                
+
                 <article class="service-card reveal-item" data-category="women">
-                    <div class="service-image">
-                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-beauty-consultation.jpg" alt="Beauty Consultation" loading="lazy">
-                        <div class="service-glow"></div>
+                    <div class="service-media">
+                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-beauty-consultation.jpg" alt="Consultation" loading="lazy">
                     </div>
-                    <div class="service-content">
+                    <div class="service-body">
                         <span class="service-tag" data-key="tagWomen">ژنان</span>
                         <h3 data-key="svcBeautyConsult">ڕاوێژکاری جوانکاری</h3>
                         <p data-key="svcBeautyConsultDesc">ڕاوێژکاری تایبەت لەگەڵ سپێشلیستی جوانکاری.</p>
-                        <a href="tel:07717007560" class="service-btn" data-key="svcBook">داتنەنی ماوە</a>
+                        <a href="tel:07717007560" class="service-link" data-key="svcBook">داواکردنی نۆرە</a>
                     </div>
                 </article>
-                
+
                 <article class="service-card reveal-item" data-category="women">
-                    <div class="service-image">
+                    <div class="service-media">
                         <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-botox.jpg" alt="Botox" loading="lazy">
-                        <div class="service-glow"></div>
                     </div>
-                    <div class="service-content">
+                    <div class="service-body">
                         <span class="service-tag" data-key="tagWomen">ژنان</span>
                         <h3 data-key="svcBotox">بۆتۆکس</h3>
                         <p data-key="svcBotoxDesc">دەرمانکردنی هێڵ و چەنیەکان بە بۆتۆکسی پێشکەوتوو.</p>
-                        <a href="tel:07717007560" class="service-btn" data-key="svcBook">داتنەنی ماوە</a>
+                        <a href="tel:07717007560" class="service-link" data-key="svcBook">داواکردنی نۆرە</a>
                     </div>
                 </article>
-                
+
                 <article class="service-card reveal-item" data-category="women">
-                    <div class="service-image">
-                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-consultation.jpg" alt="Consultation" loading="lazy">
-                        <div class="service-glow"></div>
-                    </div>
-                    <div class="service-content">
-                        <span class="service-tag" data-key="tagWomen">ژنان</span>
-                        <h3 data-key="svcConsult">ڕاوێژکاری پزیشکی</h3>
-                        <p data-key="svcConsultDesc">شیکاری پیشەیی و پێشنیازی چارەسەری.</p>
-                        <a href="tel:07717007560" class="service-btn" data-key="svcBook">داتنەنی ماوە</a>
-                    </div>
-                </article>
-                
-                <article class="service-card reveal-item" data-category="women">
-                    <div class="service-image">
+                    <div class="service-media">
                         <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-fillers.jpg" alt="Fillers" loading="lazy">
-                        <div class="service-glow"></div>
                     </div>
-                    <div class="service-content">
+                    <div class="service-body">
                         <span class="service-tag" data-key="tagWomen">ژنان</span>
                         <h3 data-key="svcFillers">فیلەر</h3>
                         <p data-key="svcFillersDesc">پڕکردنەوەی ڕوخسار و لێدان بە فیلەری ئەورووپی.</p>
-                        <a href="tel:07717007560" class="service-btn" data-key="svcBook">داتنەنی ماوە</a>
+                        <a href="tel:07717007560" class="service-link" data-key="svcBook">داواکردنی نۆرە</a>
                     </div>
                 </article>
-                
+
                 <article class="service-card reveal-item" data-category="all">
-                    <div class="service-image">
-                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-full-body-laser.jpg" alt="Full Body Laser" loading="lazy">
-                        <div class="service-glow"></div>
+                    <div class="service-media">
+                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-full-body-laser.jpg" alt="Laser" loading="lazy">
                     </div>
-                    <div class="service-content">
+                    <div class="service-body">
                         <span class="service-tag tag-all" data-key="tagAll">هەموو</span>
                         <h3 data-key="svcFullBodyLaser">لیزەری لەشی تەواو</h3>
                         <p data-key="svcFullBodyLaserDesc">لیزەری ئەمانی بۆ لەشی تەواو بە ئامێری پێشکەوتوو.</p>
-                        <a href="tel:07717007560" class="service-btn" data-key="svcBook">داتنەنی ماوە</a>
+                        <a href="tel:07717007560" class="service-link" data-key="svcBook">داواکردنی نۆرە</a>
                     </div>
                 </article>
-                
+
                 <article class="service-card reveal-item" data-category="women">
-                    <div class="service-image">
-                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-glow-skin.jpg" alt="Glow Skin" loading="lazy">
-                        <div class="service-glow"></div>
+                    <div class="service-media">
+                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-glow-skin.jpg" alt="Glow" loading="lazy">
                     </div>
-                    <div class="service-content">
+                    <div class="service-body">
                         <span class="service-tag" data-key="tagWomen">ژنان</span>
                         <h3 data-key="svcGlowSkin">پێستی درەوشاوە</h3>
                         <p data-key="svcGlowSkinDesc">دەرمانکردنی پێست بۆ درەوشاوەیی و تازەیی.</p>
-                        <a href="tel:07717007560" class="service-btn" data-key="svcBook">داتنەنی ماوە</a>
+                        <a href="tel:07717007560" class="service-link" data-key="svcBook">داواکردنی نۆرە</a>
                     </div>
                 </article>
-                
+
                 <article class="service-card reveal-item" data-category="women">
-                    <div class="service-image">
-                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-happy-client.jpg" alt="VIP Experience" loading="lazy">
-                        <div class="service-glow"></div>
+                    <div class="service-media">
+                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-hollywood-smile.jpg" alt="Smile" loading="lazy">
                     </div>
-                    <div class="service-content">
-                        <span class="service-tag" data-key="tagWomen">ژنان</span>
-                        <h3 data-key="svcVIP">ئەزموونی VIP</h3>
-                        <p data-key="svcVIPDesc">خزمەتگوزاری تایبەت و ئەزموونی دڵخۆشی بێهاوتا.</p>
-                        <a href="tel:07717007560" class="service-btn" data-key="svcBook">داتنەنی ماوە</a>
-                    </div>
-                </article>
-                
-                <article class="service-card reveal-item" data-category="women">
-                    <div class="service-image">
-                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-hollywood-smile.jpg" alt="Hollywood Smile" loading="lazy">
-                        <div class="service-glow"></div>
-                    </div>
-                    <div class="service-content">
+                    <div class="service-body">
                         <span class="service-tag" data-key="tagWomen">ژنان</span>
                         <h3 data-key="svcHollywood">پێکەنی هۆلیوود</h3>
                         <p data-key="svcHollywoodDesc">دروستکردنی پێکەنی جوان و درەوشاوە وەک ئەستێرەکان.</p>
-                        <a href="tel:07717007560" class="service-btn" data-key="svcBook">داتنەنی ماوە</a>
+                        <a href="tel:07717007560" class="service-link" data-key="svcBook">داواکردنی نۆرە</a>
                     </div>
                 </article>
-                
+
                 <article class="service-card reveal-item" data-category="women">
-                    <div class="service-image">
-                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-hydrofacial.jpg" alt="Hydrofacial" loading="lazy">
-                        <div class="service-glow"></div>
+                    <div class="service-media">
+                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-hydrofacial.jpg" alt="Hydro" loading="lazy">
                     </div>
-                    <div class="service-content">
+                    <div class="service-body">
                         <span class="service-tag" data-key="tagWomen">ژنان</span>
                         <h3 data-key="svcHydro">هایدرۆفەیشەڵ</h3>
                         <p data-key="svcHydroDesc">پاککردنەوەی قووڵ و هیدراتەکردنی پێست بە تەکنەلۆژیای ئاو.</p>
-                        <a href="tel:07717007560" class="service-btn" data-key="svcBook">داتنەنی ماوە</a>
+                        <a href="tel:07717007560" class="service-link" data-key="svcBook">داواکردنی نۆرە</a>
                     </div>
                 </article>
-                
+
                 <article class="service-card reveal-item" data-category="men">
-                    <div class="service-image">
+                    <div class="service-media">
                         <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-men-laser.jpg" alt="Men Laser" loading="lazy">
-                        <div class="service-glow"></div>
                     </div>
-                    <div class="service-content">
+                    <div class="service-body">
                         <span class="service-tag tag-men" data-key="tagMen">پیاوان</span>
                         <h3 data-key="svcMenLaser">لیزەری پیاوان</h3>
                         <p data-key="svcMenLaserDesc">لیزەری ئەمانی تایبەت بە پیاوان بە ئەنجامی بەرز.</p>
-                        <a href="tel:07717007560" class="service-btn" data-key="svcBook">داتنەنی ماوە</a>
+                        <a href="tel:07717007560" class="service-link" data-key="svcBook">داواکردنی نۆرە</a>
                     </div>
                 </article>
-                
+
                 <article class="service-card reveal-item" data-category="women">
-                    <div class="service-image">
-                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-pdrn-salmon.jpg" alt="PDRN Salmon" loading="lazy">
-                        <div class="service-glow"></div>
+                    <div class="service-media">
+                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-pdrn-salmon.jpg" alt="PDRN" loading="lazy">
                     </div>
-                    <div class="service-content">
+                    <div class="service-body">
                         <span class="service-tag" data-key="tagWomen">ژنان</span>
                         <h3 data-key="svcPDRN">PDRN ساڵمۆن</h3>
                         <p data-key="svcPDRNDesc">چارەسەری پێشکەوتوو بۆ نوێبوونەوەی پێست بە DNAی ساڵمۆن.</p>
-                        <a href="tel:07717007560" class="service-btn" data-key="svcBook">داتنەنی ماوە</a>
+                        <a href="tel:07717007560" class="service-link" data-key="svcBook">داواکردنی نۆرە</a>
                     </div>
                 </article>
-                
+
                 <article class="service-card reveal-item" data-category="women">
-                    <div class="service-image">
+                    <div class="service-media">
                         <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-profhilo.jpg" alt="Profhilo" loading="lazy">
-                        <div class="service-glow"></div>
                     </div>
-                    <div class="service-content">
+                    <div class="service-body">
                         <span class="service-tag" data-key="tagWomen">ژنان</span>
                         <h3 data-key="svcProfhilo">پڕۆفایلۆ</h3>
                         <p data-key="svcProfhiloDesc">هیدراتەکردنی قووڵ و کشانەوەی پێست بە پڕۆفایلۆ.</p>
-                        <a href="tel:07717007560" class="service-btn" data-key="svcBook">داتنەنی ماوە</a>
+                        <a href="tel:07717007560" class="service-link" data-key="svcBook">داواکردنی نۆرە</a>
                     </div>
                 </article>
-                
+
                 <article class="service-card reveal-item" data-category="men">
-                    <div class="service-image">
-                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-prp-hair-men.jpg" alt="PRP Hair Men" loading="lazy">
-                        <div class="service-glow"></div>
+                    <div class="service-media">
+                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-prp-hair-men.jpg" alt="PRP Men" loading="lazy">
                     </div>
-                    <div class="service-content">
+                    <div class="service-body">
                         <span class="service-tag tag-men" data-key="tagMen">پیاوان</span>
                         <h3 data-key="svcPRPMen">PRP قژی پیاوان</h3>
                         <p data-key="svcPRPMenDesc">چارەسەری PRP بۆ ڕێگری لە ڕەشوبوونی قژ و نوێبوونەوە.</p>
-                        <a href="tel:07717007560" class="service-btn" data-key="svcBook">داتنەنی ماوە</a>
+                        <a href="tel:07717007560" class="service-link" data-key="svcBook">داواکردنی نۆرە</a>
                     </div>
                 </article>
-                
+
                 <article class="service-card reveal-item" data-category="women">
-                    <div class="service-image">
-                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-prp-hair-women.jpg" alt="PRP Hair Women" loading="lazy">
-                        <div class="service-glow"></div>
+                    <div class="service-media">
+                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-prp-hair-women.jpg" alt="PRP Women" loading="lazy">
                     </div>
-                    <div class="service-content">
+                    <div class="service-body">
                         <span class="service-tag" data-key="tagWomen">ژنان</span>
                         <h3 data-key="svcPRPWomen">PRP قژی ژنان</h3>
                         <p data-key="svcPRPWomenDesc">چارەسەری سروشتی بۆ بەهێزکردنی قژ و ڕێگری لە کۆچ.</p>
-                        <a href="tel:07717007560" class="service-btn" data-key="svcBook">داتنەنی ماوە</a>
+                        <a href="tel:07717007560" class="service-link" data-key="svcBook">داواکردنی نۆرە</a>
                     </div>
                 </article>
-                
+
                 <article class="service-card reveal-item" data-category="women">
-                    <div class="service-image">
-                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-skin-whitening.jpg" alt="Skin Whitening" loading="lazy">
-                        <div class="service-glow"></div>
+                    <div class="service-media">
+                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-skin-whitening.jpg" alt="Whitening" loading="lazy">
                     </div>
-                    <div class="service-content">
+                    <div class="service-body">
                         <span class="service-tag" data-key="tagWomen">ژنان</span>
                         <h3 data-key="svcWhitening">سپی کردنی پێست</h3>
                         <p data-key="svcWhiteningDesc">چارەسەری تایبەت بۆ ڕووناکی و یەکسانکردنی ڕەنگی پێست.</p>
-                        <a href="tel:07717007560" class="service-btn" data-key="svcBook">داتنەنی ماوە</a>
+                        <a href="tel:07717007560" class="service-link" data-key="svcBook">داواکردنی نۆرە</a>
                     </div>
                 </article>
-                
+
                 <article class="service-card reveal-item" data-category="all">
-                    <div class="service-image">
-                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-tattoo-removal.jpg" alt="Tattoo Removal" loading="lazy">
-                        <div class="service-glow"></div>
+                    <div class="service-media">
+                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-tattoo-removal.jpg" alt="Tattoo" loading="lazy">
                     </div>
-                    <div class="service-content">
+                    <div class="service-body">
                         <span class="service-tag tag-all" data-key="tagAll">هەموو</span>
                         <h3 data-key="svcTattoo">سڕینەوەی تاتۆ</h3>
                         <p data-key="svcTattooDesc">سڕینەوەی تاتۆ بە لیزەری پێشکەوتوو بە بێ جێهێشتنی ئاسەوار.</p>
-                        <a href="tel:07717007560" class="service-btn" data-key="svcBook">داتنەنی ماوە</a>
+                        <a href="tel:07717007560" class="service-link" data-key="svcBook">داواکردنی نۆرە</a>
                     </div>
                 </article>
-                
+
                 <article class="service-card reveal-item" data-category="women">
-                    <div class="service-image">
-                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-underarm-brightening.jpg" alt="Underarm Brightening" loading="lazy">
-                        <div class="service-glow"></div>
+                    <div class="service-media">
+                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-underarm-brightening.jpg" alt="Underarm" loading="lazy">
                     </div>
-                    <div class="service-content">
+                    <div class="service-body">
                         <span class="service-tag" data-key="tagWomen">ژنان</span>
                         <h3 data-key="svcUnderarm">ڕووناک کردنی بژێر</h3>
                         <p data-key="svcUnderarmDesc">چارەسەری ئەمن بۆ ڕووناک کردنی هەرێمی بژێر.</p>
-                        <a href="tel:07717007560" class="service-btn" data-key="svcBook">داتنەنی ماوە</a>
+                        <a href="tel:07717007560" class="service-link" data-key="svcBook">داواکردنی نۆرە</a>
+                    </div>
+                </article>
+
+                <article class="service-card reveal-item" data-category="women">
+                    <div class="service-media">
+                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-consultation.jpg" alt="Consultation" loading="lazy">
+                    </div>
+                    <div class="service-body">
+                        <span class="service-tag" data-key="tagWomen">ژنان</span>
+                        <h3 data-key="svcConsult">ڕاوێژکاری پزیشکی</h3>
+                        <p data-key="svcConsultDesc">شیکاری پیشەیی و پێشنیازی چارەسەری.</p>
+                        <a href="tel:07717007560" class="service-link" data-key="svcBook">داواکردنی نۆرە</a>
+                    </div>
+                </article>
+
+                <article class="service-card reveal-item" data-category="women">
+                    <div class="service-media">
+                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-happy-client.jpg" alt="VIP" loading="lazy">
+                    </div>
+                    <div class="service-body">
+                        <span class="service-tag" data-key="tagWomen">ژنان</span>
+                        <h3 data-key="svcVIP">ئەزموونی VIP</h3>
+                        <p data-key="svcVIPDesc">خزمەتگوزاری تایبەت و ئەزموونی دڵخۆشی بێهاوتا.</p>
+                        <a href="tel:07717007560" class="service-link" data-key="svcBook">داواکردنی نۆرە</a>
                     </div>
                 </article>
             </div>
@@ -418,73 +364,47 @@
     </section>
 
     <!-- ========== SECTION SEPARATOR ========== -->
-    <div class="section-separator" aria-hidden="true"></div>
+    <div class="separator" aria-hidden="true"></div>
 
     <!-- ========== ABOUT SECTION ========== -->
     <section class="about section" id="about">
         <div class="container">
             <div class="about-grid">
-                <div class="about-images reveal-item">
-                    <div class="about-img-main">
+                <div class="about-visual reveal-item">
+                    <div class="about-frame">
                         <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-luxury-welcome.jpg" alt="Welcome" loading="lazy">
                     </div>
-                    <div class="about-img-sub">
-                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-welcome-staff.jpg" alt="Staff" loading="lazy">
-                    </div>
-                    <div class="about-img-accent">
-                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-happy-client.jpg" alt="Happy Client" loading="lazy">
-                    </div>
                 </div>
-                
-                <div class="about-content reveal-item">
-                    <span class="section-label" data-key="aboutLabel">بەخێربێن</span>
+                <div class="about-textual reveal-item">
+                    <span class="section-eyebrow" data-key="aboutLabel">بەخێربێن</span>
                     <h2 class="section-title" data-key="aboutTitle">سینوها سەنتەر</h2>
-                    <p class="about-text" data-key="aboutP1">
-                        سینوها سەنتەر شوێنێکە کە جوانکاری تێدا واتا دەگۆڕێت. ئێمە پێشکەش دەکەین باشترین خزمەتگوزاریەکانی پزیشکی جوانکاری لە فەزایەکی شاهانە و ئارام.
-                    </p>
-                    <p class="about-text" data-key="aboutP2">
-                        ستافەکەمان لە سپێشلیستی ناوخۆیی و بیانی پێکهاتووە، هەموویان بڕوانامەیان هەیە و ئەزموونیان لە بواری تەکنەلۆژیای پێشکەوتوودا هەیە.
-                    </p>
-                    <div class="about-features">
-                        <div class="feature-item">
-                            <span class="feature-icon">✦</span>
-                            <span data-key="feat1">تەکنەلۆژیای پێشکەوتوو</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✦</span>
-                            <span data-key="feat2">ستافی پیشەیی</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✦</span>
-                            <span data-key="feat3">چێژی شاهانە</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✦</span>
-                            <span data-key="feat4">ئەنجامی دڵنیاکەرەوە</span>
-                        </div>
-                    </div>
-                    <a href="#contact" class="btn btn-gold btn-lg magnetic-btn" data-key="aboutCta">پەیوەندیمان پێوە بکە</a>
+                    <p class="about-lead" data-key="aboutP1">سینوها شوێنێکی شاهانەیە بۆ جوانکاری و چاکسازی پێست.</p>
+                    <p class="about-lead" data-key="aboutP2">ستافی پیشەیی و تەکنەلۆژیای پێشکەوتوو بۆ ئەنجامی بەرز.</p>
+
+                    <ul class="about-list">
+                        <li><span class="about-bullet">✦</span> <span data-key="feat1">تەکنەلۆژیای پێشکەوتوو</span></li>
+                        <li><span class="about-bullet">✦</span> <span data-key="feat2">ستافی پیشەیی</span></li>
+                        <li><span class="about-bullet">✦</span> <span data-key="feat3">چێژی شاهانە</span></li>
+                        <li><span class="about-bullet">✦</span> <span data-key="feat4">ئەنجامی دڵنیاکەرەوە</span></li>
+                    </ul>
+
+                    <a href="#contact" class="btn btn-gold magnetic-btn" data-key="aboutCta">پەیوەندیمان پێوە بکە</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ========== SECTION SEPARATOR ========== -->
-    <div class="section-separator" aria-hidden="true"></div>
+    <div class="separator" aria-hidden="true"></div>
 
     <!-- ========== TECHNOLOGY SECTION ========== -->
     <section class="technology section" id="technology">
-        <div class="tech-bg">
-            <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-logo2-background.png.png" alt="Technology Background" loading="lazy">
-        </div>
-        <div class="tech-overlay"></div>
-        
         <div class="container">
-            <div class="section-header reveal-item">
-                <span class="section-label" data-key="techLabel">تەکنەلۆژیا</span>
+            <header class="section-header reveal-item">
+                <span class="section-eyebrow" data-key="techLabel">تەکنەلۆژیا</span>
                 <h2 class="section-title" data-key="techTitle">ئامێری پزیشکی پێشکەوتوو</h2>
-            </div>
-            
+            </header>
+
             <div class="tech-grid">
                 <div class="tech-card reveal-item">
                     <div class="tech-icon">◈</div>
@@ -511,102 +431,107 @@
     </section>
 
     <!-- ========== SECTION SEPARATOR ========== -->
-    <div class="section-separator" aria-hidden="true"></div>
+    <div class="separator" aria-hidden="true"></div>
 
-    <!-- ========== RESULTS / TESTIMONIALS SECTION ========== -->
-    <section class="results section" id="results">
+    <!-- ========== REVIEWS SECTION ========== -->
+    <section class="reviews section" id="reviews">
         <div class="container">
-            <div class="section-header reveal-item">
-                <span class="section-label" data-key="resultsLabel">ئەنجامەکان</span>
-                <h2 class="section-title" data-key="resultsTitle">باوەڕ بە ئەنجامەکان</h2>
-            </div>
-            
-            <div class="testimonials-wrapper reveal-item">
-                <div class="testimonials-slider" id="testimonialSlider">
-                    <div class="testimonial-slide active">
-                        <div class="testimonial-card">
-                            <div class="testimonial-quote">"</div>
-                            <p class="testimonial-text" data-key="test1Text">
-                                باشترین ئەزموونی جوانکاری کە هەبووم. ستافەکە زۆر میهرەبان و پیشەیی بوون، ئەنجامی کارەکەش وا دڵم بەختاو کرد.
-                            </p>
-                            <div class="testimonial-author">
-                                <span class="author-name" data-key="test1Name">سارا م.</span>
-                                <span class="author-role" data-key="test1Role">کلیێنی دڵخۆش</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial-slide">
-                        <div class="testimonial-card">
-                            <div class="testimonial-quote">"</div>
-                            <p class="testimonial-text" data-key="test2Text">
-                                من چارەسەری PRPم کرد بۆ قژم، ئەنجامی کار زۆر سەرسوڕهێنەر بوو. سینوها باشترینە لە هەولێر.
-                            </p>
-                            <div class="testimonial-author">
-                                <span class="author-name" data-key="test2Name">محمد ر.</span>
-                                <span class="author-role" data-key="test2Role">کلیێنی دڵخۆش</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial-slide">
-                        <div class="testimonial-card">
-                            <div class="testimonial-quote">"</div>
-                            <p class="testimonial-text" data-key="test3Text">
-                                فەزای سینوها جیاوازە. هەست دەکەیت لە شوێنێکی شاهانەیت. هیدرۆفەیشەڵم کرد و پێستم وەک منداڵ بووەوە.
-                            </p>
-                            <div class="testimonial-author">
-                                <span class="author-name" data-key="test3Name">لەیلا ع.</span>
-                                <span class="author-role" data-key="test3Role">کلیێنی دڵخۆش</span>
-                            </div>
-                        </div>
+            <header class="section-header reveal-item">
+                <span class="section-eyebrow" data-key="reviewsLabel">باوەڕکردن</span>
+                <h2 class="section-title" data-key="reviewsTitle">باوەڕ بە ئەنجامەکان</h2>
+            </header>
+
+            <div class="reviews-grid">
+                <div class="review-card reveal-item">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text" data-key="test1Text">ئەزموونێکی شاهانە. ستافەکە زۆر پیشەیی و میهرەبان بوو.</p>
+                    <div class="review-author">
+                        <strong data-key="test1Name">سارا م.</strong>
+                        <span data-key="test1Role">کلیێنی دڵخۆش</span>
                     </div>
                 </div>
-                
-                <div class="testimonial-dots" id="testimonialDots">
-                    <button class="dot active" data-slide="0" aria-label="Slide 1"></button>
-                    <button class="dot" data-slide="1" aria-label="Slide 2"></button>
-                    <button class="dot" data-slide="2" aria-label="Slide 3"></button>
+
+                <div class="review-card reveal-item">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text" data-key="test2Text">PRP بۆ قژم زۆر سەرکەوتوو بوو. سینوها باشترینە.</p>
+                    <div class="review-author">
+                        <strong data-key="test2Name">محمد ر.</strong>
+                        <span data-key="test2Role">کلیێنی دڵخۆش</span>
+                    </div>
+                </div>
+
+                <div class="review-card reveal-item">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text" data-key="test3Text">پێستم دوای هایدرۆفەیشەڵ وەک منداڵ بووەوە. سەرسوڕهێنەر.</p>
+                    <div class="review-author">
+                        <strong data-key="test3Name">لەیلا ع.</strong>
+                        <span data-key="test3Role">کلیێنی دڵخۆش</span>
+                    </div>
+                </div>
+
+                <div class="review-card reveal-item">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text" data-key="test4Text">فەزای سینوها جیاوازە. هەستێکی شاهانە و پێشکەوتوو.</p>
+                    <div class="review-author">
+                        <strong data-key="test4Name">نەرگس ح.</strong>
+                        <span data-key="test4Role">کلیێنی دڵخۆش</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ========== SECTION SEPARATOR ========== -->
-    <div class="section-separator" aria-hidden="true"></div>
+    <div class="separator" aria-hidden="true"></div>
 
     <!-- ========== CONTACT SECTION ========== -->
     <section class="contact section" id="contact">
         <div class="container">
-            <div class="section-header reveal-item">
-                <span class="section-label" data-key="contactLabel">پەیوەندی</span>
+            <header class="section-header reveal-item">
+                <span class="section-eyebrow" data-key="contactLabel">پەیوەندی</span>
                 <h2 class="section-title" data-key="contactTitle">پەیوەندیمان پێوە بکە</h2>
-            </div>
-            
-            <div class="contact-grid">
-                <div class="contact-card reveal-item">
-                    <div class="contact-icon">📞</div>
-                    <h3 data-key="contactPhone">تەلەفۆن</h3>
-                    <a href="tel:07717007560" class="contact-link">07717007560</a>
-                    <a href="tel:07506895434" class="contact-link">07506895434</a>
-                </div>
-                
-                <div class="contact-card reveal-item">
-                    <div class="contact-icon">📍</div>
-                    <h3 data-key="contactLocation">شوێن</h3>
-                    <a href="https://maps.app.goo.gl/ePbn7GFe8JEibMTP6" target="_blank" rel="noopener" class="contact-link" data-key="contactMap">بینین لە گووگڵ مەپ</a>
-                </div>
-                
-                <div class="contact-card reveal-item">
-                    <div class="contact-icon">📱</div>
-                    <h3 data-key="contactSocial">میدیای کۆمەڵایەتی</h3>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/sinuha_podcast?igsh=NDN2dnZ6aDNmMTJz" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                        </a>
-                        <a href="https://www.facebook.com/profile.php?id=100093399768374&locale=ur_PK" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                        </a>
+            </header>
+
+            <div class="contact-premium reveal-item">
+                <div class="contact-inner">
+                    <!-- Phone -->
+                    <div class="contact-block">
+                        <div class="contact-icon">📞</div>
+                        <h4 data-key="contactPhone">تەلەفۆن</h4>
+                        <div class="contact-phones">
+                            <a href="tel:07717007560">07717007560</a>
+                            <a href="tel:07506895434">07506895434</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-divider" aria-hidden="true"></div>
+
+                    <!-- Location -->
+                    <div class="contact-block">
+                        <div class="contact-icon">📍</div>
+                        <h4 data-key="contactLocation">شوێن</h4>
+                        <a href="https://maps.app.goo.gl/ePbn7GFe8JEibMTP6" target="_blank" rel="noopener" class="btn btn-gold btn-sm" data-key="contactMap">بینین لە گووگڵ مەپ</a>
+                    </div>
+
+                    <div class="contact-divider" aria-hidden="true"></div>
+
+                    <!-- Social -->
+                    <div class="contact-block">
+                        <h4 data-key="contactSocial">میدیای کۆمەڵایەتی</h4>
+                        <div class="social-circles">
+                            <a href="https://www.instagram.com/sinuha_podcast?igsh=NDN2dnZ6aDNmMTJz" target="_blank" rel="noopener" class="social-circle" aria-label="Instagram">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            </a>
+                            <a href="https://www.facebook.com/profile.php?id=100093399768374&locale=ur_PK" target="_blank" rel="noopener" class="social-circle" aria-label="Facebook">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                            </a>
+                            <a href="https://wa.me/9647717007560" target="_blank" rel="noopener" class="social-circle" aria-label="WhatsApp">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            </a>
+                            <a href="https://maps.app.goo.gl/ePbn7GFe8JEibMTP6" target="_blank" rel="noopener" class="social-circle" aria-label="Maps">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -616,14 +541,13 @@
     <!-- ========== FOOTER SECTION ========== -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-inner">
                 <div class="footer-brand">
-                    <h3 class="footer-logo" data-key="siteTitle">سینوها سەنتەر</h3>
+                    <h4 class="footer-logo" data-key="siteTitle">سینوها</h4>
                     <p class="footer-desc" data-key="footerDesc">سەنتەری جوانکاری و پزیشکی ئێسێتیکی پێشکەوتوو.</p>
                 </div>
-                
                 <div class="footer-links">
-                    <h4 data-key="footerQuick">خێراکان</h4>
+                    <span class="footer-label" data-key="footerQuick">خێراکان</span>
                     <ul>
                         <li><a href="#home" data-key="navHome">ماڵەوە</a></li>
                         <li><a href="#about" data-key="navAbout">دەربارە</a></li>
@@ -631,19 +555,16 @@
                         <li><a href="#contact" data-key="navContact">پەیوەندی</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-contact">
-                    <h4 data-key="footerContact">پەیوەندی</h4>
-                    <p><a href="tel:07717007560">07717007560</a></p>
-                    <p><a href="tel:07506895434">07506895434</a></p>
+                <div class="footer-links">
+                    <span class="footer-label" data-key="footerContact">پەیوەندی</span>
+                    <ul>
+                        <li><a href="tel:07717007560">07717007560</a></li>
+                        <li><a href="tel:07506895434">07506895434</a></li>
+                    </ul>
                 </div>
             </div>
-            
-            <div class="footer-divider"></div>
-            
-            <div class="footer-bottom">
-                <p data-key="footerCopy">© 2026 سینوها سەنتەر. هەموو مافەکان پارێزراون.</p>
-            </div>
+            <div class="footer-rule"></div>
+            <div class="footer-copy" data-key="footerCopy">© 2026 سینوها سەنتەر. هەموو مافەکان پارێزراون.</div>
         </div>
     </footer>
 
