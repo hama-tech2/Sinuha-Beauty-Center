@@ -1,925 +1,1364 @@
-<!DOCTYPE html>
-<html lang="ckb" dir="rtl">
+
+html_content = '''<!DOCTYPE html>
+<html lang="ku" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sinuha Beauty Center | سینوها بیووتی سەنتەر</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Noto+Sans+Arabic:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<style>
-:root{
-  --g1:#0f2318;
-  --g2:#1a3a2a;
-  --g3:#2d5a3d;
-  --g4:#3d7a52;
-  --gold:#c9a84c;
-  --gold-l:#dfc06c;
-  --gold-d:#9c7c2e;
-  --cream:#f5f0e8;
-  --cream-d:#ede5d5;
-  --white:#fff;
-  --text:#1a2a1e;
-  --text-m:#4a6850;
-  --shadow:0 12px 40px rgba(15,35,24,.13);
-  --shadow-g:0 6px 24px rgba(201,168,76,.28);
-  --r:16px;
-  --rs:10px;
-  --ease:all .38s cubic-bezier(.4,0,.2,1);
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
-body{
-  font-family:'Noto Sans Arabic',serif;
-  background:var(--cream);
-  color:var(--text);
-  direction:rtl;
-  overflow-x:hidden;
-  line-height:1.75;
-}
-body.ltr{direction:ltr;font-family:'Cormorant Garamond',serif}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-ku="سینوها سەنتەری جوانکاری" data-ar="مركز سينوهة للتجميل" data-en="Sinuha Beauty Center">سینوها سەنتەری جوانکاری</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --dark-green: #1b4332;
+            --dark-green-light: #2d6a4f;
+            --gold: #d4af37;
+            --gold-light: #e8c96a;
+            --cream: #f8f5f0;
+            --cream-dark: #efe9e0;
+            --white: #ffffff;
+            --text-dark: #1a1a1a;
+            --text-medium: #4a4a4a;
+            --text-light: #7a7a7a;
+            --shadow-soft: 0 4px 24px rgba(27, 67, 50, 0.08);
+            --shadow-hover: 0 8px 32px rgba(27, 67, 50, 0.15);
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 32px;
+            --radius-xl: 50px;
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
 
-/* ───── NAVBAR ───── */
-.nav{
-  position:fixed;top:0;left:0;right:0;z-index:900;
-  padding:18px 28px;
-  display:flex;align-items:center;justify-content:space-between;
-  transition:var(--ease);
-}
-.nav.stuck{
-  background:rgba(10,30,18,.94);
-  backdrop-filter:blur(14px);
-  padding:10px 28px;
-  box-shadow:0 2px 24px rgba(0,0,0,.22);
-}
-.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-.nav-logo img{
-  width:48px;height:48px;border-radius:50%;
-  border:1.5px solid rgba(201,168,76,.6);
-  object-fit:contain;
-  transition:var(--ease);
-}
-.nav-logo:hover img{border-color:var(--gold);transform:scale(1.05)}
-.nav-logo-txt{
-  color:var(--white);
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.1rem;font-weight:500;
-  letter-spacing:.5px;
-  white-space:nowrap;
-}
-.nav-center{display:flex;gap:28px;list-style:none}
-.nav-center a{
-  color:rgba(255,255,255,.82);
-  text-decoration:none;font-size:.88rem;letter-spacing:.3px;
-  position:relative;transition:var(--ease);
-}
-.nav-center a::after{
-  content:'';position:absolute;bottom:-3px;right:0;
-  width:0;height:1px;background:var(--gold);
-  transition:width .35s ease;
-}
-body.ltr .nav-center a::after{right:auto;left:0}
-.nav-center a:hover{color:var(--gold-l)}
-.nav-center a:hover::after{width:100%}
-.nav-end{display:flex;align-items:center;gap:14px}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* Lang switcher */
-.lang-sw{
-  display:flex;
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(201,168,76,.35);
-  border-radius:50px;
-  overflow:hidden;
-  backdrop-filter:blur(8px);
-}
-.lang-sw button{
-  background:none;border:none;
-  color:rgba(255,255,255,.65);
-  font-size:.7rem;font-weight:500;letter-spacing:.5px;
-  padding:5px 11px;cursor:pointer;
-  transition:var(--ease);
-  font-family:inherit;
-}
-.lang-sw button.on{background:var(--gold);color:var(--white)}
-.lang-sw button:hover:not(.on){color:var(--gold-l)}
+        html {
+            scroll-behavior: smooth;
+        }
 
-/* Hamburger */
-.ham{
-  display:none;flex-direction:column;gap:5px;
-  background:none;border:none;cursor:pointer;padding:4px;
-}
-.ham span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px;transition:var(--ease)}
-.ham.x span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
-.ham.x span:nth-child(2){opacity:0}
-.ham.x span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
 
-/* Mobile drawer */
-.drawer{
-  display:none;position:fixed;inset:0;z-index:850;
-  background:rgba(10,28,18,.97);
-  flex-direction:column;align-items:center;justify-content:center;gap:36px;
-}
-.drawer.open{display:flex}
-.drawer a{
-  color:var(--white);text-decoration:none;
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.8rem;font-weight:300;letter-spacing:1px;
-  transition:var(--ease);
-}
-.drawer a:hover{color:var(--gold)}
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--cream);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--dark-green);
+            border-radius: 4px;
+        }
 
-/* ───── HERO ───── */
-.hero{
-  min-height:100vh;
-  background:url('https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/sinuha-hero-background.png?raw=true') center/cover no-repeat;
-  background-attachment:fixed;
-  position:relative;
-  display:flex;align-items:center;justify-content:center;
-  text-align:center;
-  overflow:hidden;
-}
-.hero::before{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(160deg,rgba(10,28,18,.62) 0%,rgba(10,28,18,.75) 55%,rgba(10,28,18,.9) 100%);
-}
-/* subtle radial gold glow */
-.hero::after{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 70% 60% at 50% 60%,rgba(201,168,76,.08),transparent 70%);
-  pointer-events:none;
-}
-.hero-content{
-  position:relative;z-index:2;
-  padding:130px 24px 72px;
-  max-width:720px;margin:0 auto;
-}
-.hero-logo{
-  width:118px;height:118px;
-  object-fit:contain;border-radius:50%;
-  border:2px solid rgba(201,168,76,.45);
-  box-shadow:0 0 50px rgba(201,168,76,.18);
-  margin-bottom:28px;
-  animation:fadeUp .9s ease .15s both;
-}
-.hero-eyebrow{
-  font-size:.68rem;letter-spacing:3.5px;text-transform:uppercase;
-  color:var(--gold-l);
-  margin-bottom:14px;font-family:'Noto Sans Arabic',sans-serif;
-  animation:fadeUp .9s ease .3s both;
-}
-.hero-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(2.6rem,8vw,4.8rem);
-  font-weight:400;color:var(--white);
-  line-height:1.12;letter-spacing:1px;
-  margin-bottom:18px;
-  animation:fadeUp .9s ease .42s both;
-}
-.hero-sub{
-  font-size:clamp(.95rem,2.5vw,1.12rem);
-  color:rgba(255,255,255,.78);
-  font-weight:300;line-height:1.85;
-  margin-bottom:44px;
-  font-family:'Noto Sans Arabic',sans-serif;
-  animation:fadeUp .9s ease .55s both;
-}
-.hero-btns{
-  display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
-  animation:fadeUp .9s ease .7s both;
-}
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(28px)}
-  to{opacity:1;transform:translateY(0)}
-}
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-/* Scroll arrow */
-.scroll-arrow{
-  position:absolute;bottom:30px;left:50%;
-  transform:translateX(-50%);
-  color:rgba(255,255,255,.45);font-size:1.3rem;
-  animation:bob 2.2s ease-in-out infinite;
-  z-index:3;
-}
-@keyframes bob{
-  0%,100%{transform:translateX(-50%) translateY(0)}
-  50%{transform:translateX(-50%) translateY(9px)}
-}
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
-/* ───── BUTTONS ───── */
-.btn{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:13px 26px;border-radius:50px;
-  font-size:.88rem;font-weight:500;letter-spacing:.3px;
-  text-decoration:none;border:none;cursor:pointer;
-  transition:var(--ease);
-  font-family:'Noto Sans Arabic',sans-serif;
-  white-space:nowrap;
-}
-.btn-gold{background:var(--gold);color:var(--white);box-shadow:var(--shadow-g)}
-.btn-gold:hover{background:var(--gold-d);transform:translateY(-3px);box-shadow:0 10px 32px rgba(201,168,76,.4)}
-.btn-wa{background:#25D366;color:var(--white)}
-.btn-wa:hover{background:#128C7E;transform:translateY(-3px)}
-.btn-ghost{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.42)}
-.btn-ghost:hover{border-color:var(--gold-l);color:var(--gold-l);transform:translateY(-3px)}
-.btn-outline-g{background:transparent;color:var(--g2);border:1.5px solid var(--gold)}
-.btn-outline-g:hover{background:var(--gold);color:var(--white);transform:translateY(-3px)}
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
 
-/* ───── SHARED LAYOUT ───── */
-section{padding:88px 24px}
-.wrap{max-width:1100px;margin:0 auto}
-.sec-label{
-  font-size:.68rem;letter-spacing:3px;text-transform:uppercase;
-  color:var(--gold);display:block;
-  margin-bottom:10px;font-family:'Noto Sans Arabic',sans-serif;
-}
-.sec-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(1.9rem,5vw,2.9rem);
-  font-weight:400;color:var(--g2);line-height:1.18;
-  margin-bottom:14px;
-}
-.sec-desc{
-  font-size:.95rem;color:var(--text-m);max-width:580px;
-  line-height:1.85;font-family:'Noto Sans Arabic',sans-serif;font-weight:300;
-}
-.sec-head{margin-bottom:56px}
-.gold-bar{
-  width:56px;height:2px;
-  background:linear-gradient(90deg,var(--gold),transparent);
-  margin:14px 0 18px;
-}
-body.ltr .gold-bar{background:linear-gradient(90deg,transparent,var(--gold))}
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
 
-/* on dark */
-.on-dark .sec-title{color:var(--white)}
-.on-dark .sec-label{color:var(--gold-l)}
-.on-dark .sec-desc{color:rgba(255,255,255,.7)}
-.on-dark .gold-bar{background:linear-gradient(90deg,var(--gold),transparent)}
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
 
-/* ───── SERVICES ───── */
-.services{background:var(--white)}
-.svc-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
-  gap:24px;
-}
-.svc-card{
-  background:var(--cream);border-radius:var(--r);
-  padding:36px 30px;
-  border:1px solid rgba(201,168,76,.1);
-  position:relative;overflow:hidden;
-  transition:var(--ease);
-}
-.svc-card::after{
-  content:'';position:absolute;top:0;right:0;
-  width:3px;height:0;
-  background:linear-gradient(180deg,var(--gold),var(--g4));
-  transition:height .45s ease;
-}
-body.ltr .svc-card::after{right:auto;left:0}
-.svc-card:hover{transform:translateY(-7px);box-shadow:var(--shadow);background:var(--white)}
-.svc-card:hover::after{height:100%}
-.svc-ico{
-  width:52px;height:52px;border-radius:14px;
-  display:flex;align-items:center;justify-content:center;
-  background:linear-gradient(135deg,var(--g2),var(--g3));
-  color:var(--gold);font-size:1.25rem;
-  margin-bottom:20px;
-  box-shadow:0 6px 18px rgba(26,58,42,.22);
-  transition:var(--ease);
-}
-.svc-card:hover .svc-ico{
-  background:linear-gradient(135deg,var(--gold-d),var(--gold));
-  color:var(--white);transform:scale(1.1) rotate(-3deg);
-}
-.svc-name{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.22rem;font-weight:500;color:var(--g2);
-  margin-bottom:10px;
-}
-.svc-desc{font-size:.86rem;color:#6a7a6e;line-height:1.75;font-family:'Noto Sans Arabic',sans-serif;font-weight:300}
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-/* ───── GALLERY ───── */
-.gallery{background:var(--cream-d)}
-.gal-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  grid-template-rows:auto;
-  gap:18px;
-}
-.gal-item{
-  position:relative;border-radius:var(--r);
-  overflow:hidden;cursor:pointer;
-  box-shadow:0 4px 20px rgba(15,35,24,.1);
-}
-.gal-item:first-child{grid-column:span 2;aspect-ratio:16/9}
-.gal-item:not(:first-child){aspect-ratio:4/3}
-.gal-item img{
-  width:100%;height:100%;object-fit:cover;
-  transition:transform .55s ease;display:block;
-}
-.gal-item:hover img{transform:scale(1.07)}
-.gal-over{
-  position:absolute;inset:0;
-  background:linear-gradient(0deg,rgba(10,28,18,.82) 0%,transparent 55%);
-  opacity:0;transition:var(--ease);
-  display:flex;align-items:flex-end;padding:22px;
-}
-.gal-item:hover .gal-over{opacity:1}
-.gal-lbl{
-  color:var(--white);
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.1rem;font-weight:400;letter-spacing:.5px;
-}
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 0;
+            transition: var(--transition);
+            background: transparent;
+        }
 
-/* ───── ABOUT ───── */
-.about{
-  background:var(--g2);position:relative;overflow:hidden;
-}
-.about::before{
-  content:'';position:absolute;
-  top:-40%;right:-8%;
-  width:520px;height:520px;border-radius:50%;
-  background:rgba(201,168,76,.04);pointer-events:none;
-}
-.about::after{
-  content:'';position:absolute;
-  bottom:-30%;left:-5%;
-  width:320px;height:320px;border-radius:50%;
-  background:rgba(201,168,76,.03);pointer-events:none;
-}
-.about-grid{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:72px;align-items:center;
-  position:relative;z-index:1;
-}
-.about-stats{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:20px;margin-top:36px;
-}
-.stat{
-  background:rgba(255,255,255,.05);
-  border:1px solid rgba(201,168,76,.18);
-  border-radius:var(--rs);padding:22px 18px;text-align:center;
-  transition:var(--ease);
-}
-.stat:hover{background:rgba(201,168,76,.08);border-color:rgba(201,168,76,.35)}
-.stat-n{
-  font-family:'Cormorant Garamond',serif;
-  font-size:2.1rem;color:var(--gold);display:block;line-height:1;
-  margin-bottom:6px;
-}
-.stat-l{font-size:.78rem;color:rgba(255,255,255,.58);font-family:'Noto Sans Arabic',sans-serif}
-.about-img-wrap{position:relative}
-.about-img{
-  width:100%;border-radius:var(--r);
-  object-fit:cover;aspect-ratio:4/5;
-  box-shadow:var(--shadow);display:block;
-}
-.about-badge{
-  position:absolute;bottom:-22px;left:-22px;
-  background:linear-gradient(135deg,var(--gold-d),var(--gold));
-  color:var(--white);padding:22px 20px;
-  border-radius:var(--rs);text-align:center;
-  box-shadow:var(--shadow-g);min-width:110px;
-}
-body.ltr .about-badge{left:auto;right:-22px}
-.ab-n{font-family:'Cormorant Garamond',serif;font-size:2rem;display:block;line-height:1}
-.ab-t{font-size:.7rem;letter-spacing:1px;font-family:'Noto Sans Arabic',sans-serif;display:block;margin-top:5px;opacity:.9}
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            box-shadow: var(--shadow-soft);
+            padding: 12px 0;
+        }
 
-/* ───── CONTACT ───── */
-.contact{background:var(--white)}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
-.ci-list{display:flex;flex-direction:column;gap:16px}
-.ci{
-  display:flex;align-items:center;gap:16px;
-  padding:18px 20px;background:var(--cream);
-  border-radius:var(--rs);border:1px solid transparent;
-  text-decoration:none;color:var(--text);
-  transition:var(--ease);
-}
-.ci:hover{
-  border-color:var(--gold);background:var(--white);
-  box-shadow:var(--shadow);transform:translateX(-5px);
-}
-body.ltr .ci:hover{transform:translateX(5px)}
-.ci-ico{
-  width:44px;height:44px;border-radius:12px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.05rem;flex-shrink:0;
-}
-.ci-ico.ph{background:#e8f5e9;color:#2e7d32}
-.ci-ico.wa{background:#e8f5e9;color:#25D366}
-.ci-ico.ig{background:#fce4ec;color:#e91e63}
-.ci-ico.fb{background:#e3f2fd;color:#1877f2}
-.ci-ico.lc{background:#fff3e0;color:#e65100}
-.ci-txt strong{display:block;font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:500;margin-bottom:2px}
-.ci-txt span{font-size:.83rem;color:#7a8a7e;font-family:'Noto Sans Arabic',sans-serif}
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-/* Map card */
-.map-card{background:var(--cream);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow)}
-.map-vis{
-  background:linear-gradient(145deg,var(--g2),var(--g3));
-  height:290px;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;gap:18px;
-  color:var(--white);text-align:center;position:relative;overflow:hidden;
-}
-.map-vis::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 80% 80% at 50% 50%,rgba(201,168,76,.1),transparent);
-}
-.map-vis i{font-size:3.2rem;color:var(--gold);position:relative;z-index:1}
-.map-vis h3{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:400;position:relative;z-index:1}
-.map-vis p{font-size:.83rem;color:rgba(255,255,255,.65);font-family:'Noto Sans Arabic',sans-serif;position:relative;z-index:1}
-.map-foot{padding:22px;text-align:center}
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
 
-/* ───── FOOTER ───── */
-footer{background:var(--g1);padding:52px 24px 30px}
-.ft-in{max-width:1100px;margin:0 auto}
-.ft-top{
-  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;
-  padding-bottom:28px;
-  border-bottom:1px solid rgba(255,255,255,.07);
-  margin-bottom:22px;
-}
-.ft-logo{display:flex;align-items:center;gap:12px}
-.ft-logo img{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--gold);object-fit:contain}
-.ft-logo span{color:var(--white);font-family:'Cormorant Garamond',serif;font-size:1.05rem}
-.ft-links{display:flex;gap:12px}
-.soc{
-  width:38px;height:38px;border-radius:50%;
-  border:1px solid rgba(255,255,255,.18);
-  display:flex;align-items:center;justify-content:center;
-  color:rgba(255,255,255,.6);text-decoration:none;font-size:.9rem;
-  transition:var(--ease);
-}
-.soc:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px)}
-.ft-bot{text-align:center;font-size:.78rem;color:rgba(255,255,255,.35);font-family:'Noto Sans Arabic',sans-serif}
+        .nav-logo img {
+            height: 44px;
+            width: auto;
+            border-radius: 8px;
+        }
 
-/* ───── WHATSAPP FLOAT ───── */
-.wa-float{
-  position:fixed;bottom:28px;left:28px;
-  width:54px;height:54px;border-radius:50%;
-  background:#25D366;color:var(--white);
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.45rem;text-decoration:none;
-  box-shadow:0 4px 24px rgba(37,211,102,.4);
-  z-index:800;transition:var(--ease);
-  animation:pulse 2.8s ease-in-out infinite;
-}
-body.ltr .wa-float{left:auto;right:28px}
-.wa-float:hover{transform:scale(1.12)}
-@keyframes pulse{
-  0%,100%{box-shadow:0 4px 24px rgba(37,211,102,.4)}
-  50%{box-shadow:0 4px 36px rgba(37,211,102,.65)}
-}
+        .nav-logo span {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--white);
+            transition: var(--transition);
+        }
 
-/* ───── REVEAL ───── */
-.r{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
-.r.vis{opacity:1;transform:translateY(0)}
-.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}
-.rd3{transition-delay:.3s}.rd4{transition-delay:.4s}
+        .navbar.scrolled .nav-logo span {
+            color: var(--dark-green);
+        }
 
-/* ───── RESPONSIVE ───── */
-@media(max-width:900px){
-  .nav-center{display:none}
-  .ham{display:flex}
-  .gal-grid{grid-template-columns:1fr 1fr}
-  .gal-item:first-child{grid-column:span 2;aspect-ratio:16/9}
-  .about-grid{grid-template-columns:1fr;gap:44px}
-  .about-img-wrap{display:none}
-  .contact-grid{grid-template-columns:1fr;gap:36px}
-}
-@media(max-width:560px){
-  section{padding:64px 18px}
-  .gal-grid{grid-template-columns:1fr}
-  .gal-item:first-child{grid-column:auto;aspect-ratio:4/3}
-  .svc-grid{grid-template-columns:1fr}
-  .hero-btns{flex-direction:column;align-items:center}
-  .hero-logo{width:92px;height:92px}
-  .about-stats{grid-template-columns:1fr 1fr}
-  .ft-top{flex-direction:column;align-items:flex-start}
-}
-</style>
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--white);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .navbar.scrolled .nav-links a {
+            color: var(--text-dark);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .lang-switcher {
+            display: flex;
+            gap: 4px;
+            background: rgba(255,255,255,0.15);
+            padding: 4px;
+            border-radius: var(--radius-xl);
+            backdrop-filter: blur(8px);
+        }
+
+        .navbar.scrolled .lang-switcher {
+            background: var(--cream-dark);
+        }
+
+        .lang-btn {
+            border: none;
+            background: transparent;
+            color: var(--white);
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: var(--radius-xl);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled .lang-btn {
+            color: var(--text-dark);
+        }
+
+        .lang-btn.active {
+            background: var(--gold);
+            color: var(--white) !important;
+        }
+
+        .lang-btn:hover:not(.active) {
+            background: rgba(212, 175, 55, 0.2);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled .mobile-menu-btn {
+            color: var(--dark-green);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(27, 67, 50, 0.98);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .mobile-menu a:hover {
+            color: var(--gold);
+        }
+
+        .mobile-menu .close-btn {
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: var(--dark-green);
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/sinuha-hero-background.png?raw=true') center/cover no-repeat;
+            opacity: 0.4;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(27,67,50,0.6) 0%, rgba(27,67,50,0.85) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 120px 24px 80px;
+            max-width: 800px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-logo {
+            width: 140px;
+            height: 140px;
+            object-fit: contain;
+            margin-bottom: 24px;
+            border-radius: 50%;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+        }
+
+        .hero-desc {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 40px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 32px;
+            border-radius: var(--radius-xl);
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--white);
+            box-shadow: 0 4px 16px rgba(212, 175, 55, 0.35);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(212, 175, 55, 0.45);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255,255,255,0.4);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+            color: var(--white);
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+        }
+
+        .btn-whatsapp:hover {
+            background: #1da851;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.6);
+            font-size: 1.5rem;
+            animation: float 2s ease-in-out infinite;
+            cursor: pointer;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 100px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .section-label::before,
+        .section-label::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 30px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .section-label::before {
+            right: calc(100% + 12px);
+        }
+
+        .section-label::after {
+            left: calc(100% + 12px);
+        }
+
+        .section-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--dark-green);
+            margin-bottom: 16px;
+        }
+
+        .section-desc {
+            font-size: 1.05rem;
+            color: var(--text-medium);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 36px 24px;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--cream);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.4rem;
+            color: var(--dark-green);
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--dark-green);
+            color: var(--gold);
+        }
+
+        .service-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark-green);
+            margin-bottom: 10px;
+        }
+
+        .service-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            background: linear-gradient(180deg, var(--cream) 0%, var(--white) 50%, var(--cream) 100%);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            box-shadow: var(--shadow-soft);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 40%, rgba(27,67,50,0.85) 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 24px;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            background: linear-gradient(180deg, rgba(27,67,50,0.4) 0%, rgba(27,67,50,0.9) 100%);
+        }
+
+        .gallery-title {
+            color: var(--white);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* About Section */
+        .about-section {
+            background: var(--white);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text {
+            padding: 20px 0;
+        }
+
+        .about-text p {
+            font-size: 1.05rem;
+            color: var(--text-medium);
+            margin-bottom: 20px;
+            line-height: 1.9;
+        }
+
+        .about-features {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .about-feature i {
+            width: 44px;
+            height: 44px;
+            background: var(--cream);
+            color: var(--dark-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .about-feature span {
+            font-weight: 600;
+            color: var(--dark-green);
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--gold);
+            border-radius: var(--radius-md);
+            z-index: -1;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--dark-green) 0%, var(--dark-green-light) 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .contact-section .section-title {
+            color: var(--white);
+        }
+
+        .contact-section .section-desc {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .contact-section .section-label {
+            color: var(--gold-light);
+        }
+
+        .contact-section .section-label::before,
+        .contact-section .section-label::after {
+            background: var(--gold-light);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: var(--radius-md);
+            padding: 36px 24px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .contact-card:hover {
+            background: rgba(255,255,255,0.12);
+            transform: translateY(-4px);
+        }
+
+        .contact-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--gold);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.3rem;
+            transition: var(--transition);
+        }
+
+        .contact-card:hover .contact-icon {
+            background: var(--white);
+            color: var(--dark-green);
+        }
+
+        .contact-label {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 8px;
+        }
+
+        .contact-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--white);
+            text-decoration: none;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .contact-value:hover {
+            color: var(--gold-light);
+        }
+
+        .contact-socials {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 48px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .social-btn {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: var(--transition);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .social-btn:hover {
+            background: var(--white);
+            color: var(--dark-green);
+            transform: translateY(-4px);
+        }
+
+        .map-container {
+            margin-top: 48px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+        }
+
+        .map-container iframe,
+        .map-container .map-placeholder {
+            width: 100%;
+            height: 320px;
+            border: none;
+            display: block;
+        }
+
+        .map-placeholder {
+            background: linear-gradient(135deg, var(--dark-green-light) 0%, var(--dark-green) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            gap: 16px;
+        }
+
+        .map-placeholder i {
+            font-size: 3rem;
+            color: var(--gold);
+        }
+
+        .map-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--gold);
+            color: var(--white);
+            padding: 12px 28px;
+            border-radius: var(--radius-xl);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .map-btn:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-green);
+            color: rgba(255,255,255,0.7);
+            padding: 48px 24px 24px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .footer-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 24px 0;
+        }
+
+        .footer-socials a {
+            color: rgba(255,255,255,0.7);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .footer-socials a:hover {
+            color: var(--gold);
+            transform: translateY(-3px);
+        }
+
+        .footer-copy {
+            font-size: 0.85rem;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 24px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .about-image {
+                order: -1;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links,
+            .lang-switcher {
+                display: none;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .hero-title {
+                font-size: 2.4rem;
+            }
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            .section {
+                padding: 70px 20px;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+            .about-image::before {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            .hero-logo {
+                width: 110px;
+                height: 110px;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* LTR adjustments */
+        html[dir="ltr"] .section-label::before {
+            left: calc(100% + 12px);
+            right: auto;
+        }
+        html[dir="ltr"] .section-label::after {
+            right: calc(100% + 12px);
+            left: auto;
+        }
+        html[dir="ltr"] .about-image::before {
+            left: -20px;
+            right: auto;
+        }
+        html[dir="ltr"] .mobile-menu .close-btn {
+            right: 24px;
+            left: auto;
+        }
+    </style>
 </head>
 <body>
 
-<!-- WhatsApp float -->
-<a href="https://wa.me/9647717007560" class="wa-float" target="_blank" aria-label="WhatsApp">
-  <i class="fab fa-whatsapp"></i>
-</a>
-
-<!-- ═══════════════ NAVBAR ═══════════════ -->
-<nav class="nav" id="nav">
-  <a href="#home" class="nav-logo">
-    <img src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/sinuha-logo2-background.png.png?raw=true" alt="Sinuha Logo">
-    <span class="nav-logo-txt" data-k="brand">سینوها بیووتی سەنتەر</span>
-  </a>
-
-  <ul class="nav-center">
-    <li><a href="#services" data-k="n_svc">خزمەتگوزاریەکان</a></li>
-    <li><a href="#gallery"  data-k="n_gal">گەلەری</a></li>
-    <li><a href="#about"    data-k="n_abt">دەربارەی ئێمە</a></li>
-    <li><a href="#contact"  data-k="n_con">پەیوەندی</a></li>
-  </ul>
-
-  <div class="nav-end">
-    <div class="lang-sw">
-      <button class="on" onclick="setL('ckb')">کوردی</button>
-      <button onclick="setL('ar')">عربی</button>
-      <button onclick="setL('en')">EN</button>
-    </div>
-    <button class="ham" id="ham" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-
-<!-- Mobile drawer -->
-<div class="drawer" id="drawer">
-  <a href="#services" onclick="closeD()" data-k="n_svc">خزمەتگوزاریەکان</a>
-  <a href="#gallery"  onclick="closeD()" data-k="n_gal">گەلەری</a>
-  <a href="#about"    onclick="closeD()" data-k="n_abt">دەربارەی ئێمە</a>
-  <a href="#contact"  onclick="closeD()" data-k="n_con">پەیوەندی</a>
-</div>
-
-<!-- ═══════════════ HERO ═══════════════ -->
-<section class="hero" id="home">
-  <div class="hero-content">
-    <img src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/sinuha-logo2-background.png.png?raw=true"
-         alt="Sinuha Logo" class="hero-logo">
-    <p class="hero-eyebrow" data-k="h_eye">• سینوها بیووتی سەنتەر •</p>
-    <h1 class="hero-title">Sinuha Beauty Center</h1>
-    <p class="hero-sub" data-k="h_sub">جایەکی تایبەت بۆ ئارامی، جوانی، و باشتری پووستت<br>ئێمە لێرەین بۆ ئەوەی بیدەینەوە چی بهێزتری تیایە</p>
-    <div class="hero-btns">
-      <a href="tel:07717007560" class="btn btn-gold">
-        <i class="fas fa-phone"></i>
-        <span data-k="b_call">پەیوەندیمان پێوە بکە</span>
-      </a>
-      <a href="https://wa.me/9647717007560" class="btn btn-wa" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-        <span data-k="b_wa">واتساپ</span>
-      </a>
-      <a href="https://maps.app.goo.gl/ePbn7GFe8JEibMTP6" class="btn btn-ghost" target="_blank">
-        <i class="fas fa-location-dot"></i>
-        <span data-k="b_dir">شوێنەکەمان</span>
-      </a>
-    </div>
-  </div>
-  <div class="scroll-arrow"><i class="fas fa-chevron-down"></i></div>
-</section>
-
-<!-- ═══════════════ SERVICES ═══════════════ -->
-<section class="services" id="services">
-  <div class="wrap">
-    <div class="sec-head r">
-      <span class="sec-label" data-k="sl_svc">خزمەتگوزارییەکانمان</span>
-      <h2 class="sec-title" data-k="st_svc">خزمەتگوزاریەکانی سینوها</h2>
-      <div class="gold-bar"></div>
-      <p class="sec-desc" data-k="sd_svc">پیشەیی‌ترین ئامراز و شێوازی دەرمانکردنی پووست بۆ ئافرەت و پیاو</p>
-    </div>
-
-    <div class="svc-grid">
-      <div class="svc-card r rd1">
-        <div class="svc-ico"><i class="fas fa-sparkles" style="font-size:1.1rem">✦</i></div>
-        <h3 class="svc-name" data-k="sv1n">لەیزەری جەستەی تەواو</h3>
-        <p class="svc-desc" data-k="sv1d">لابردنی مووی جەستە بە ئامراری لەیزەری پیشەیی، بە ئارامی و ئەنجامی دایمی</p>
-      </div>
-      <div class="svc-card r rd2">
-        <div class="svc-ico"><i class="fas fa-sun"></i></div>
-        <h3 class="svc-name" data-k="sv2n">رووناکبوونی باوشرین</h3>
-        <p class="svc-desc" data-k="sv2d">چارەسەری تایبەتی بۆ رووناکبوون و جوانبوونی ناوچەی باوشرین</p>
-      </div>
-      <div class="svc-card r rd3">
-        <div class="svc-ico"><i class="fas fa-seedling"></i></div>
-        <h3 class="svc-name" data-k="sv3n">چارەسەری دەنگروو</h3>
-        <p class="svc-desc" data-k="sv3d">چارەسەری دەنگروو بە شێوازی پزیشکی نوێ و ئەنجامی بەرچاو</p>
-      </div>
-      <div class="svc-card r rd4">
-        <div class="svc-ico"><i class="fas fa-eraser"></i></div>
-        <h3 class="svc-name" data-k="sv4n">لابردنی تاتوو — Candela</h3>
-        <p class="svc-desc" data-k="sv4d">لابردنی تاتوو بە ئامراری Candela پیشەیی، بیازرباو و پارێزراو</p>
-      </div>
-      <div class="svc-card r rd1">
-        <div class="svc-ico"><i class="fas fa-droplet"></i></div>
-        <h3 class="svc-name" data-k="sv5n">چارەسەری PDRN سیلمۆن</h3>
-        <p class="svc-desc" data-k="sv5d">نوێبوونەوەی پووست بە تەکنەلۆژیای PDRN بۆ خەمڵاندنی سروشتی و دیمەنی جوانتر</p>
-      </div>
-      <div class="svc-card r rd2">
-        <div class="svc-ico"><i class="fas fa-spa"></i></div>
-        <h3 class="svc-name" data-k="sv6n">چارەسەری Profhilo</h3>
-        <p class="svc-desc" data-k="sv6d">ئاوداندنی قووڵ و گەشکردنی پووست بە شێوازی نوێی Profhilo</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ GALLERY ═══════════════ -->
-<section class="gallery" id="gallery">
-  <div class="wrap">
-    <div class="sec-head r">
-      <span class="sec-label" data-k="sl_gal">گەلەری چارەسەرەکان</span>
-      <h2 class="sec-title" data-k="st_gal">چارەسەرەکانمان</h2>
-      <div class="gold-bar"></div>
-    </div>
-
-    <div class="gal-grid">
-      <div class="gal-item r">
-        <img src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/full-body-laser.jpg?raw=true"
-             alt="Full Body Laser" loading="lazy">
-        <div class="gal-over"><span class="gal-lbl" data-k="g1">لەیزەری جەستەی تەواو</span></div>
-      </div>
-      <div class="gal-item r rd1">
-        <img src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/acne-treatment.jpg?raw=true"
-             alt="Acne Treatment" loading="lazy">
-        <div class="gal-over"><span class="gal-lbl" data-k="g2">چارەسەری دەنگروو</span></div>
-      </div>
-      <div class="gal-item r rd2">
-        <img src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/underarm-brightening.jpg?raw=true"
-             alt="Underarm Brightening" loading="lazy">
-        <div class="gal-over"><span class="gal-lbl" data-k="g3">رووناکبوونی باوشرین</span></div>
-      </div>
-      <div class="gal-item r rd3">
-        <img src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/candela-tattoo-removal.jpg?raw=true"
-             alt="Tattoo Removal" loading="lazy">
-        <div class="gal-over"><span class="gal-lbl" data-k="g4">لابردنی تاتوو — Candela</span></div>
-      </div>
-      <div class="gal-item r rd4">
-        <img src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/pdrn-salmon-treatment.jpg?raw=true"
-             alt="PDRN Salmon" loading="lazy">
-        <div class="gal-over"><span class="gal-lbl" data-k="g5">چارەسەری PDRN سیلمۆن</span></div>
-      </div>
-      <div class="gal-item r rd1">
-        <img src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/profhilo-treatment.jpg?raw=true"
-             alt="Profhilo" loading="lazy">
-        <div class="gal-over"><span class="gal-lbl" data-k="g6">چارەسەری Profhilo</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ ABOUT ═══════════════ -->
-<section class="about" id="about">
-  <div class="wrap">
-    <div class="about-grid">
-      <div class="r on-dark">
-        <span class="sec-label" data-k="sl_abt">دەربارەی ئێمە</span>
-        <h2 class="sec-title" data-k="st_abt">سینوها بیووتی سەنتەر</h2>
-        <div class="gold-bar"></div>
-        <p class="sec-desc" data-k="sd_abt">
-          سینوها بیووتی سەنتەر ناوەندێکی تایبەت و پریمیەمە بۆ چارەسەری پووست و کاتی خۆشبوون. بە تیمێکی پیشەیی و ئامرازی نوێترین تەکنەلۆژیا، بەرز‌ترین چارەسەرەکانی پزیشکی جوانی دەکەین. ئامانجمان ئەوەیە کە هەر کەسێک لەگەڵمان، بە باوەڕێکی زیاتر و سروویەکی جوانتر ببیتەوە.
-        </p>
-        <div class="about-stats">
-          <div class="stat">
-            <span class="stat-n">+500</span>
-            <span class="stat-l" data-k="s1">کڕیاری دڵخۆش</span>
-          </div>
-          <div class="stat">
-            <span class="stat-n">6+</span>
-            <span class="stat-l" data-k="s2">جۆری خزمەتگوزاری</span>
-          </div>
-          <div class="stat">
-            <span class="stat-n">100%</span>
-            <span class="stat-l" data-k="s3">ئامراز پیشەیی</span>
-          </div>
-          <div class="stat">
-            <span class="stat-n">★★★★★</span>
-            <span class="stat-l" data-k="s4">نرخاندنی کڕیارەکان</span>
-          </div>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/sinuha-logo2-background.png.png?raw=true" alt="Sinuha Logo">
+                <span data-ku="سینوها" data-ar="سينوهة" data-en="Sinuha">سینوها</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#hero" data-ku="سەرەکی" data-ar="الرئيسية" data-en="Home">سەرەکی</a></li>
+                <li><a href="#services" data-ku="خزمەتگوزارییەکان" data-ar="الخدمات" data-en="Services">خزمەتگوزارییەکان</a></li>
+                <li><a href="#gallery" data-ku="گالێری" data-ar="معرض الصور" data-en="Gallery">گالێری</a></li>
+                <li><a href="#about" data-ku="دەربارە" data-ar="من نحن" data-en="About">دەربارە</a></li>
+                <li><a href="#contact" data-ku="پەیوەندی" data-ar="تواصل معنا" data-en="Contact">پەیوەندی</a></li>
+            </ul>
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang="ku" onclick="setLanguage('ku')">KU</button>
+                <button class="lang-btn" data-lang="ar" onclick="setLanguage('ar')">AR</button>
+                <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-      </div>
+    </nav>
 
-      <div class="about-img-wrap r rd2">
-        <img src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/profhilo-treatment.jpg?raw=true"
-             alt="Sinuha Treatment" class="about-img" loading="lazy">
-        <div class="about-badge">
-          <span class="ab-n">✦</span>
-          <span class="ab-t" data-k="badge">پریمیەم</span>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-btn" onclick="toggleMobileMenu()">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="#hero" onclick="toggleMobileMenu()" data-ku="سەرەکی" data-ar="الرئيسية" data-en="Home">سەرەکی</a>
+        <a href="#services" onclick="toggleMobileMenu()" data-ku="خزمەتگوزارییەکان" data-ar="الخدمات" data-en="Services">خزمەتگوزارییەکان</a>
+        <a href="#gallery" onclick="toggleMobileMenu()" data-ku="گالێری" data-ar="معرض الصور" data-en="Gallery">گالێری</a>
+        <a href="#about" onclick="toggleMobileMenu()" data-ku="دەربارە" data-ar="من نحن" data-en="About">دەربارە</a>
+        <a href="#contact" onclick="toggleMobileMenu()" data-ku="پەیوەندی" data-ar="تواصل معنا" data-en="Contact">پەیوەندی</a>
+        <div style="display:flex; gap:8px; margin-top:16px;">
+            <button class="lang-btn active" data-lang="ku" onclick="setLanguage('ku'); toggleMobileMenu();">KU</button>
+            <button class="lang-btn" data-lang="ar" onclick="setLanguage('ar'); toggleMobileMenu();">AR</button>
+            <button class="lang-btn" data-lang="en" onclick="setLanguage('en'); toggleMobileMenu();">EN</button>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ CONTACT ═══════════════ -->
-<section class="contact" id="contact">
-  <div class="wrap">
-    <div class="sec-head r">
-      <span class="sec-label" data-k="sl_con">پەیوەندی</span>
-      <h2 class="sec-title" data-k="st_con">پەیوەندیمان پێوە بکە</h2>
-      <div class="gold-bar"></div>
-      <p class="sec-desc" data-k="sd_con">ئێمە هەمیشە ئامادەین بۆ وەڵامدانەوەت</p>
     </div>
 
-    <div class="contact-grid">
-      <div class="ci-list r">
-        <a href="tel:07717007560" class="ci">
-          <div class="ci-ico ph"><i class="fas fa-phone"></i></div>
-          <div class="ci-txt">
-            <strong data-k="c_ph">ژمارەی تەلەفۆن</strong>
-            <span>07717007560 &nbsp;|&nbsp; 07506895434</span>
-          </div>
-        </a>
-        <a href="https://wa.me/9647717007560" class="ci" target="_blank">
-          <div class="ci-ico wa"><i class="fab fa-whatsapp"></i></div>
-          <div class="ci-txt">
-            <strong data-k="c_wa">واتساپ</strong>
-            <span>07717007560</span>
-          </div>
-        </a>
-        <a href="tel:07506895434" class="ci">
-          <div class="ci-ico ph"><i class="fas fa-phone-volume"></i></div>
-          <div class="ci-txt">
-            <strong data-k="c_ph2">ژمارەی دوەم</strong>
-            <span>07506895434</span>
-          </div>
-        </a>
-        <a href="https://www.instagram.com/sinuha_podcast?igsh=NDN2dnZ6aDNmMTJz" class="ci" target="_blank">
-          <div class="ci-ico ig"><i class="fab fa-instagram"></i></div>
-          <div class="ci-txt">
-            <strong data-k="c_ig">ئینستاگرام</strong>
-            <span>@sinuha_podcast</span>
-          </div>
-        </a>
-        <a href="https://www.facebook.com/profile.php?id=100093399768374&locale=ur_PK" class="ci" target="_blank">
-          <div class="ci-ico fb"><i class="fab fa-facebook-f"></i></div>
-          <div class="ci-txt">
-            <strong data-k="c_fb">فەیسبووک</strong>
-            <span>Sinuha Beauty Center</span>
-          </div>
-        </a>
-        <a href="https://maps.app.goo.gl/ePbn7GFe8JEibMTP6" class="ci" target="_blank">
-          <div class="ci-ico lc"><i class="fas fa-location-dot"></i></div>
-          <div class="ci-txt">
-            <strong data-k="c_loc">شوێنەکەمان</strong>
-            <span data-k="c_locv">هەولێر، کوردستان</span>
-          </div>
-        </a>
-      </div>
-
-      <div class="map-card r rd2">
-        <div class="map-vis">
-          <i class="fas fa-map-location-dot"></i>
-          <h3 data-k="mp_t">سینوها بیووتی سەنتەر</h3>
-          <p data-k="mp_s">هەولێر، کوردستان</p>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <img src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/sinuha-logo2-background.png.png?raw=true" alt="Sinuha Logo" class="hero-logo">
+            <h1 class="hero-title" data-ku="سینوها" data-ar="سينوهة" data-en="Sinuha">سینوها</h1>
+            <p class="hero-subtitle" data-ku="سەنتەری جوانکاری بە ستانداردی پزیشکی" data-ar="مركز التجميل بمعايير طبية عالمية" data-en="Medical-Grade Beauty Excellence">سەنتەری جوانکاری بە ستانداردی پزیشکی</p>
+            <p class="hero-desc" data-ku="جوانکاری پێشەنگ بۆ ژنان و پیاوان" data-ar="جمال راقٍ للنساء والرجال" data-en="Premium aesthetics for women and men">جوانکاری پێشەنگ بۆ ژنان و پیاوان</p>
+            <div class="hero-buttons">
+                <a href="tel:07717007560" class="btn btn-primary">
+                    <i class="fas fa-phone"></i>
+                    <span data-ku="پەیوەندی" data-ar="اتصل بنا" data-en="Call Us">پەیوەندی</span>
+                </a>
+                <a href="https://wa.me/9647517095434" target="_blank" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span data-ku="واتس ئەپ" data-ar="واتساب" data-en="WhatsApp">واتس ئەپ</span>
+                </a>
+                <a href="https://maps.app.goo.gl/ePbn7GFe8JEibMTP6" target="_blank" class="btn btn-outline">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span data-ku="شوێن نیشان بدە" data-ar="الموقع" data-en="Directions">شوێن نیشان بدە</span>
+                </a>
+            </div>
         </div>
-        <div class="map-foot">
-          <a href="https://maps.app.goo.gl/ePbn7GFe8JEibMTP6" class="btn btn-gold" target="_blank">
-            <i class="fas fa-directions"></i>
-            <span data-k="b_gdir">بڕۆ بۆ شوێن</span>
-          </a>
+        <a href="#services" class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <div class="section-header animate-on-scroll">
+            <span class="section-label" data-ku="خزمەتگوزارییەکان" data-ar="خدماتنا" data-en="Our Services">خزمەتگوزارییەکان</span>
+            <h2 class="section-title" data-ku="چارەسەری تایبەت بۆ هەر جۆرە پێستێک" data-ar="علاجات مخصصة لكل نوع بشرة" data-en="Tailored Treatments for Every Skin">چارەسەری تایبەت بۆ هەر جۆرە پێستێک</h2>
+            <p class="section-desc" data-ku="بە کادری پسپۆڕ و ئامێری پێشەنگ، ئێمە باشترین خزمەتگوزاری جوانکاری پێشکەش دەکەین" data-ar="بأيدي خبراء وأحدث الأجهزة، نقدم أفضل خدمات التجميل" data-en="With expert staff and cutting-edge equipment, we deliver the finest beauty services">بە کادری پسپۆڕ و ئامێری پێشەنگ، ئێمە باشترین خزمەتگوزاری جوانکاری پێشکەش دەکەین</p>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+        <div class="services-grid">
+            <div class="service-card animate-on-scroll">
+                <div class="service-icon"><i class="fas fa-spa"></i></div>
+                <h3 class="service-title" data-ku="چارەسەری پێست" data-ar="العناية بالبشرة" data-en="Skin Care">چارەسەری پێست</h3>
+                <p class="service-desc" data-ku="پێستێکی تەندروست و ڕوون بە چارەسەری تایبەت" data-ar="بشرة صحية ونقية بعلاجات مخصصة" data-en="Healthy, radiant skin with specialized treatments">پێستێکی تەندروست و ڕوون بە چارەسەری تایبەت</p>
+            </div>
+            <div class="service-card animate-on-scroll">
+                <div class="service-icon"><i class="fas fa-bolt"></i></div>
+                <h3 class="service-title" data-ku="لیزەری لەش" data-ar="الليزر الكامل" data-en="Full Body Laser">لیزەری لەش</h3>
+                <p class="service-desc" data-ku="لیزەری پێشەنگ بۆ لەش بە ئەمنیترین تەکنەلۆژیا" data-ar="ليزر متقدم للجسم بأحدث التقنيات الآمنة" data-en="Advanced full-body laser with the safest technology">لیزەری پێشەنگ بۆ لەش بە ئەمنیترین تەکنەلۆژیا</p>
+            </div>
+            <div class="service-card animate-on-scroll">
+                <div class="service-icon"><i class="fas fa-face-smile"></i></div>
+                <h3 class="service-title" data-ku="چارەسەری ئەکنە" data-ar="علاج حب الشباب" data-en="Acne Treatment">چارەسەری ئەکنە</h3>
+                <p class="service-desc" data-ku="چارەسەری تایبەتی ئەکنە بۆ پێستێکی پاک و ڕوون" data-ar="علاج متخصص لحب الشباب لبشرة نقية وصافية" data-en="Specialized acne solutions for clear, pure skin">چارەسەری تایبەتی ئەکنە بۆ پێستێکی پاک و ڕوون</p>
+            </div>
+            <div class="service-card animate-on-scroll">
+                <div class="service-icon"><i class="fas fa-eraser"></i></div>
+                <h3 class="service-title" data-ku="سڕینەوەی تاتۆ" data-ar="إزالة الوشم" data-en="Tattoo Removal">سڕینەوەی تاتۆ</h3>
+                <p class="service-desc" data-ku="سڕینەوەی تاتۆ بە ئەمنی و بێ ئازار" data-ar="إزالة الوشم بأمان وبدون ألم" data-en="Safe and painless tattoo removal">سڕینەوەی تاتۆ بە ئەمنی و بێ ئازار</p>
+            </div>
+            <div class="service-card animate-on-scroll">
+                <div class="service-icon"><i class="fas fa-hand-sparkles"></i></div>
+                <h3 class="service-title" data-ku="ڕوونکردنەوەی بەژێر دەست" data-ar="تفتيح الإبط" data-en="Underarm Brightening">ڕوونکردنەوەی بەژێر دەست</h3>
+                <p class="service-desc" data-ku="ڕوونکردنەوەی شوێنی بەژێر دەست بە ئەنجامێکی درەوشاوە" data-ar="تفتيح منطقة الإبط بنتائج مبهرة" data-en="Underarm lightening with stunning results">ڕوونکردنەوەی شوێنی بەژێر دەست بە ئەنجامێکی درەوشاوە</p>
+            </div>
+            <div class="service-card animate-on-scroll">
+                <div class="service-icon"><i class="fas fa-droplet"></i></div>
+                <h3 class="service-title" data-ku="پڕۆفایلۆ" data-ar="بروفايلو" data-en="Profhilo">پڕۆفایلۆ</h3>
+                <p class="service-desc" data-ku="جوانکاری و ڕێژەنی پێست بە پڕۆفایلۆ" data-ar="تجديد وترطيب البشرة بالبروفايلو" data-en="Skin rejuvenation and hydration with Profhilo">جوانکاری و ڕێژەنی پێست بە پڕۆفایلۆ</p>
+            </div>
+            <div class="service-card animate-on-scroll">
+                <div class="service-icon"><i class="fas fa-fish"></i></div>
+                <h3 class="service-title" data-ku="پیدی ئاڕ ئێن" data-ar="بي دي آر إن" data-en="PDRN">پیدی ئاڕ ئێن</h3>
+                <p class="service-desc" data-ku="ڕێژەنی قووڵی پێست بە پیدی ئاڕ ئێن" data-ar="ترطيب عميق للبشرة بالبي دي آر إن" data-en="Deep skin renewal with PDRN salmon treatment">ڕێژەنی قووڵی پێست بە پیدی ئاڕ ئێن</p>
+            </div>
+            <div class="service-card animate-on-scroll">
+                <div class="service-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+                <h3 class="service-title" data-ku="لیزەر" data-ar="الليزر" data-en="Laser">لیزەر</h3>
+                <p class="service-desc" data-ku="خزمەتگوزارییەکانی لیزەری پێشەنگ بۆ جوانکاری" data-ar="خدمات الليزر المتقدمة للتجميل" data-en="Advanced laser services for aesthetic treatments">خزمەتگوزارییەکانی لیزەری پێشەنگ بۆ جوانکاری</p>
+            </div>
+        </div>
+    </section>
 
-<!-- ═══════════════ FOOTER ═══════════════ -->
-<footer>
-  <div class="ft-in">
-    <div class="ft-top">
-      <div class="ft-logo">
-        <img src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/sinuha-logo2-background.png.png?raw=true" alt="Sinuha">
-        <span>Sinuha Beauty Center</span>
-      </div>
-      <div class="ft-links">
-        <a href="https://www.instagram.com/sinuha_podcast?igsh=NDN2dnZ6aDNmMTJz" class="soc" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=100093399768374&locale=ur_PK" class="soc" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://wa.me/9647717007560" class="soc" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="tel:07717007560" class="soc" aria-label="Phone"><i class="fas fa-phone"></i></a>
-        <a href="https://maps.app.goo.gl/ePbn7GFe8JEibMTP6" class="soc" target="_blank" aria-label="Location"><i class="fas fa-location-dot"></i></a>
-      </div>
-    </div>
-    <p class="ft-bot" data-k="ft_c">© 2024 Sinuha Beauty Center — هەموو مافەکان پارێزراوە</p>
-  </div>
-</footer>
+    <!-- Gallery Section -->
+    <section class="section gallery-section" id="gallery">
+        <div class="section-header animate-on-scroll">
+            <span class="section-label" data-ku="گالێری" data-ar="معرض الصور" data-en="Gallery">گالێری</span>
+            <h2 class="section-title" data-ku="چارەسەری هەڵبژاردەکان" data-ar="علاجاتنا المميزة" data-en="Featured Treatments">چارەسەری هەڵبژاردەکان</h2>
+            <p class="section-desc" data-ku="سەیرێک بکە لە چارەسەرییە تایبەتەکانمان" data-ar="اطلع على علاجاتنا المخصصة" data-en="Take a look at our specialized treatments">سەیرێک بکە لە چارەسەرییە تایبەتەکانمان</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item animate-on-scroll">
+                <img src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/acne-treatment.jpg?raw=true" alt="Acne Treatment">
+                <div class="gallery-overlay">
+                    <span class="gallery-title" data-ku="چارەسەری ئەکنە" data-ar="علاج حب الشباب" data-en="Acne Treatment">چارەسەری ئەکنە</span>
+                </div>
+            </div>
+            <div class="gallery-item animate-on-scroll">
+                <img src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/candela-tattoo-removal.jpg?raw=true" alt="Tattoo Removal">
+                <div class="gallery-overlay">
+                    <span class="gallery-title" data-ku="سڕینەوەی تاتۆ" data-ar="إزالة الوشم" data-en="Tattoo Removal">سڕینەوەی تاتۆ</span>
+                </div>
+            </div>
+            <div class="gallery-item animate-on-scroll">
+                <img src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/full-body-laser.jpg?raw=true" alt="Full Body Laser">
+                <div class="gallery-overlay">
+                    <span class="gallery-title" data-ku="لیزەری لەش" data-ar="الليزر الكامل" data-en="Full Body Laser">لیزەری لەش</span>
+                </div>
+            </div>
+            <div class="gallery-item animate-on-scroll">
+                <img src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/pdrn-salmon-treatment.jpg?raw=true" alt="PDRN Treatment">
+                <div class="gallery-overlay">
+                    <span class="gallery-title" data-ku="پیدی ئاڕ ئێن" data-ar="بي دي آر إن" data-en="PDRN">پیدی ئاڕ ئێن</span>
+                </div>
+            </div>
+            <div class="gallery-item animate-on-scroll">
+                <img src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/profhilo-treatment.jpg?raw=true" alt="Profhilo Treatment">
+                <div class="gallery-overlay">
+                    <span class="gallery-title" data-ku="پڕۆفایلۆ" data-ar="بروفايلو" data-en="Profhilo">پڕۆفایلۆ</span>
+                </div>
+            </div>
+            <div class="gallery-item animate-on-scroll">
+                <img src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/underarm-brightening.jpg?raw=true" alt="Underarm Brightening">
+                <div class="gallery-overlay">
+                    <span class="gallery-title" data-ku="ڕوونکردنەوەی بەژێر دەست" data-ar="تفتيح الإبط" data-en="Underarm Brightening">ڕوونکردنەوەی بەژێر دەست</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- ═══════════════ SCRIPTS ═══════════════ -->
-<script>
-/* ── Translations ── */
-const T = {
-  ckb:{
-    brand:'سینوها بیووتی سەنتەر',
-    n_svc:'خزمەتگوزاریەکان',n_gal:'گەلەری',n_abt:'دەربارەی ئێمە',n_con:'پەیوەندی',
-    h_eye:'• سینوها بیووتی سەنتەر •',
-    h_sub:'جایەکی تایبەت بۆ ئارامی، جوانی، و باشتری پووستت\nئێمە لێرەین بۆ ئەوەی بیدەینەوە چی بهێزتری تیایە',
-    b_call:'پەیوەندیمان پێوە بکە',b_wa:'واتساپ',b_dir:'شوێنەکەمان',
-    sl_svc:'خزمەتگوزارییەکانمان',st_svc:'خزمەتگوزاریەکانی سینوها',
-    sd_svc:'پیشەیی‌ترین ئامراز و شێوازی دەرمانکردنی پووست بۆ ئافرەت و پیاو',
-    sv1n:'لەیزەری جەستەی تەواو',sv1d:'لابردنی مووی جەستە بە ئامراری لەیزەری پیشەیی، بە ئارامی و ئەنجامی دایمی',
-    sv2n:'رووناکبوونی باوشرین',sv2d:'چارەسەری تایبەتی بۆ رووناکبوون و جوانبوونی ناوچەی باوشرین',
-    sv3n:'چارەسەری دەنگروو',sv3d:'چارەسەری دەنگروو بە شێوازی پزیشکی نوێ و ئەنجامی بەرچاو',
-    sv4n:'لابردنی تاتوو — Candela',sv4d:'لابردنی تاتوو بە ئامراری Candela پیشەیی، بیازرباو و پارێزراو',
-    sv5n:'چارەسەری PDRN سیلمۆن',sv5d:'نوێبوونەوەی پووست بە تەکنەلۆژیای PDRN بۆ خەمڵاندنی سروشتی',
-    sv6n:'چارەسەری Profhilo',sv6d:'ئاوداندنی قووڵ و گەشکردنی پووست بە شێوازی نوێی Profhilo',
-    sl_gal:'گەلەری چارەسەرەکان',st_gal:'چارەسەرەکانمان',
-    g1:'لەیزەری جەستەی تەواو',g2:'چارەسەری دەنگروو',g3:'رووناکبوونی باوشرین',
-    g4:'لابردنی تاتوو — Candela',g5:'چارەسەری PDRN سیلمۆن',g6:'چارەسەری Profhilo',
-    sl_abt:'دەربارەی ئێمە',st_abt:'سینوها بیووتی سەنتەر',
-    sd_abt:'سینوها بیووتی سەنتەر ناوەندێکی تایبەت و پریمیەمە بۆ چارەسەری پووست و کاتی خۆشبوون. بە تیمێکی پیشەیی و ئامرازی نوێترین تەکنەلۆژیا، بەرزترین چارەسەرەکانی پزیشکی جوانی دەکەین. ئامانجمان ئەوەیە کە هەر کەسێک لەگەڵمان، بە باوەڕێکی زیاتر و سروویەکی جوانتر ببیتەوە.',
-    s1:'کڕیاری دڵخۆش',s2:'جۆری خزمەتگوزاری',s3:'ئامراز پیشەیی',s4:'نرخاندنی کڕیارەکان',
-    badge:'پریمیەم',
-    sl_con:'پەیوەندی',st_con:'پەیوەندیمان پێوە بکە',sd_con:'ئێمە هەمیشە ئامادەین بۆ وەڵامدانەوەت',
-    c_ph:'ژمارەی تەلەفۆن',c_wa:'واتساپ',c_ph2:'ژمارەی دوەم',
-    c_ig:'ئینستاگرام',c_fb:'فەیسبووک',c_loc:'شوێنەکەمان',c_locv:'هەولێر، کوردستان',
-    mp_t:'سینوها بیووتی سەنتەر',mp_s:'هەولێر، کوردستان',b_gdir:'بڕۆ بۆ شوێن',
-    ft_c:'© 2024 Sinuha Beauty Center — هەموو مافەکان پارێزراوە'
-  },
-  ar:{
-    brand:'مركز سينوها للجمال',
-    n_svc:'الخدمات',n_gal:'معرض الصور',n_abt:'عنّا',n_con:'تواصل معنا',
-    h_eye:'• مركز سينوها للجمال •',
-    h_sub:'وجهة راقية للعناية بالبشرة والجمال والثقة بالنفس\nنحن هنا لنكشف الجمال الحقيقي فيك',
-    b_call:'اتصل بنا',b_wa:'واتساب',b_dir:'موقعنا',
-    sl_svc:'خدماتنا',st_svc:'خدمات سينوها',
-    sd_svc:'أحدث التقنيات وأساليب علاج البشرة للرجال والنساء',
-    sv1n:'ليزر الجسم الكامل',sv1d:'إزالة شعر الجسم بالكامل بأجهزة ليزر احترافية بشكل آمن وفعّال',
-    sv2n:'تفتيح منطقة الإبط',sv2d:'علاج متخصص لتفتيح وتجميل منطقة الإبط',
-    sv3n:'علاج حب الشباب',sv3d:'علاج حب الشباب بأسلوب طبي متقدم ونتائج واضحة ودائمة',
-    sv4n:'إزالة الوشم — Candela',sv4d:'إزالة الوشم بجهاز Candela الاحترافي بأمان وفعّالية عالية',
-    sv5n:'علاج PDRN السالمون',sv5d:'تجديد البشرة بتقنية PDRN لتحسين الملمس والنضارة الطبيعية',
-    sv6n:'علاج Profhilo',sv6d:'ترطيب عميق وتنشيط البشرة بعلاج Profhilo المتطور',
-    sl_gal:'معرض العلاجات',st_gal:'علاجاتنا',
-    g1:'ليزر الجسم الكامل',g2:'علاج حب الشباب',g3:'تفتيح الإبط',
-    g4:'إزالة الوشم — Candela',g5:'علاج PDRN السالمون',g6:'علاج Profhilo',
-    sl_abt:'عنّا',st_abt:'مركز سينوها للجمال',
-    sd_abt:'مركز سينوها للجمال هو مركز متخصص وراقٍ لعلاج البشرة والعناية الجمالية. بفريق متخصص وأجهزة حديثة، نقدم أفضل علاجات طب الجمال. هدفنا أن يغادر كل عميل بثقة أعلى وإحساس بالجمال الحقيقي.',
-    s1:'عميل سعيد',s2:'نوع خدمة',s3:'أجهزة احترافية',s4:'تقييم العملاء',
-    badge:'بريميوم',
-    sl_con:'تواصل معنا',st_con:'تواصل معنا',sd_con:'نحن دائمًا هنا للإجابة على استفساراتك',
-    c_ph:'رقم الهاتف',c_wa:'واتساب',c_ph2:'الرقم الثاني',
-    c_ig:'إنستغرام',c_fb:'فيسبوك',c_loc:'موقعنا',c_locv:'أربيل، كردستان',
-    mp_t:'مركز سينوها للجمال',mp_s:'أربيل، كردستان',b_gdir:'احصل على الاتجاهات',
-    ft_c:'© 2024 Sinuha Beauty Center — جميع الحقوق محفوظة'
-  },
-  en:{
-    brand:'Sinuha Beauty Center',
-    n_svc:'Services',n_gal:'Gallery',n_abt:'About',n_con:'Contact',
-    h_eye:'• Sinuha Beauty Center •',
-    h_sub:'A premium destination for skin care, beauty & confidence\nWe are here to reveal the best in you',
-    b_call:'Call Us',b_wa:'WhatsApp',b_dir:'Find Us',
-    sl_svc:'Our Services',st_svc:'Sinuha Services',
-    sd_svc:'Professional treatments and skincare solutions for both men and women',
-    sv1n:'Full Body Laser',sv1d:'Complete body hair removal using professional laser technology safely and effectively',
-    sv2n:'Underarm Brightening',sv2d:'Specialized treatment to brighten and beautify underarm skin',
-    sv3n:'Acne Treatment',sv3d:'Advanced medical acne treatment with visible and long-lasting results',
-    sv4n:'Candela Tattoo Removal',sv4d:'Safe and effective tattoo removal using professional Candela technology',
-    sv5n:'PDRN Salmon Treatment',sv5d:'Skin renewal using PDRN salmon technology for natural rejuvenation',
-    sv6n:'Profhilo Treatment',sv6d:'Deep hydration and skin revitalization with advanced Profhilo treatment',
-    sl_gal:'Treatment Gallery',st_gal:'Our Treatments',
-    g1:'Full Body Laser',g2:'Acne Treatment',g3:'Underarm Brightening',
-    g4:'Candela Tattoo Removal',g5:'PDRN Salmon Treatment',g6:'Profhilo Treatment',
-    sl_abt:'About Us',st_abt:'Sinuha Beauty Center',
-    sd_abt:'Sinuha Beauty Center is a premium, specialized beauty clinic offering expert skin care and aesthetic treatments. With a professional team and modern technology, we deliver the finest medical beauty services. Our goal is for every client to leave feeling more confident and beautiful.',
-    s1:'Happy Clients',s2:'Services',s3:'Pro Equipment',s4:'Client Rating',
-    badge:'Premium',
-    sl_con:'Contact',st_con:'Get In Touch',sd_con:'We are always ready to answer your questions',
-    c_ph:'Phone',c_wa:'WhatsApp',c_ph2:'Second Number',
-    c_ig:'Instagram',c_fb:'Facebook',c_loc:'Location',c_locv:'Erbil, Kurdistan',
-    mp_t:'Sinuha Beauty Center',mp_s:'Erbil, Kurdistan',b_gdir:'Get Directions',
-    ft_c:'© 2024 Sinuha Beauty Center — All Rights Reserved'
-  }
-};
+    <!-- About Section -->
+    <section class="section about-section" id="about">
+        <div class="about-content">
+            <div class="about-text animate-on-scroll">
+                <span class="section-label" data-ku="دەربارەی ئێمە" data-ar="من نحن" data-en="About Us">دەربارەی ئێمە</span>
+                <h2 class="section-title" data-ku="سینوها، جێگایەکی تایبەت بۆ جوانکاری" data-ar="سينوهة، وجهتك المثالية للجمال" data-en="Sinuha, Your Destination for Beauty">سینوها، جێگایەکی تایبەت بۆ جوانکاری</h2>
+                <p data-ku="سینوها سەنتەری جوانکاری جێگایەکی تایبەتە بۆ ئەو کەسانەی دەیانەوێ جوانترین و تەندروستترین پێست هەبێ. ئێمە بە کادری پسپۆڕ و ئامێری پێشەنگ، خزمەتگوزارییەکانی جوانکاری پێشکەش دەکەین." data-ar="مركز سينوهة للتجميل هو وجهتك المثالية للحصول على بشرة جميلة وصحية. نقدم خدماتنا بأيدي خبراء وبأحدث الأجهزة الطبية." data-en="Sinuha Beauty Center is your destination for beautiful, healthy skin. We deliver expert services using state-of-the-art medical equipment.">سینوها سەنتەری جوانکاری جێگایەکی تایبەتە بۆ ئەو کەسانەی دەیانەوێ جوانترین و تەندروستترین پێست هەبێ. ئێمە بە کادری پسپۆڕ و ئامێری پێشەنگ، خزمەتگوزارییەکانی جوانکاری پێشکەش دەکەین.</p>
+                <p data-ku="ئامانجی ئێمە ئەوەیە کە هەر کڕیارێک هەست بە ئەمنی و ئارامی بکات و ئەنجامێکی درەوشاوە وەربگرێت. سینوha سەنتەرێکی پێشەنگە بۆ ژنان و پیاوان." data-ar="هدفنا أن يشعر كل عميل بالأمان والراحة ويحصل على نتائج مبهرة. سينوهة مركز راقٍ للنساء والرجال." data-en="Our goal is for every client to feel safe, comfortable, and achieve stunning results. Sinuha is a premium center for women and men.">ئامانجی ئێمە ئەوەیە کە هەر کڕیارێک هەست بە ئەمنی و ئارامی بکات و ئەنجامێکی درەوشاوە وەربگرێت. سینوها سەنتەرێکی پێشەنگە بۆ ژنان و پیاوان.</p>
+                <div class="about-features">
+                    <div class="about-feature">
+                        <i class="fas fa-check"></i>
+                        <span data-ku="کادری پسپۆڕ و بە ئەزموون" data-ar="فريق خبير وذو خبرة" data-en="Expert & Experienced Staff">کادری پسپۆڕ و بە ئەزموون</span>
+                    </div>
+                    <div class="about-feature">
+                        <i class="fas fa-check"></i>
+                        <span data-ku="ئامێری پێشەنگ و پزیشکی" data-ar="أحدث الأجهزة الطبية" data-en="Cutting-Edge Medical Equipment">ئامێری پێشەنگ و پزیشکی</span>
+                    </div>
+                    <div class="about-feature">
+                        <i class="fas fa-check"></i>
+                        <span data-ku="شوێنێکی ئارام و ڕێک و پێک" data-ar="بيئة هادئة ومنظمة" data-en="Calm & Organized Environment">شوێنێکی ئارام و ڕێک و پێک</span>
+                    </div>
+                    <div class="about-feature">
+                        <i class="fas fa-check"></i>
+                        <span data-ku="خزمەتگوزاری بۆ ژنان و پیاوان" data-ar="خدمات للنساء والرجال" data-en="Services for Women & Men">خزمەتگوزاری بۆ ژنان و پیاوان</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image animate-on-scroll">
+                <img src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/sinuha-hero-background.png?raw=true" alt="Sinuha Beauty Center">
+            </div>
+        </div>
+    </section>
 
-function setL(lang){
-  const t = T[lang];
-  document.documentElement.lang = lang;
-  const rtl = lang !== 'en';
-  document.documentElement.dir = rtl ? 'rtl' : 'ltr';
-  document.body.classList.toggle('ltr', !rtl);
-  document.querySelectorAll('[data-k]').forEach(el=>{
-    const v = t[el.dataset.k];
-    if(v !== undefined) el.textContent = v;
-  });
-  document.querySelectorAll('.lang-sw button').forEach((b,i)=>{
-    b.classList.toggle('on', ['ckb','ar','en'][i] === lang);
-  });
-}
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <div class="section-header animate-on-scroll">
+            <span class="section-label" data-ku="پەیوەندی" data-ar="تواصل معنا" data-en="Contact">پەیوەندی</span>
+            <h2 class="section-title" data-ku="پەیوەندیمان پێوە بکە" data-ar="تواصل معنا" data-en="Get in Touch">پەیوەندیمان پێوە بکە</h2>
+            <p class="section-desc" data-ku="ئامادەیین بۆ وەڵامدانەوە بە هەر پرسیارێک" data-ar="نحن جاهزون للإجابة على جميع استفساراتك" data-en="We are ready to answer all your questions">ئامادەیین بۆ وەڵامدانەوە بە هەر پرسیارێک</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-card animate-on-scroll">
+                <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                <div class="contact-label" data-ku="ژمارەی تەلەفۆن" data-ar="الهاتف" data-en="Phone">ژمارەی تەلەفۆن</div>
+                <a href="tel:07717007560" class="contact-value">0771 700 7560</a>
+            </div>
+            <div class="contact-card animate-on-scroll">
+                <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                <div class="contact-label" data-ku="واتس ئەپ" data-ar="واتساب" data-en="WhatsApp">واتس ئەپ</div>
+                <a href="https://wa.me/9647506895434" target="_blank" class="contact-value">0750 689 5434</a>
+            </div>
+            <div class="contact-card animate-on-scroll">
+                <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="contact-label" data-ku="ناونیشان" data-ar="العنوان" data-en="Address">ناونیشان</div>
+                <a href="https://maps.app.goo.gl/ePbn7GFe8JEibMTP6" target="_blank" class="contact-value" data-ku="شوێنی سەنتەرەکە ببینە" data-ar="عرض موقع المركز" data-en="View Center Location">شوێنی سەنتەرەکە ببینە</a>
+            </div>
+        </div>
+        <div class="contact-socials animate-on-scroll">
+            <a href="https://www.instagram.com/sinuha_podcast?igsh=NDN2dnZ6aDNmMTJz" target="_blank" class="social-btn" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100093399768374&locale=ur_PK" target="_blank" class="social-btn" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://wa.me/9647506895434" target="_blank" class="social-btn" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="tel:07717007560" class="social-btn" aria-label="Phone">
+                <i class="fas fa-phone"></i>
+            </a>
+        </div>
+        <div class="map-container animate-on-scroll">
+            <div class="map-placeholder">
+                <i class="fas fa-map-marked-alt"></i>
+                <span data-ku="سینوها سەنتەری جوانکاری" data-ar="مركز سينوهة للتجميل" data-en="Sinuha Beauty Center">سینوها سەنتەری جوانکاری</span>
+                <a href="https://maps.app.goo.gl/ePbn7GFe8JEibMTP6" target="_blank" class="map-btn">
+                    <i class="fas fa-directions"></i>
+                    <span data-ku="شوێن نیشان بدە" data-ar="الاتجاهات" data-en="Get Directions">شوێن نیشان بدە</span>
+                </a>
+            </div>
+        </div>
+    </section>
 
-/* ── Navbar scroll ── */
-const nav = document.getElementById('nav');
-window.addEventListener('scroll',()=>nav.classList.toggle('stuck', scrollY > 60),{passive:true});
+    <!-- Footer -->
+    <footer class="footer">
+        <img src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/sinuha-logo2-background.png.png?raw=true" alt="Sinuha Logo" class="footer-logo">
+        <div class="footer-title" data-ku="سینوها سەنتەری جوانکاری" data-ar="مركز سينوهة للتجميل" data-en="Sinuha Beauty Center">سینوها سەنتەری جوانکاری</div>
+        <div class="footer-socials">
+            <a href="https://www.instagram.com/sinuha_podcast?igsh=NDN2dnZ6aDNmMTJz" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100093399768374&locale=ur_PK" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://wa.me/9647506895434" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="tel:07717007560" aria-label="Phone"><i class="fas fa-phone"></i></a>
+        </div>
+        <div class="footer-copy">
+            <span data-ku="© 2025 سینوها سەنتەری جوانکاری. هەموو مافێک پارێزراوە." data-ar="© 2025 مركز سينوهة للتجميل. جميع الحقوق محفوظة." data-en="© 2025 Sinuha Beauty Center. All rights reserved.">© 2025 سینوها سەنتەری جوانکاری. هەموو مافێک پارێزراوە.</span>
+        </div>
+    </footer>
 
-/* ── Mobile menu ── */
-const ham = document.getElementById('ham');
-const drawer = document.getElementById('drawer');
-ham.addEventListener('click',()=>{
-  ham.classList.toggle('x');
-  drawer.classList.toggle('open');
-  document.body.style.overflow = drawer.classList.contains('open') ? 'hidden' : '';
-});
-function closeD(){
-  ham.classList.remove('x');
-  drawer.classList.remove('open');
-  document.body.style.overflow = '';
-}
+    <script>
+        // Language Switcher
+        let currentLang = 'ku';
 
-/* ── Scroll reveal ── */
-const obs = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}});
-},{threshold:0.1});
-document.querySelectorAll('.r').forEach(el=>obs.observe(el));
-</script>
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang;
+            document.documentElement.dir = (lang === 'en') ? 'ltr' : 'rtl';
+
+            // Update all elements with data attributes
+            document.querySelectorAll('[data-ku]').forEach(el => {
+                if (el.tagName === 'TITLE') {
+                    document.title = el.getAttribute('data-' + lang);
+                } else if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                    el.placeholder = el.getAttribute('data-' + lang) || el.placeholder;
+                } else {
+                    el.textContent = el.getAttribute('data-' + lang);
+                }
+            });
+
+            // Update active lang button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+
+            // Save preference
+            localStorage.setItem('sinuha-lang', lang);
+        }
+
+        // Mobile Menu
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        }
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('sinuha-lang');
+            if (savedLang && savedLang !== 'ku') {
+                setLanguage(savedLang);
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
-</html>
+</html>'''
+
+with open('/mnt/agents/output/sinuha-beauty-center.html', 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
+print("File saved successfully!")
+print(f"File size: {len(html_content)} characters")
