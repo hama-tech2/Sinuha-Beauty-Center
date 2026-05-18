@@ -263,7 +263,18 @@ button {
     letter-spacing: .18em;
     text-transform: uppercase;
 }
+.brand-logo-img {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+    flex: 0 0 auto;
+    filter: drop-shadow(0 0 18px rgba(212, 176, 106, 0.22));
+}
 
+.nav-logo:hover .brand-logo-img {
+    transform: scale(1.03);
+    filter: drop-shadow(0 0 24px rgba(212, 176, 106, 0.32));
+}
 .nav-menu {
     direction: ltr;
     display: flex;
@@ -1411,7 +1422,10 @@ button {
     .nav-logo strong {
         font-size: 1rem;
     }
-
+.brand-logo-img {
+    width: 46px;
+    height: 46px;
+}
     .nav-logo small {
         font-size: .58rem;
     }
