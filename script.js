@@ -40,6 +40,9 @@ const translations = {
         servicesLabel: "خزمەتگوزارییەکان",
         servicesTitle: "چارەسەری پێشکەوتوو، بە شێوازی ناسک و پریمیم",
         servicesNote: "لیستەکە کورتکراو نییە؛ بەڵام دیزاینەکە وێنە، ناو و پێناسە بە شێوەیەکی خێرا و ئاسان پیشان دەدات.",
+        searchPlaceholder: "گەڕان: لیزەر، PRP، بۆتۆکس...",
+        searchEmptyTitle: "هیچ خزمەتگوزارییەک نەدۆزرایەوە",
+        searchEmptyBody: "وشەیەکی تر تاقی بکەوە؛ وەک laser، PRP، botox یان لیزەر.",
         filterAll: "هەموو",
         filterWomen: "ژنان",
         filterMen: "پیاوان",
@@ -64,6 +67,8 @@ const translations = {
         svcMenLaserDesc: "لیزەری تایبەت بە پیاوان بە پلانی ڕێک و ئەنجامی پاک.",
         svcPRPMen: "PRP قژی پیاوان",
         svcPRPMenDesc: "پلانی چاودێری قژ بۆ بەهێزکردن و پشتگیری نوێبوونەوە.",
+        svcMaleSkin: "چاودێری پێستی پیاوان",
+        svcMaleSkinDesc: "پلانی پاککردنەوە و تازەکردنەوەی پێست بە شێوەیەکی پیاوانە و ناسک.",
         svcPRPWomen: "PRP قژی ژنان",
         svcPRPWomenDesc: "چارەسەری پشتگیری قژ بۆ بەهێزی و تازەبوونەوە.",
         svcPDRN: "PDRN ساڵمۆن",
@@ -93,6 +98,7 @@ const translations = {
         aboutCta: "پەیوەندی بکە",
         techLabel: "تەکنەلۆژیا",
         techTitle: "ئامێر و ڕێکارەکان بە وردی هەڵبژێردراون",
+        techNote: "تەکنەلۆژیا لە سینوها وەک بەشێک لە ڕێکاری جوانکاری بەکاردێت: پاک، دڵنیا و بە پلانی گونجاو.",
         tech1Title: "لیزەری پێشکەوتوو",
         tech1Desc: "بۆ ئەنجامی ورد، خێرا و ئارام.",
         tech2Title: "هایدرۆفەیشەڵ",
@@ -104,17 +110,25 @@ const translations = {
         reviewsLabel: "ئەنجامەکان",
         reviewsTitle: "هەستێکی باش، ئەنجامێکی دڵنیا",
         test1Text: "فەزاکە ئارام و ستافەکە زۆر شارەزا بوو. ئەنجامەکەم زۆر سروشتی دەرچوو.",
+        test1Initial: "س",
         test1Name: "سارا م.",
         test1Role: "کلیێنی دڵخۆش",
         test2Text: "بۆ قژم PRPم کرد، ڕاوێژکارییەکە ڕوون و ئەزموونەکە زۆر پاک بوو.",
+        test2Initial: "م",
         test2Name: "محمد ر.",
         test2Role: "کلیێنی دڵخۆش",
         test3Text: "دوای هایدرۆفەیشەڵ پێستم ڕوونتر و تازەتر بوو. زۆر پێم باش بوو.",
+        test3Initial: "ل",
         test3Name: "لەیلا ع.",
         test3Role: "کلیێنی دڵخۆش",
         test4Text: "شوێنەکە هەستێکی پریمیمی هەیە، بەڵام ئەنجامەکان هێشتا زۆر سروشتی و ناسکن.",
+        test4Initial: "ن",
         test4Name: "نەرگس ح.",
         test4Role: "کلیێنی دڵخۆش",
+        test5Text: "بۆ لیزەری پیاوان هاتم. کاتەکە ڕێکخراو بوو و ستافەکە هەموو هەنگاوێکی بە ڕوونی باس کرد.",
+        test5Initial: "ه",
+        test5Name: "هێمن ک.",
+        test5Role: "کلیێنی دڵخۆش",
         contactLabel: "پەیوەندی",
         contactTitle: "بۆ ڕاوێژکاری و نۆرە، بە ئاسانی پەیوەندی بکە",
         contactDesc: "تیمەکەمان بەخێرایی و بە شێوەیەکی ڕێکخراو وەڵامت دەدات.",
@@ -123,6 +137,9 @@ const translations = {
         contactLocation: "شوێن",
         contactMap: "بینین لە گووگڵ مەپ",
         footerDesc: "سەنتەری جوانکاری و پزیشکی ئێستێتیکی پێشکەوتوو.",
+        footerQuick: "لینکی خێرا",
+        footerServices: "خزمەتگوزارییە پریمیمەکان",
+        footerContact: "پەیوەندی",
         footerCopy: "© 2026 سینوها سەنتەر. هەموو مافەکان پارێزراون."
     },
     ar: {
@@ -166,6 +183,9 @@ const translations = {
         servicesLabel: "الخدمات",
         servicesTitle: "علاجات متقدمة بلمسة ناعمة وفاخرة",
         servicesNote: "القائمة كاملة، لكن التصميم يعرض الصورة والاسم والوصف بسرعة ووضوح.",
+        searchPlaceholder: "بحث: ليزر، PRP، بوتوكس...",
+        searchEmptyTitle: "لم يتم العثور على خدمة",
+        searchEmptyBody: "جرّب كلمة أخرى مثل laser أو PRP أو botox أو ليزر.",
         filterAll: "الكل",
         filterWomen: "النساء",
         filterMen: "الرجال",
@@ -190,6 +210,8 @@ const translations = {
         svcMenLaserDesc: "ليزر خاص للرجال بخطة منظمة ونتائج نظيفة.",
         svcPRPMen: "PRP شعر الرجال",
         svcPRPMenDesc: "خطة عناية بالشعر للتقوية ودعم التجدد.",
+        svcMaleSkin: "عناية بشرة الرجال",
+        svcMaleSkinDesc: "خطة تنظيف وتجديد للبشرة بأسلوب رجالي ناعم ومنظم.",
         svcPRPWomen: "PRP شعر النساء",
         svcPRPWomenDesc: "علاج داعم للشعر من أجل القوة والتجدد.",
         svcPDRN: "PDRN السالمون",
@@ -219,6 +241,7 @@ const translations = {
         aboutCta: "تواصل معنا",
         techLabel: "التقنيات",
         techTitle: "أجهزة وإجراءات مختارة بعناية",
+        techNote: "في سينوها تُستخدم التقنية كجزء من خطة جمالية هادئة: نظيفة وآمنة ومناسبة لكل حالة.",
         tech1Title: "ليزر متقدم",
         tech1Desc: "لنتائج دقيقة وسريعة ومريحة.",
         tech2Title: "هيدروفيشل",
@@ -230,17 +253,25 @@ const translations = {
         reviewsLabel: "النتائج",
         reviewsTitle: "شعور جيد ونتيجة موثوقة",
         test1Text: "المكان هادئ والفريق مختص جداً. النتيجة ظهرت طبيعية وجميلة.",
+        test1Initial: "س",
         test1Name: "سارة م.",
         test1Role: "عميلة سعيدة",
         test2Text: "جربت PRP للشعر، الاستشارة كانت واضحة والتجربة نظيفة جداً.",
+        test2Initial: "م",
         test2Name: "محمد ر.",
         test2Role: "عميل سعيد",
         test3Text: "بعد الهيدروفيشل أصبحت بشرتي أنقى وأكثر نضارة. تجربة ممتازة.",
+        test3Initial: "ل",
         test3Name: "ليلى ع.",
         test3Role: "عميلة سعيدة",
         test4Text: "المكان فاخر، لكن النتائج بقيت طبيعية وناعمة جداً.",
+        test4Initial: "ن",
         test4Name: "نرجس ح.",
         test4Role: "عميلة سعيدة",
+        test5Text: "أتيت لليزر الخاص بالرجال. الموعد كان منظماً والفريق شرح كل خطوة بوضوح.",
+        test5Initial: "هـ",
+        test5Name: "هيمن ك.",
+        test5Role: "عميل سعيد",
         contactLabel: "التواصل",
         contactTitle: "للاستشارة أو الحجز، تواصل معنا بسهولة",
         contactDesc: "فريقنا يرد عليك بسرعة وبطريقة منظمة.",
@@ -249,6 +280,9 @@ const translations = {
         contactLocation: "الموقع",
         contactMap: "عرض على خرائط جوجل",
         footerDesc: "مركز تجميل وطب تجميلي متقدم.",
+        footerQuick: "روابط سريعة",
+        footerServices: "خدمات فاخرة",
+        footerContact: "التواصل",
         footerCopy: "© 2026 مركز سينوها. جميع الحقوق محفوظة."
     },
     en: {
@@ -292,6 +326,9 @@ const translations = {
         servicesLabel: "Services",
         servicesTitle: "Advanced treatments with a soft premium touch",
         servicesNote: "The list is complete, but the layout keeps every image, name and description fast to scan.",
+        searchPlaceholder: "Search: laser, PRP, botox...",
+        searchEmptyTitle: "No service found",
+        searchEmptyBody: "Try another word like laser, PRP, botox or fillers.",
         filterAll: "All",
         filterWomen: "Women",
         filterMen: "Men",
@@ -316,6 +353,8 @@ const translations = {
         svcMenLaserDesc: "Dedicated laser care for men with a clear, clean plan.",
         svcPRPMen: "PRP Hair for Men",
         svcPRPMenDesc: "Hair care planning to support strength and renewal.",
+        svcMaleSkin: "Men's Skin Care",
+        svcMaleSkinDesc: "Cleansing and skin renewal planned with a clean, masculine touch.",
         svcPRPWomen: "PRP Hair for Women",
         svcPRPWomenDesc: "Supportive hair treatment for strength and renewal.",
         svcPDRN: "PDRN Salmon",
@@ -345,6 +384,7 @@ const translations = {
         aboutCta: "Contact us",
         techLabel: "Technology",
         techTitle: "Devices and procedures chosen with care",
+        techNote: "Technology at Sinuha supports calm aesthetic planning: clean, safe and tailored to each case.",
         tech1Title: "Advanced Laser",
         tech1Desc: "For precise, fast and comfortable results.",
         tech2Title: "Hydrofacial",
@@ -356,17 +396,25 @@ const translations = {
         reviewsLabel: "Results",
         reviewsTitle: "Good feeling, trusted results",
         test1Text: "The space was calm and the team was very skilled. My result looked natural and beautiful.",
+        test1Initial: "S",
         test1Name: "Sara M.",
         test1Role: "Happy client",
         test2Text: "I tried PRP for hair. The consultation was clear and the whole experience felt very clean.",
+        test2Initial: "M",
         test2Name: "Mohammed R.",
         test2Role: "Happy client",
         test3Text: "After Hydrofacial my skin looked clearer and fresher. A beautiful experience.",
+        test3Initial: "L",
         test3Name: "Layla A.",
         test3Role: "Happy client",
         test4Text: "The place feels premium, but the results still look very soft and natural.",
+        test4Initial: "N",
         test4Name: "Narges H.",
         test4Role: "Happy client",
+        test5Text: "I came for men's laser. The appointment was organized and the team explained each step clearly.",
+        test5Initial: "H",
+        test5Name: "Hemin K.",
+        test5Role: "Happy client",
         contactLabel: "Contact",
         contactTitle: "For consultation or booking, reach us easily",
         contactDesc: "Our team replies quickly and keeps everything simple and organized.",
@@ -375,6 +423,9 @@ const translations = {
         contactLocation: "Location",
         contactMap: "View on Google Maps",
         footerDesc: "Advanced beauty and aesthetic medical center.",
+        footerQuick: "Quick links",
+        footerServices: "Premium services",
+        footerContact: "Contact",
         footerCopy: "© 2026 Sinuha Center. All rights reserved."
     }
 };
@@ -473,9 +524,18 @@ function setLang(lang) {
         }
     });
 
+    document.querySelectorAll("[data-key-placeholder]").forEach((element) => {
+        const key = element.dataset.keyPlaceholder;
+        if (Object.prototype.hasOwnProperty.call(t, key)) {
+            element.setAttribute("placeholder", t[key]);
+        }
+    });
+
     document.querySelectorAll(".lang-btn").forEach((button) => {
         button.classList.toggle("active", button.dataset.lang === lang);
     });
+
+    window.dispatchEvent(new CustomEvent("sinuha:languagechange"));
 }
 
 function initReveal() {
@@ -499,27 +559,154 @@ function initReveal() {
 
 function initFilters() {
     const buttons = document.querySelectorAll(".filter-btn");
-    const cards = document.querySelectorAll(".service-card");
+    const cards = Array.from(document.querySelectorAll(".service-card"));
     const categoryLinks = document.querySelectorAll(".category-card[data-filter]");
+    const searchInput = document.getElementById("serviceSearch");
+    const clearButton = document.querySelector("[data-search-clear]");
+    const emptyState = document.querySelector("[data-service-empty]");
 
-    const applyFilter = (filter) => {
-        buttons.forEach((button) => {
-            button.classList.toggle("active", button.dataset.filter === filter);
-        });
+    let activeFilter = "all";
+    let searchValue = "";
 
-        cards.forEach((card) => {
-            const category = card.dataset.category;
-            const visible = filter === "all" || category === filter || category === "all";
-            if (visible) {
-                card.classList.remove("hidden");
-                requestAnimationFrame(() => card.classList.remove("exiting"));
-            } else {
-                card.classList.add("exiting");
-                setTimeout(() => {
-                    if (card.classList.contains("exiting")) card.classList.add("hidden");
-                }, 220);
+    const searchProfiles = {
+        acne: ["acne", "akne", "حب الشباب", "حبوب", "ئەکنە", "دانە", "skin", "بشرة", "پێست"],
+        botox: ["botox", "botoks", "بوتوكس", "بوتوکس", "بۆتۆکس", "بوت", "wrinkle", "lines", "چرووک", "تجاعيد"],
+        fillers: ["filler", "fillers", "dermal filler", "فيلر", "فیلەر", "فلر", "volume", "lip", "face"],
+        fullBodyLaser: ["laser", "lazer", "ليزر", "لیزر", "لیزەر", "full body", "body laser", "لەشی تەواو", "الجسم الكامل"],
+        hydro: ["hydrofacial", "hydrafacial", "هيدروفيشل", "هایدرۆفەیشەڵ", "facial", "تنظيف", "پاککردنەوە", "glow"],
+        glowSkin: ["glow", "skin", "بشرة", "نضارة", "پێست", "درەوشاوە", "bright", "fresh"],
+        hollywood: ["hollywood", "smile", "ابتسامة", "هوليوود", "هۆلیوود", "teeth", "dental", "ددان"],
+        menLaser: ["men laser", "male laser", "laser", "lazer", "ليزر الرجال", "لیزەری پیاوان", "پیاوان", "رجال"],
+        prpMen: ["prp", "hair", "men hair", "شعر الرجال", "قژ", "قژی پیاوان", "پیاوان", "تساقط"],
+        maleSkin: ["men skin", "male skincare", "skincare", "skin", "بشرة الرجال", "عناية الرجال", "پێستی پیاوان", "چاودێری پێست"],
+        prpWomen: ["prp", "hair", "women hair", "شعر النساء", "قژی ژنان", "قژ", "تساقط"],
+        pdrn: ["pdrn", "salmon", "سالمون", "ساڵمۆن", "regeneration", "skin", "پێست"],
+        profhilo: ["profhilo", "بروفايلو", "پڕۆفایلۆ", "hydration", "ترطيب", "هیدراتە"],
+        whitening: ["whitening", "brightening", "تفتيح", "تبييض", "ڕووناککردن", "skin", "پێست"],
+        tattoo: ["tattoo", "tattoo removal", "وشم", "ازالة الوشم", "تاتۆ", "سڕینەوە", "laser", "ليزر", "لیزەر"],
+        underarm: ["underarm", "armpit", "ابط", "الإبط", "بژێر", "brightening", "تفتيح", "ڕووناککردن"],
+        consult: ["consultation", "medical consultation", "استشارة", "طبية", "ڕاوێژکاری", "پزیشکی", "doctor", "skin analysis"],
+        beautyConsult: ["beauty consultation", "استشارة تجميل", "ڕاوێژکاری جوانکاری", "plan", "aesthetic", "تجميل"],
+        vip: ["vip", "experience", "تجربة", "ئەزموون", "premium", "luxury"]
+    };
+
+    const normalize = (value = "") => value
+        .toString()
+        .toLowerCase()
+        .normalize("NFKD")
+        .replace(/[\u064B-\u065F\u0670\u0640]/g, "")
+        .replace(/[أإآٱ]/g, "ا")
+        .replace(/[ؤ]/g, "و")
+        .replace(/[ئ]/g, "ی")
+        .replace(/[يى]/g, "ی")
+        .replace(/[ك]/g, "ک")
+        .replace(/[ة]/g, "ه")
+        .replace(/[ە]/g, "ه")
+        .replace(/[ۆ]/g, "و")
+        .replace(/[ێ]/g, "ی")
+        .replace(/[ڕ]/g, "ر")
+        .replace(/[ڵ]/g, "ل")
+        .replace(/[ڤ]/g, "ف")
+        .replace(/[^a-z0-9\u0600-\u06ff]+/g, " ")
+        .trim();
+
+    const compact = (value) => normalize(value).replace(/\s+/g, "");
+
+    const distance = (a, b) => {
+        if (!a || !b) return Math.max(a.length, b.length);
+        const dp = Array.from({ length: a.length + 1 }, () => Array(b.length + 1).fill(0));
+        for (let i = 0; i <= a.length; i += 1) dp[i][0] = i;
+        for (let j = 0; j <= b.length; j += 1) dp[0][j] = j;
+        for (let i = 1; i <= a.length; i += 1) {
+            for (let j = 1; j <= b.length; j += 1) {
+                const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+                dp[i][j] = Math.min(
+                    dp[i - 1][j] + 1,
+                    dp[i][j - 1] + 1,
+                    dp[i - 1][j - 1] + cost
+                );
             }
+        }
+        return dp[a.length][b.length];
+    };
+
+    const fuzzyMatch = (query, corpus) => {
+        if (!query) return true;
+        const queryCompact = compact(query);
+        const corpusCompact = compact(corpus);
+        if (!queryCompact) return true;
+        if (corpusCompact.includes(queryCompact)) return true;
+
+        const queryTokens = normalize(query).split(/\s+/).filter(Boolean);
+        const corpusTokens = normalize(corpus).split(/\s+/).filter(Boolean);
+        return queryTokens.every((queryToken) => corpusTokens.some((token) => {
+            if (token.includes(queryToken)) return true;
+            if (token.length >= 3 && queryToken.includes(token)) return true;
+            if (queryToken.length < 4) return token.startsWith(queryToken);
+            const limit = queryToken.length > 6 ? 2 : 1;
+            return distance(queryToken, token) <= limit;
+        }));
+    };
+
+    const serviceCorpus = (card) => {
+        const id = card.dataset.serviceId;
+        const t = translations[currentLang] || translations.ckb;
+        const keys = Array.from(card.querySelectorAll("[data-key]")).map((element) => element.dataset.key);
+        const translated = keys
+            .flatMap((key) => [translations.ckb[key], translations.ar[key], translations.en[key], t[key]])
+            .filter(Boolean);
+        return [
+            id,
+            card.dataset.category,
+            card.dataset.audience,
+            ...(searchProfiles[id] || []),
+            ...translated,
+            card.textContent
+        ].join(" ");
+    };
+
+    const belongsToFilter = (card, filter) => {
+        if (filter === "all") return true;
+        return (card.dataset.audience || card.dataset.category || "")
+            .split(/\s+/)
+            .includes(filter);
+    };
+
+    const showCard = (card, visible) => {
+        if (visible) {
+            card.classList.remove("hidden");
+            requestAnimationFrame(() => card.classList.remove("exiting"));
+            return;
+        }
+
+        card.classList.add("exiting");
+        setTimeout(() => {
+            if (card.classList.contains("exiting")) card.classList.add("hidden");
+        }, 210);
+    };
+
+    const applyFilter = (filter = activeFilter) => {
+        activeFilter = filter;
+        searchValue = searchInput?.value || "";
+
+        buttons.forEach((button) => {
+            button.classList.toggle("active", button.dataset.filter === activeFilter);
         });
+
+        let visibleCount = 0;
+        cards.forEach((card) => {
+            const visible = belongsToFilter(card, activeFilter) && fuzzyMatch(searchValue, serviceCorpus(card));
+            if (visible) visibleCount += 1;
+            showCard(card, visible);
+        });
+
+        if (emptyState) {
+            emptyState.hidden = visibleCount > 0;
+        }
+
+        if (clearButton) {
+            clearButton.classList.toggle("visible", Boolean(searchValue.trim()));
+        }
     };
 
     buttons.forEach((button) => {
@@ -529,6 +716,17 @@ function initFilters() {
     categoryLinks.forEach((link) => {
         link.addEventListener("click", () => applyFilter(link.dataset.filter));
     });
+
+    searchInput?.addEventListener("input", () => applyFilter(activeFilter));
+    clearButton?.addEventListener("click", () => {
+        if (!searchInput) return;
+        searchInput.value = "";
+        searchInput.focus();
+        applyFilter(activeFilter);
+    });
+    window.addEventListener("sinuha:languagechange", () => applyFilter(activeFilter));
+
+    applyFilter(activeFilter);
 }
 
 function initReviewsCarousel() {
