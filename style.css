@@ -203,6 +203,7 @@ button {
 }
 
 .brand-mark {
+    flex-shrink: 0;
     width: 46px;
     height: 46px;
     border: 1px solid var(--line-strong);
@@ -697,8 +698,8 @@ button {
 
 .categories-grid {
     display: grid;
-    grid-template-columns: 1.25fr .88fr .88fr;
-    grid-auto-rows: 168px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 220px;
     gap: 12px;
 }
 
@@ -716,7 +717,7 @@ button {
 }
 
 .category-feature {
-    grid-row: span 2;
+    grid-row: span 1;
 }
 
 .category-card img {
@@ -923,6 +924,7 @@ button {
 
 .service-card img {
     width: 100%;
+    height: auto;
     aspect-ratio: 16 / 10;
     object-fit: cover;
     object-position: center;
