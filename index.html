@@ -44,7 +44,7 @@
                 <ul class="nav-links">
                     <li><a href="#home" class="nav-link active" data-key="navHome">ماڵەوە</a></li>
                     <li><a href="#about" class="nav-link" data-key="navAbout">دەربارە</a></li>
-                    <li><a href="#services" class="nav-link" data-key="navServices">خزمەتگوزاریەکان</a></li>
+                    <li><a href="#services" class="nav-link" data-key="navServices">خزمەتگوزارییەکان</a></li>
                     <li><a href="#technology" class="nav-link" data-key="navTech">تەکنەلۆژیا</a></li>
                     <li><a href="#reviews" class="nav-link" data-key="navReviews">ئەنجامەکان</a></li>
                     <li><a href="#contact" class="nav-link" data-key="navContact">پەیوەندی</a></li>
@@ -65,11 +65,15 @@
     <main>
         <section class="hero" id="home">
             <div class="hero-media">
-                <video autoplay muted loop playsinline>
-  <source src="sinuha-video2-hero.mp4.mp4" type="video/mp4">
-</video>
+                <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-cinematic-hero.jpg.png" alt="Sinuha Center interior and beauty model" loading="eager">
             </div>
+
             <div class="hero-overlay" aria-hidden="true"></div>
+            <div class="hero-ambient" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
 
             <div class="container hero-inner">
                 <div class="hero-copy">
@@ -105,7 +109,7 @@
                         </div>
                     </div>
 
-                    <a href="#services" class="btn btn-primary reveal-item" data-key="heroCta">خزمەتگوزاریەکان ببینە</a>
+                    <a href="#services" class="btn btn-primary reveal-item" data-key="heroCta">خزمەتگوزارییەکان ببینە</a>
                 </div>
             </div>
 
@@ -151,38 +155,52 @@
             </div>
         </section>
 
-        <section class="categories section" id="categories">
+        <section class="categories section section-warm" id="categories">
             <div class="container">
                 <header class="section-header reveal-item">
                     <span class="section-eyebrow" data-key="catLabel">بەشەکان</span>
-                    <h2 class="section-title" data-key="catTitle">خزمەتگوزارییەکان بە خێرایی بدۆزەوە</h2>
+                    <h2 class="section-title" data-key="catTitle">ڕێگای خێرا بۆ هەڵبژاردنی چاودێری گونجاو</h2>
+                    <p class="section-note" data-key="catNote">بەشەکان بە شێوەیەکی ڕێکخراو، کورت و پریمیم بۆ ئەوەی لە مۆبایل زۆر خێرا بگەیتە خزمەتگوزارییەکە.</p>
                 </header>
 
                 <div class="categories-grid">
-                    <a href="#services" class="category-card reveal-item" data-filter="women">
+                    <a href="#services" class="category-card category-feature reveal-item" data-filter="women">
                         <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/category-women-cover.jpg.jpeg" alt="Women's beauty services" loading="lazy">
                         <span class="category-shade"></span>
+                        <span class="category-index">01</span>
                         <span class="category-text">
                             <strong data-key="catWomen">ژنان</strong>
-                            <small data-key="catWomenDesc">پێست، جوانکاری و چاودێری تایبەت</small>
+                            <small data-key="catWomenDesc">پێست، جوانکاری، هایدرۆفەیشەڵ و چاودێری تایبەت</small>
                         </span>
                     </a>
 
                     <a href="#services" class="category-card reveal-item" data-filter="men">
-                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-men-laser.jpg" alt="Men's laser services" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-prp-hair-men.jpg" alt="Men's hair and aesthetic services" loading="lazy">
                         <span class="category-shade"></span>
+                        <span class="category-index">02</span>
                         <span class="category-text">
                             <strong data-key="catMen">پیاوان</strong>
-                            <small data-key="catMenDesc">لیزەر و چارەسەری قژ بۆ پیاوان</small>
+                            <small data-key="catMenDesc">لیزەر، PRPی قژ و چاودێری تایبەت بە پیاوان</small>
                         </span>
                     </a>
 
-                    <a href="#services" class="category-card category-card-simple reveal-item" data-filter="all">
-                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-luxury-welcome.jpg" alt="Sinuha services" loading="lazy">
+                    <a href="#services" class="category-card reveal-item" data-filter="all">
+                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-consultation.jpg" alt="Aesthetic consultation" loading="lazy">
                         <span class="category-shade"></span>
+                        <span class="category-index">03</span>
+                        <span class="category-text">
+                            <strong data-key="catConsult">ڕاوێژکاری</strong>
+                            <small data-key="catConsultDesc">پلانی جوانکاری بە پێی پێستی تۆ</small>
+                        </span>
+                    </a>
+
+                    <a href="#services" class="category-card reveal-item" data-filter="all">
+                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-happy-client.jpg" alt="Natural aesthetic results" loading="lazy">
+                        <span class="category-shade"></span>
+                        <span class="category-index">04</span>
                         <span class="category-text">
                             <strong data-key="catAll">هەموو خزمەتگوزارییەکان</strong>
-                            <small data-key="catAllDesc">هەموو بەشەکان لە یەک شوێن</small>
+                            <small data-key="catAllDesc">هەموو چارەسەرەکان لە یەک لیستی پاک</small>
                         </span>
                     </a>
                 </div>
@@ -191,9 +209,12 @@
 
         <section class="services section" id="services">
             <div class="container">
-                <header class="section-header reveal-item">
-                    <span class="section-eyebrow" data-key="servicesLabel">خزمەتگوزارییەکان</span>
-                    <h2 class="section-title" data-key="servicesTitle">چارەسەری پێشکەوتوو بە دیزاینی ناسک</h2>
+                <header class="section-header section-header-row reveal-item">
+                    <div>
+                        <span class="section-eyebrow" data-key="servicesLabel">خزمەتگوزارییەکان</span>
+                        <h2 class="section-title" data-key="servicesTitle">چارەسەری پێشکەوتوو، بە شێوازی ناسک و پریمیم</h2>
+                    </div>
+                    <p class="section-note" data-key="servicesNote">لیستەکە کورتکراو نییە؛ بەڵام دیزاینەکە وێنە، ناو و پێناسە بە شێوەیەکی خێرا و ئاسان پیشان دەدات.</p>
                 </header>
 
                 <div class="filter-bar reveal-item" aria-label="Service filters">
@@ -226,7 +247,7 @@
                         <div class="service-body">
                             <span class="service-tag" data-key="tagWomen">ژنان</span>
                             <h3 data-key="svcFillers">فیلەر</h3>
-                            <p data-key="svcFillersDesc">پڕکردنەوە و هاوسەنگکردنی ڕوخسار بە ستایلی ناسک و مۆدێرن.</p>
+                            <p data-key="svcFillersDesc">هاوسەنگکردنی ڕوخسار بە شێوەیەکی ناسک و مۆدێرن.</p>
                         </div>
                     </article>
 
@@ -236,6 +257,15 @@
                             <span class="service-tag tag-all" data-key="tagAll">هەموو</span>
                             <h3 data-key="svcFullBodyLaser">لیزەری لەشی تەواو</h3>
                             <p data-key="svcFullBodyLaserDesc">لیزەری خێرا و دڵنیا بۆ لەشی تەواو بە ئامێری پێشکەوتوو.</p>
+                        </div>
+                    </article>
+
+                    <article class="service-card reveal-item" data-category="women">
+                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-hydrofacial.jpg" alt="Hydrofacial" loading="lazy">
+                        <div class="service-body">
+                            <span class="service-tag" data-key="tagWomen">ژنان</span>
+                            <h3 data-key="svcHydro">هایدرۆفەیشەڵ</h3>
+                            <p data-key="svcHydroDesc">پاککردنەوەی قووڵ، هیدراتەکردن و درەوشاندنەوەی پێست.</p>
                         </div>
                     </article>
 
@@ -257,21 +287,30 @@
                         </div>
                     </article>
 
-                    <article class="service-card reveal-item" data-category="women">
-                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-hydrofacial.jpg" alt="Hydrofacial" loading="lazy">
-                        <div class="service-body">
-                            <span class="service-tag" data-key="tagWomen">ژنان</span>
-                            <h3 data-key="svcHydro">هایدرۆفەیشەڵ</h3>
-                            <p data-key="svcHydroDesc">پاککردنەوەی قووڵ، هیدراتەکردن و درەوشاندنەوەی پێست.</p>
-                        </div>
-                    </article>
-
                     <article class="service-card reveal-item" data-category="men">
                         <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-men-laser.jpg" alt="Men laser" loading="lazy">
                         <div class="service-body">
                             <span class="service-tag tag-men" data-key="tagMen">پیاوان</span>
                             <h3 data-key="svcMenLaser">لیزەری پیاوان</h3>
-                            <p data-key="svcMenLaserDesc">لیزەری تایبەت بە پیاوان، بە پلانی ڕێک و ئەنجامی باش.</p>
+                            <p data-key="svcMenLaserDesc">لیزەری تایبەت بە پیاوان بە پلانی ڕێک و ئەنجامی پاک.</p>
+                        </div>
+                    </article>
+
+                    <article class="service-card reveal-item" data-category="men">
+                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-prp-hair-men.jpg" alt="PRP hair men" loading="lazy">
+                        <div class="service-body">
+                            <span class="service-tag tag-men" data-key="tagMen">پیاوان</span>
+                            <h3 data-key="svcPRPMen">PRP قژی پیاوان</h3>
+                            <p data-key="svcPRPMenDesc">پلانی چاودێری قژ بۆ بەهێزکردن و پشتگیری نوێبوونەوە.</p>
+                        </div>
+                    </article>
+
+                    <article class="service-card reveal-item" data-category="women">
+                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-prp-hair-women.jpg" alt="PRP hair women" loading="lazy">
+                        <div class="service-body">
+                            <span class="service-tag" data-key="tagWomen">ژنان</span>
+                            <h3 data-key="svcPRPWomen">PRP قژی ژنان</h3>
+                            <p data-key="svcPRPWomenDesc">چارەسەری پشتگیری قژ بۆ بەهێزی و تازەبوونەوە.</p>
                         </div>
                     </article>
 
@@ -293,38 +332,78 @@
                         </div>
                     </article>
 
-                    <article class="service-card reveal-item" data-category="men">
-                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-prp-hair-men.jpg" alt="PRP hair men" loading="lazy">
+                    <article class="service-card reveal-item" data-category="women">
+                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-skin-whitening.jpg" alt="Skin whitening" loading="lazy">
                         <div class="service-body">
-                            <span class="service-tag tag-men" data-key="tagMen">پیاوان</span>
-                            <h3 data-key="svcPRPMen">PRP قژی پیاوان</h3>
-                            <p data-key="svcPRPMenDesc">پلانی چاودێری قژ بۆ بەهێزکردن و پشتگیری نوێبوونەوە.</p>
+                            <span class="service-tag" data-key="tagWomen">ژنان</span>
+                            <h3 data-key="svcWhitening">ڕووناککردنی پێست</h3>
+                            <p data-key="svcWhiteningDesc">هاوسەنگکردنی ڕەنگی پێست و درەوشانەوەی ناسک.</p>
+                        </div>
+                    </article>
+
+                    <article class="service-card reveal-item" data-category="all">
+                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-tattoo-removal.jpg" alt="Tattoo removal" loading="lazy">
+                        <div class="service-body">
+                            <span class="service-tag tag-all" data-key="tagAll">هەموو</span>
+                            <h3 data-key="svcTattoo">سڕینەوەی تاتۆ</h3>
+                            <p data-key="svcTattooDesc">سڕینەوەی ورد بە لیزەری پێشکەوتوو و ڕێنمایی پیشەیی.</p>
                         </div>
                     </article>
 
                     <article class="service-card reveal-item" data-category="women">
-                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-prp-hair-women.jpg" alt="PRP hair women" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-underarm-brightening.jpg" alt="Underarm brightening" loading="lazy">
                         <div class="service-body">
                             <span class="service-tag" data-key="tagWomen">ژنان</span>
-                            <h3 data-key="svcPRPWomen">PRP قژی ژنان</h3>
-                            <p data-key="svcPRPWomenDesc">چارەسەری پشتگیری قژ بۆ بەهێزی و تازەبوونەوە.</p>
+                            <h3 data-key="svcUnderarm">ڕووناککردنی بژێر</h3>
+                            <p data-key="svcUnderarmDesc">چارەسەری ناسک و ئارام بۆ ڕووناکی شوێنە هەستیارەکان.</p>
+                        </div>
+                    </article>
+
+                    <article class="service-card reveal-item" data-category="all">
+                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-consultation.jpg" alt="Medical consultation" loading="lazy">
+                        <div class="service-body">
+                            <span class="service-tag tag-all" data-key="tagAll">هەموو</span>
+                            <h3 data-key="svcConsult">ڕاوێژکاری پزیشکی</h3>
+                            <p data-key="svcConsultDesc">شیکاری پێست و پێشنیاری پلانی چارەسەر بە شێوەی ڕوون.</p>
+                        </div>
+                    </article>
+
+                    <article class="service-card reveal-item" data-category="all">
+                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-beauty-consultation.jpg" alt="Beauty consultation" loading="lazy">
+                        <div class="service-body">
+                            <span class="service-tag tag-all" data-key="tagAll">هەموو</span>
+                            <h3 data-key="svcBeautyConsult">ڕاوێژکاری جوانکاری</h3>
+                            <p data-key="svcBeautyConsultDesc">هەڵبژاردنی ئەو چارەسەرەی بە ڕوخسار و پێستت دەگونجێت.</p>
+                        </div>
+                    </article>
+
+                    <article class="service-card reveal-item" data-category="all">
+                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-happy-client.jpg" alt="VIP experience" loading="lazy">
+                        <div class="service-body">
+                            <span class="service-tag tag-all" data-key="tagAll">هەموو</span>
+                            <h3 data-key="svcVIP">ئەزموونی VIP</h3>
+                            <p data-key="svcVIPDesc">چاودێری تایبەت، فەزای ئارام و هەستێکی پریمیم لە هەموو هەنگاوێک.</p>
                         </div>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section class="about section" id="about">
+        <section class="about section section-split" id="about">
             <div class="container about-grid">
                 <div class="about-visual reveal-item">
-                    <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-luxury-welcome.jpg" alt="Sinuha Center welcome area" loading="lazy">
+                    <img class="about-main-img" src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-luxury-welcome.jpg" alt="Sinuha Center welcome area" loading="lazy">
+                    <div class="about-mini-row">
+                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-beauty-consultation.jpg" alt="Welcome staff consultation" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/hama-tech2/Sinuha-Beauty-Center/main/sinuha-happy-client.jpg" alt="Happy Sinuha client" loading="lazy">
+                    </div>
                 </div>
 
                 <div class="about-copy reveal-item">
                     <span class="section-eyebrow" data-key="aboutLabel">دەربارەی سینوها</span>
-                    <h2 class="section-title" data-key="aboutTitle">شوێنێک بۆ جوانی، دڵنیایی و ئارامی</h2>
-                    <p data-key="aboutP1">سینوها سەنتەر فەزایەکی پریمیمە بۆ جوانکاری، چاودێری پێست و چارەسەری پزیشکی ئێستێتیک.</p>
-                    <p data-key="aboutP2">ئامانجمان ئەنجامی سروشتییە: کاری پاک، ڕاوێژکاری ڕوون و ئەزموونێک کە هەست بە بایەخ پێدەکات.</p>
+                    <h2 class="section-title" data-key="aboutTitle">فەزایەکی شاهانە، بە ڕێکاری پزیشکی و ئەنجامی سروشتی</h2>
+                    <p data-key="aboutP1">سینوها بە شێوەیەکی ئارام و پریمیم جوانکاری، چاودێری پێست و ڕاوێژکاری پزیشکی پێشکەش دەکات.</p>
+                    <p data-key="aboutP2">ئامانجمان ئەوەیە ئەنجامەکە ناسک، پاک و باوەڕپێکراو بێت، نەک قورس و دەستکرد.</p>
 
                     <div class="about-points">
                         <span data-key="feat1">تەکنەلۆژیای پێشکەوتوو</span>
@@ -342,7 +421,7 @@
             <div class="container">
                 <header class="section-header reveal-item">
                     <span class="section-eyebrow" data-key="techLabel">تەکنەلۆژیا</span>
-                    <h2 class="section-title" data-key="techTitle">ئامێر و ڕێکارەکانی بە دڵنیایی هەڵبژێردراون</h2>
+                    <h2 class="section-title" data-key="techTitle">ئامێر و ڕێکارەکان بە وردی هەڵبژێردراون</h2>
                 </header>
 
                 <div class="tech-grid">
@@ -351,98 +430,112 @@
                             <svg viewBox="0 0 24 24"><path d="M12 2v20M5 7l14 10M19 7 5 17"/></svg>
                         </span>
                         <h3 data-key="tech1Title">لیزەری پێشکەوتوو</h3>
-                        <p data-key="tech1Desc">بۆ ئەنجامی ورد و خێرا.</p>
+                        <p data-key="tech1Desc">بۆ ئەنجامی ورد، خێرا و ئارام.</p>
                     </article>
                     <article class="tech-card reveal-item">
                         <span class="tech-icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24"><path d="M12 3c4 3 6 6 6 10a6 6 0 0 1-12 0c0-4 2-7 6-10Z"/></svg>
                         </span>
                         <h3 data-key="tech2Title">هایدرۆفەیشەڵ</h3>
-                        <p data-key="tech2Desc">پاککردنەوە و هیدراتەکردن.</p>
+                        <p data-key="tech2Desc">پاککردنەوە، هیدراتەکردن و درەوشانەوە.</p>
                     </article>
                     <article class="tech-card reveal-item">
                         <span class="tech-icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24"><path d="M5 19c8 0 14-6 14-14C11 5 5 11 5 19Z"/><path d="M5 19 19 5"/></svg>
                         </span>
                         <h3 data-key="tech3Title">PRP / PDRN</h3>
-                        <p data-key="tech3Desc">پشتگیری نوێبوونەوە.</p>
+                        <p data-key="tech3Desc">پشتگیری نوێبوونەوەی پێست و قژ.</p>
                     </article>
                     <article class="tech-card reveal-item">
                         <span class="tech-icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24"><path d="M4 20 20 4M14 4l6 6M4 14l6 6"/></svg>
                         </span>
                         <h3 data-key="tech4Title">فیلەر و بۆتۆکس</h3>
-                        <p data-key="tech4Desc">بە ستایلی سروشتی.</p>
+                        <p data-key="tech4Desc">بە ستایلی هاوسەنگ و سروشتی.</p>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section class="reviews section" id="reviews">
-            <div class="container">
-                <header class="section-header reveal-item">
-                    <span class="section-eyebrow" data-key="reviewsLabel">ئەنجامەکان</span>
-                    <h2 class="section-title" data-key="reviewsTitle">هەستێکی باش، ئەنجامێکی دڵنیا</h2>
+        <section class="reviews section section-warm" id="reviews">
+            <div class="container reviews-shell">
+                <header class="section-header section-header-row reveal-item">
+                    <div>
+                        <span class="section-eyebrow" data-key="reviewsLabel">ئەنجامەکان</span>
+                        <h2 class="section-title" data-key="reviewsTitle">هەستێکی باش، ئەنجامێکی دڵنیا</h2>
+                    </div>
+                    <div class="review-controls" aria-label="Review slider controls">
+                        <button class="review-control" type="button" data-review-prev aria-label="Previous review">‹</button>
+                        <button class="review-control" type="button" data-review-next aria-label="Next review">›</button>
+                    </div>
                 </header>
 
-                <div class="reviews-grid">
-                    <article class="review-card reveal-item">
-                        <span class="review-stars" aria-label="5 stars">★★★★★</span>
-                        <p data-key="test1Text">فەزاکە ئارام و ستافەکە زۆر شارەزا بوو. ئەنجامەکەم زۆر سروشتی دەرچوو.</p>
-                        <strong data-key="test1Name">سارا م.</strong>
-                        <small data-key="test1Role">کلیێنی دڵخۆش</small>
-                    </article>
-                    <article class="review-card reveal-item">
-                        <span class="review-stars" aria-label="5 stars">★★★★★</span>
-                        <p data-key="test2Text">بۆ قژم PRPم کرد، ڕاوێژکارییەکە ڕوون و ئەزموونەکە زۆر پاک بوو.</p>
-                        <strong data-key="test2Name">محمد ر.</strong>
-                        <small data-key="test2Role">کلیێنی دڵخۆش</small>
-                    </article>
-                    <article class="review-card reveal-item">
-                        <span class="review-stars" aria-label="5 stars">★★★★★</span>
-                        <p data-key="test3Text">دوای هایدرۆفەیشەڵ پێستم ڕوونتر و تازەتر بوو. زۆر پێم باش بوو.</p>
-                        <strong data-key="test3Name">لەیلا ع.</strong>
-                        <small data-key="test3Role">کلیێنی دڵخۆش</small>
-                    </article>
+                <div class="reviews-carousel reveal-item" data-review-carousel>
+                    <div class="reviews-track" data-review-track>
+                        <article class="review-card">
+                            <span class="review-stars" aria-label="5 stars">★★★★★</span>
+                            <p data-key="test1Text">فەزاکە ئارام و ستافەکە زۆر شارەزا بوو. ئەنجامەکەم زۆر سروشتی دەرچوو.</p>
+                            <strong data-key="test1Name">سارا م.</strong>
+                            <small data-key="test1Role">کلیێنی دڵخۆش</small>
+                        </article>
+                        <article class="review-card">
+                            <span class="review-stars" aria-label="5 stars">★★★★★</span>
+                            <p data-key="test2Text">بۆ قژم PRPم کرد، ڕاوێژکارییەکە ڕوون و ئەزموونەکە زۆر پاک بوو.</p>
+                            <strong data-key="test2Name">محمد ر.</strong>
+                            <small data-key="test2Role">کلیێنی دڵخۆش</small>
+                        </article>
+                        <article class="review-card">
+                            <span class="review-stars" aria-label="5 stars">★★★★★</span>
+                            <p data-key="test3Text">دوای هایدرۆفەیشەڵ پێستم ڕوونتر و تازەتر بوو. زۆر پێم باش بوو.</p>
+                            <strong data-key="test3Name">لەیلا ع.</strong>
+                            <small data-key="test3Role">کلیێنی دڵخۆش</small>
+                        </article>
+                        <article class="review-card">
+                            <span class="review-stars" aria-label="5 stars">★★★★★</span>
+                            <p data-key="test4Text">شوێنەکە هەستێکی پریمیمی هەیە، بەڵام ئەنجامەکان هێشتا زۆر سروشتی و ناسکن.</p>
+                            <strong data-key="test4Name">نەرگس ح.</strong>
+                            <small data-key="test4Role">کلیێنی دڵخۆش</small>
+                        </article>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="contact section" id="contact">
             <div class="container">
-                <header class="section-header reveal-item">
-                    <span class="section-eyebrow" data-key="contactLabel">پەیوەندی</span>
-                    <h2 class="section-title" data-key="contactTitle">بە ئاسانی پەیوەندیمان پێوە بکە</h2>
-                </header>
-
-                <div class="contact-panel reveal-item">
-                    <div class="contact-card">
-                        <span class="contact-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9Z"/></svg>
-                        </span>
-                        <h3 data-key="contactPhone">تەلەفۆن</h3>
-                        <a href="tel:07717007560">07717007560</a>
-                        <a href="tel:07506895434">07506895434</a>
+                <div class="contact-premium reveal-item">
+                    <div class="contact-copy">
+                        <span class="section-eyebrow" data-key="contactLabel">پەیوەندی</span>
+                        <h2 class="section-title" data-key="contactTitle">بۆ ڕاوێژکاری و نۆرە، بە ئاسانی پەیوەندی بکە</h2>
+                        <p data-key="contactDesc">تیمەکەمان بەخێرایی و بە شێوەیەکی ڕێکخراو وەڵامت دەدات.</p>
                     </div>
 
-                    <div class="contact-card">
-                        <span class="contact-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24"><path d="M12 21s7-5 7-12a7 7 0 0 0-14 0c0 7 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>
-                        </span>
-                        <h3 data-key="contactLocation">شوێن</h3>
-                        <a href="https://maps.app.goo.gl/ePbn7GFe8JEibMTP6" target="_blank" rel="noopener" data-key="contactMap">بینین لە گووگڵ مەپ</a>
+                    <div class="contact-lines">
+                        <a href="tel:07717007560" class="contact-line">
+                            <span class="contact-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9Z"/></svg>
+                            </span>
+                            <span><small data-key="contactPhone">تەلەفۆن</small><strong>07717007560</strong></span>
+                        </a>
+                        <a href="tel:07506895434" class="contact-line">
+                            <span class="contact-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.5 3 3.7 5.2 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.4 2.7.6 4.1.6.7 0 1.3.6 1.3 1.3v3.5c0 .7-.6 1.3-1.3 1.3C10.4 22 2 13.6 2 3.3 2 2.6 2.6 2 3.3 2h3.5c.7 0 1.3.6 1.3 1.3 0 1.4.2 2.8.6 4.1.1.4 0 .9-.3 1.2l-1.8 2.2Z"/></svg>
+                            </span>
+                            <span><small data-key="contactSecondPhone">ژمارەی دووەم</small><strong>07506895434</strong></span>
+                        </a>
+                        <a href="https://maps.app.goo.gl/ePbn7GFe8JEibMTP6" target="_blank" rel="noopener" class="contact-line">
+                            <span class="contact-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M12 21s7-5 7-12a7 7 0 0 0-14 0c0 7 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                            </span>
+                            <span><small data-key="contactLocation">شوێن</small><strong data-key="contactMap">بینین لە گووگڵ مەپ</strong></span>
+                        </a>
                     </div>
 
-                    <div class="contact-card">
-                        <span class="contact-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24"><path d="M7 10v4a5 5 0 0 0 10 0v-4a5 5 0 0 0-10 0Z"/><path d="M12 19v3M8 22h8"/></svg>
-                        </span>
-                        <h3 data-key="contactSocial">سۆشیال میدیا</h3>
-                        <div class="social-links">
-                            <a href="https://www.instagram.com/sinuha_podcast?igsh=NDN2dnZ6aDNmMTJz" target="_blank" rel="noopener">Instagram</a>
-                            <a href="https://www.facebook.com/profile.php?id=100093399768374&locale=ur_PK" target="_blank" rel="noopener">Facebook</a>
-                            <a href="https://wa.me/9647717007560" target="_blank" rel="noopener">WhatsApp</a>
-                        </div>
+                    <div class="social-strip" aria-label="Social links">
+                        <a href="https://wa.me/9647717007560" target="_blank" rel="noopener">WhatsApp</a>
+                        <a href="https://www.instagram.com/sinuha_podcast?igsh=NDN2dnZ6aDNmMTJz" target="_blank" rel="noopener">Instagram</a>
+                        <a href="https://www.facebook.com/profile.php?id=100093399768374&locale=ur_PK" target="_blank" rel="noopener">Facebook</a>
+                        <a href="https://maps.app.goo.gl/ePbn7GFe8JEibMTP6" target="_blank" rel="noopener">Maps</a>
                     </div>
                 </div>
             </div>
@@ -457,7 +550,7 @@
             </div>
             <div class="footer-links">
                 <a href="#about" data-key="navAbout">دەربارە</a>
-                <a href="#services" data-key="navServices">خزمەتگوزاریەکان</a>
+                <a href="#services" data-key="navServices">خزمەتگوزارییەکان</a>
                 <a href="#contact" data-key="navContact">پەیوەندی</a>
             </div>
         </div>
