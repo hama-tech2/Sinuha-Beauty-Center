@@ -18,7 +18,7 @@ const serviceDict = [
     keys:['mesotherapy','meso','vitamin','skin','hair','injection','serum','پێست','قژ','ڤیتامین','مێسۆ','بشرة','شعر','حقن'] },
 
   { id:'w2', section:'women', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/women-fractional-co2.webp?raw=true',
-    ckb:{title:'فراکشنال CO2',desc:'چارەسەری ئاسەواری ئەکنە و نوێبوونەوەی پێست.'},
+    ckb:{title:'فراکشنال CO2',desc:'چارەسەری ئاسەواری زیپکە و نوێبوونەوەی پێست.'},
     ar:{title:'فريكشنال CO2',desc:'علاج آثار حب الشباب وتجديد البشرة.'},
     en:{title:'Fractional CO2',desc:'Acne scar treatment and skin renewal.'},
     keys:['fractional','co2','laser','acne','scar','renewal','resurfacing','پێست','ئەکنە','لیزەر','CO2','تجديد','بشرة','ليزر'] },
