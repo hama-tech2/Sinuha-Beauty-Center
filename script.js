@@ -156,7 +156,7 @@ const serviceDict = [
     keys:['prp','platelet','hair','growth','loss','scalp','قژ','PRP','شعر','بلازما','نمو','تساقط'] },
 
   { id:'w25', section:'women', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/women-laser-hair-removal.webp4.png?raw=true',
-    ckb:{title:'لیزەری لەش',desc:'سڕینەوەی قژ بە لیزەری پێشکەوتوو.'},
+    ckb:{title:'لیزەری لادانی موو',desc:'سڕینەوەی موو بە لیزەری پێشکەوتوو.'},
     ar:{title:'ليزر الجسم',desc:'إزالة الشعر بالليزر المتقدم.'},
     en:{title:'Body Laser',desc:'Advanced laser hair removal.'},
     keys:['laser','hair removal','body','diode','alexandrite','لیزەر','سڕینەوە','قژ','ليزر','إزالة شعر','جسم'] },
