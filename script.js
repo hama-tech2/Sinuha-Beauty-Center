@@ -3,20 +3,37 @@
    Full Search System + Service Dictionary + All UI
    ════════════════════════════════════════════════════ */
 
-/* ── SERVICE DICTIONARY ───────────────────────────── */
+/* ── SERVICE DICTIONARY ─────────────────────────────
+   Each entry has:
+   · id, section (women/men/dental), img
+   · ckb / ar / en  { title, desc }
+   · keys: combined keyword pool for fuzzy search
+   ──────────────────────────────────────────────────── */
 const serviceDict = [
   /* ════ WOMEN ════ */
+  { id:'w1', section:'women', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/kurdish_beauty_mesotherapy4.png?raw=true',
+    ckb:{title:'مێسۆتێراپی',desc:'پێست و قژ بە ڤیتامین و مادەی خۆراکی.'},
+    ar:{title:'ميزوثيرابي',desc:'البشرة والشعر بالفيتامينات والمواد المغذية.'},
+    en:{title:'Mesotherapy',desc:'Skin and hair nourishment with vitamins.'},
+    keys:['mesotherapy','meso','vitamin','skin','hair','injection','serum','پێست','قژ','ڤیتامین','مێسۆ','بشرة','شعر','حقن'] },
+
   { id:'w2', section:'women', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/women-fractional-co2.webp?raw=true',
     ckb:{title:'فراکشنال CO2',desc:'چارەسەری ئاسەواری زیپکە و نوێبوونەوەی پێست.'},
-    ar:{title:'فراكشنال CO2',desc:'علاج آثار حب الشباب وتجديد البشرة.'},
+    ar:{title:'فريكشنال CO2',desc:'علاج آثار حب الشباب وتجديد البشرة.'},
     en:{title:'Fractional CO2',desc:'Acne scar treatment and skin renewal.'},
     keys:['fractional','co2','laser','acne','scar','renewal','resurfacing','پێست','ئەکنە','لیزەر','CO2','تجديد','بشرة','ليزر'] },
 
+  { id:'w3', section:'women', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/women-exosome.webp.png?raw=true',
+    ckb:{title:'ئێگزۆسۆم',desc:'پشتگیری نوێبوونەوەی پێست لە ئاستی زانستی.'},
+    ar:{title:'إكسوزوم',desc:'دعم تجديد البشرة على المستوى العلمي.'},
+    en:{title:'Exosome',desc:'Scientific skin regeneration support.'},
+    keys:['exosome','regeneration','stem','cell','skin','renewal','ئێگزۆسۆم','پێست','إكسوزوم','تجديد','بشرة'] },
+
   { id:'w4', section:'women', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/women-hifu.webp.png?raw=true',
-    ckb:{title:'HIFU',desc:'توند کردنی پێست.'},
-    ar:{title:'HIFU',desc:'شد البشرة.'},
-    en:{title:'HIFU',desc:'Skin tightening.'},
-    keys:['hifu','lift','tighten','ultrasound','skin','noninvasive','توند کردن','پێست','شد','بشرة'] },
+    ckb:{title:'HIFU',desc:'هەڵگرتنی پێست بەبێ نەشتەرگەری.'},
+    ar:{title:'HIFU',desc:'شد البشرة بدون جراحة.'},
+    en:{title:'HIFU',desc:'Non-surgical skin lifting.'},
+    keys:['hifu','lift','tighten','ultrasound','skin','noninvasive','هەڵگرتن','پێست','شد','بدون جراحة','رفع'] },
 
   { id:'w5', section:'women', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/women-microneedling3.png?raw=true',
     ckb:{title:'مایکرۆنیدلینگ',desc:'تازەکردنەوەی تەکسچەری پێست.'},
@@ -25,22 +42,28 @@ const serviceDict = [
     keys:['microneedling','needle','texture','skin','collagen','مایکرۆ','پێست','ميكرو','بشرة','ابر'] },
 
   { id:'w6', section:'women', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/women-chemical-peeling3.png?raw=true',
-    ckb:{title:'کیمیاوی پێست',desc:'تەقشیر کیمیایی پێست. لابردنی چینی مردووەکەی پێست.'},
-    ar:{title:'التقشير الكيميائي',desc:'إزالة الطبقة الميتة من البشرة.'},
+    ckb:{title:'کیمیاوی پێست',desc:'پاککردنەوەی قووڵ و لابردنی مردووەکان.'},
+    ar:{title:'تقشير كيميائي',desc:'تنظيف عميق وإزالة الخلايا الميتة.'},
     en:{title:'Chemical Peeling',desc:'Deep cleansing and dead cell removal.'},
     keys:['chemical','peel','peeling','acid','exfoliation','skin','کیمیاوی','تقشير','بشرة','حمض','تنظيف'] },
 
   { id:'w7', section:'women', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/women-morpheus-8.webp.png?raw=true',
-    ckb:{title:'مۆرفیوس 8',desc:'لادانی ئاسەواری زیپکە و هاندانی کۆلاجین.'},
-    ar:{title:'مورفيوس 8',desc:'إزالة آثار حب الشباب وتحفيز الكولاجين.'},
-    en:{title:'Morpheus 8',desc:'Acne scar removal and collagen stimulation.'},
+    ckb:{title:'مۆرفیوس 8',desc:'هەڵگرتن و بەهێزکردنی کۆلاژن.'},
+    ar:{title:'مورفيوس 8',desc:'شد وتحفيز الكولاجين.'},
+    en:{title:'Morpheus 8',desc:'Tightening and collagen stimulation.'},
     keys:['morpheus','morpheus8','rf','radiofrequency','collagen','tighten','lift','مۆرفیوس','کۆلاژن','مورفيوس','كولاجين','شد'] },
 
   { id:'w8', section:'women', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/women-carbon-peeling3.png?raw=true',
-    ckb:{title:'تەقشیر کاربۆنی پێست',desc:'بچووک کردنی کونیلە و هاندانی کۆلاجین.'},
-    ar:{title:'تقشير كاربوني',desc:'سد المسامات وتحفيز الكولاجين.'},
-    en:{title:'Carbon Peeling',desc:'Pore reduction and collagen stimulation.'},
-    keys:['carbon','peel','blackhead','glow','shine','laser','کاربۆن','تقشير','كربون','إشراقة','تنظيف'] },
+    ckb:{title:'کاربۆن پێست',desc:'پاککردنەوەی قووڵ و درەوشانەوە.'},
+    ar:{title:'كربون بيلينج',desc:'تنظيف عميق وإشراقة.'},
+    en:{title:'Carbon Peeling',desc:'Deep cleansing and glow.'},
+    keys:['carbon','peel','blackhead','glow','shine','laser','کاربۆن','درەوشان','كربون','إشراقة','تنظيف'] },
+
+  { id:'w9', section:'women', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/women-nctf-1353.png?raw=true',
+    ckb:{title:'NCTF 135',desc:'تازەکردنەوەی پریمیمی پێست.'},
+    ar:{title:'NCTF 135',desc:'تجديد فاخر للبشرة.'},
+    en:{title:'NCTF 135',desc:'Premium skin revitalization.'},
+    keys:['nctf','135','revitalize','skin','hydrate','NCTF','پێست','بشرة','ترطيب','حيوية'] },
 
   { id:'w10', section:'women', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/women-pdrn2.png?raw=true',
     ckb:{title:'PDRN',desc:'پشتگیری نوێبوونەوەی پێست.'},
@@ -49,19 +72,19 @@ const serviceDict = [
     keys:['pdrn','polynucleotide','dna','skin','repair','PDRN','پێست','بشرة','ترميم','DNA'] },
 
   { id:'w11', section:'women', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/women-pologen.webp.png?raw=true',
-    ckb:{title:'پۆڵۆجین',desc:'سپی بوونەوە و پاک کردنی پێست لە قولایی.'},
-    ar:{title:'بولوجين',desc:'تنظيف وتوحيد لون البشرة.'},
-    en:{title:'Pologen',desc:'Skin brightening and deep cleansing.'},
-    keys:['pologen','lift','tighten','skin','radiofrequency','پۆلۆگین','پۆڵۆجین','بولوجين','بشرة'] },
+    ckb:{title:'پۆلۆگین',desc:'تەکنەلۆژیای هەڵگرتنی پێست.'},
+    ar:{title:'بولوجين',desc:'تقنية شد البشرة.'},
+    en:{title:'Pologen',desc:'Skin tightening technology.'},
+    keys:['pologen','lift','tighten','skin','radiofrequency','پۆلۆگین','هەڵگرتن','بولوجين','شد','بشرة'] },
 
   { id:'w12', section:'women', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/women-profhilo-premium3.png?raw=true',
-    ckb:{title:'پڕۆفایلۆ',desc:'باشترین دەرزی لێفتینگ و شیدارکردنەوە.'},
-    ar:{title:'بروفايلو',desc:'أفضل إبرة لشد البشرة والنضارة.'},
-    en:{title:'Profhilo',desc:'Best lifting needle for radiance.'},
-    keys:['profhilo','hyaluronic','hydrate','hydration','lift','skin','پڕۆفایلۆ','بروفايلو','ترطيب','بشرة'] },
+    ckb:{title:'پڕۆفایلۆ',desc:'هیدراتەکردنی قووڵ و هەڵگرتن.'},
+    ar:{title:'بروفايلو',desc:'ترطيب عميق وشد.'},
+    en:{title:'Profhilo',desc:'Deep hydration and lifting.'},
+    keys:['profhilo','hyaluronic','hydrate','hydration','lift','skin','پڕۆفایلۆ','هیدرات','بروفايلو','ترطيب','بشرة'] },
 
   { id:'w13', section:'women', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/women-underarm-whitening3.png?raw=true',
-    ckb:{title:'ڕووناككردنی بژێر',desc:'سپئ بوونەوەی بن باڵ و ناوچەی هەستیار. یەک رەنگ کردنی پێست بە نوێترین تەکنیک.'},
+    ckb:{title:'ڕووناككردنی بژێر',desc:'چارەسەری شوێنە هەستیارەکان.'},
     ar:{title:'تفتيح الإبط',desc:'علاج المناطق الحساسة.'},
     en:{title:'Underarm Brightening',desc:'Sensitive area treatment.'},
     keys:['underarm','whitening','brightening','armpit','lighten','بژێر','ڕووناک','إبط','تفتيح','جسم'] },
@@ -85,16 +108,22 @@ const serviceDict = [
     keys:['rejuvenation','glow','radiance','skin','tazakrdnawa','تازەکردنەوە','پێست','تجديد','إشراقة','بشرة','نضارة'] },
 
   { id:'w17', section:'women', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/women-skin-whitening-premium3.png?raw=true',
-    ckb:{title:'سپی بوونەوەی پێست',desc:'سپی بوونەوەی پێست و یەک رەنگ کردنی.'},
-    ar:{title:'تفتيح البشرة',desc:'تفتيح البشرة وتوحيد اللون.'},
+    ckb:{title:'ڕووناككردنی پێست',desc:'هاوسەنگکردنی ڕەنگ و درەوشانەوە.'},
+    ar:{title:'تفتيح البشرة',desc:'توحيد اللون وإشراقة.'},
     en:{title:'Skin Brightening',desc:'Even tone and glow.'},
-    keys:['brightening','whitening','skin','tone','even','lighten','سپی','پێست','تفتيح','بشرة','لون'] },
+    keys:['brightening','whitening','skin','tone','even','lighten','ڕووناک','پێست','تفتيح','بشرة','لون'] },
 
   { id:'w18', section:'women', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/women-acne-treatment2.png?raw=true',
-    ckb:{title:'چارەسەری زیپکە',desc:'بن بر کردنی زیپکەی ئەکتیڤ.'},
-    ar:{title:'علاج حب الشباب',desc:'إزالة الحبوب النشطة.'},
-    en:{title:'Acne Treatment',desc:'Active pimple removal.'},
-    keys:['acne','pimple','blemish','treatment','skin','پێست','زیپکە','حب الشباب','بشرة','علاج'] },
+    ckb:{title:'چارەسەری ئەکنە',desc:'پاككردنەوە و چارەسەری دانەکان.'},
+    ar:{title:'علاج حب الشباب',desc:'تنظيف وعلاج الحبوب.'},
+    en:{title:'Acne Treatment',desc:'Cleansing and acne care.'},
+    keys:['acne','pimple','blemish','treatment','skin','پێست','ئەکنە','دانەکان','حب الشباب','بشرة','علاج'] },
+
+  { id:'w19', section:'women', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/kurdish_beauty_mesotherapy3.png?raw=true',
+    ckb:{title:'مێسۆتێراپی قژ',desc:'بەهێزکردنی پێست و قژ.'},
+    ar:{title:'ميزوثيرابي شعر',desc:'تقوية البشرة والشعر.'},
+    en:{title:'Mesotherapy (Hair)',desc:'Skin and hair strengthening.'},
+    keys:['mesotherapy','hair','strengthen','growth','scalp','قژ','مێسۆ','شعر','تقوية','نمو','فروة'] },
 
   { id:'w20', section:'women', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/women-lip-rose3.png?raw=true',
     ckb:{title:'لێب ڕۆز',desc:'ڕووناکی و شێوەیەکی سروشتی.'},
@@ -109,16 +138,16 @@ const serviceDict = [
     keys:['filler','hyaluronic','lip','cheek','face','volume','فیلەر','ڕوخسار','فيلر','وجه','حجم','شفاه'] },
 
   { id:'w22', section:'women', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/women-fat-dissolving3.png?raw=true',
-    ckb:{title:'تواندنەوەی چەوری',desc:'دەرزی تایبەت بە شیکردنەوەی خانەی چەوری.'},
-    ar:{title:'إذابة الدهون',desc:'إبر خاصة لتفتيت الخلايا الدهنية.'},
-    en:{title:'Fat Dissolving',desc:'Special needles for breaking down fat cells.'},
-    keys:['fat','dissolve','lipolysis','slim','contour','body','چەوری','تواندنەوە','دهون','تخسيس','رسم'] },
+    ckb:{title:'تەواوکردنی چەوری',desc:'چارەسەری بە لایپۆلایسیس.'},
+    ar:{title:'تذويب الدهون',desc:'علاج بالليبوليزيس.'},
+    en:{title:'Fat Dissolving',desc:'Lipolysis treatment.'},
+    keys:['fat','dissolve','lipolysis','slim','contour','body','چەوری','تذويب','دهون','تخسيس','رسم'] },
 
   { id:'w23', section:'women', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/women-botox3.png?raw=true',
-    ckb:{title:'بۆتۆکس',desc:'کەم کردنەوەی هێلی رووخسار و نەهێشتنی وردە لۆچی.'},
-    ar:{title:'بوتوكس',desc:'تقليل خطوط الوجه وإزالة التجاعيد الدقيقة.'},
-    en:{title:'Botox',desc:'Reducing facial lines and fine wrinkles.'},
-    keys:['botox','botulinum','wrinkle','line','forehead','brow','بۆتۆکس','رووخسار','بوتوكس','تجاعيد','خطوط','جبهة'] },
+    ckb:{title:'بۆتۆکس',desc:'کەمکردنەوەی هێڵ و چرووک.'},
+    ar:{title:'بوتوكس',desc:'تخفيف الخطوط والتجاعيد.'},
+    en:{title:'Botox',desc:'Line and wrinkle reduction.'},
+    keys:['botox','botulinum','wrinkle','line','forehead','brow','بۆتۆکس','چرووک','بوتوكس','تجاعيد','خطوط','جبهة'] },
 
   { id:'w24', section:'women', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/women-prp-hair3.png?raw=true',
     ckb:{title:'PRP قژ',desc:'پشتگیری بەهێزکردنی قژ.'},
@@ -127,9 +156,9 @@ const serviceDict = [
     keys:['prp','platelet','hair','growth','loss','scalp','قژ','PRP','شعر','بلازما','نمو','تساقط'] },
 
   { id:'w25', section:'women', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/women-laser-hair-removal.webp4.png?raw=true',
-    ckb:{title:'لەیزەری لادانی موو',desc:'لەیزەری لادانی موو بە نوێترین ئامێر.'},
-    ar:{title:'ليزر إزالة الشعر',desc:'أحدث أجهزة إزالة الشعر بالليزر.'},
-    en:{title:'Laser Hair Removal',desc:'Latest laser hair removal devices.'},
+    ckb:{title:'لیزەری لادانی موو',desc:'سڕینەوەی موو بە لیزەری پێشکەوتوو.'},
+    ar:{title:'ليزر الجسم',desc:'إزالة الشعر بالليزر المتقدم.'},
+    en:{title:'Body Laser',desc:'Advanced laser hair removal.'},
     keys:['laser','hair removal','body','diode','alexandrite','لیزەر','سڕینەوە','قژ','ليزر','إزالة شعر','جسم'] },
 
   /* ════ MEN ════ */
@@ -165,27 +194,27 @@ const serviceDict = [
 
   { id:'m6', section:'men', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/men-fractional-co2.webp.png?raw=true',
     ckb:{title:'فراکشنال CO2',desc:'چارەسەری پێستی پیاوان.'},
-    ar:{title:'فراكشنال CO2',desc:'علاج بشرة الرجال.'},
+    ar:{title:'فريكشنال CO2',desc:'علاج بشرة الرجال.'},
     en:{title:'Fractional CO2',desc:"Men's skin treatment."},
     keys:['fractional','co2','laser','skin','men','acne','فراکشنال','CO2','پیاوان','ليزر','بشرة رجال'] },
 
   { id:'m7', section:'men', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/men-carbon-peel.webp.png?raw=true',
-    ckb:{title:'تەقشیر کاربۆنی پێست',desc:'بچووک کردنی کونیلە و هاندانی کۆلاجین.'},
-    ar:{title:'تقشير كاربوني',desc:'سد المسامات وتحفيز الكولاجين.'},
-    en:{title:'Carbon Peeling',desc:'Pore reduction and collagen stimulation.'},
+    ckb:{title:'کاربۆن پێست',desc:'پاككردنەوەی قووڵی پێست.'},
+    ar:{title:'كربون بيلينج',desc:'تنظيف عميق للبشرة.'},
+    en:{title:'Carbon Peel',desc:'Deep skin cleansing.'},
     keys:['carbon','peel','blackhead','men','glow','کاربۆن','پیاوان','كربون','تنظيف','رجال'] },
 
   { id:'m8', section:'men', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/men-chest-laser.webp.png?raw=true',
-    ckb:{title:'لەیزەرئ سینگ',desc:'بن بر کردنی مووی پشت و سنگ.'},
-    ar:{title:'ليزر الصدر والظهر',desc:'إزالة شعر الصدر والظهر.'},
-    en:{title:'Chest & Back Laser',desc:'Chest and back hair removal.'},
-    keys:['chest','back','laser','hair removal','men','body','سینگ','لیزەر','صدر','ظهر','ليزر','إزالة شعر'] },
+    ckb:{title:'لیزەری سینە',desc:'سڕینەوەی قژی سینە.'},
+    ar:{title:'ليزر الصدر',desc:'إزالة شعر الصدر.'},
+    en:{title:'Chest Laser',desc:'Chest hair removal.'},
+    keys:['chest','laser','hair removal','men','body','سینە','لیزەر','صدر','ليزر','إزالة شعر'] },
 
   { id:'m9', section:'men', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/men-neck-laser.webp.png?raw=true',
-    ckb:{title:'لەیزەری مل',desc:'بن بر کردنی مووی مل.'},
+    ckb:{title:'لیزەری گردن',desc:'سڕینەوەی قژی گردن.'},
     ar:{title:'ليزر الرقبة',desc:'إزالة شعر الرقبة.'},
     en:{title:'Neck Laser',desc:'Neck hair removal.'},
-    keys:['neck','laser','hair removal','men','مل','لیزەر','رقبة','ليزر','إزالة شعر'] },
+    keys:['neck','laser','hair removal','men','گردن','لیزەر','رقبة','ليزر','إزالة شعر'] },
 
   { id:'m10', section:'men', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/men-full-body-laser3.png?raw=true',
     ckb:{title:'لیزەری لەشی تەواو',desc:'لیزەری خێرا بۆ لەشی تەواو.'},
@@ -207,22 +236,22 @@ const serviceDict = [
     keys:['before after','results','dental','teeth','transformation','پێش و پاش','ددان','قبل وبعد','نتائج'] },
 
   { id:'d3', section:'dental', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/teeth-pediatric-dentistry.webp?raw=true',
-    ckb:{title:'چارەسەری منداڵان',desc:'چاودێری تایبەت بە ددانە منداڵان.'},
-    ar:{title:'علاج أسنان الأطفال',desc:'عناية خاصة بأسنان الأطفال.'},
+    ckb:{title:'ددانپزیشکی منداڵان',desc:'چاودێری تایبەت بە ددانە منداڵان.'},
+    ar:{title:'طب أسنان الأطفال',desc:'عناية خاصة بأسنان الأطفال.'},
     en:{title:'Pediatric Dentistry',desc:"Specialized children's dental care."},
     keys:['pediatric','children','kids','dental','teeth','منداڵان','ددان','أطفال','أسنان أطفال'] },
 
   { id:'d4', section:'dental', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/teeth-extraction.webp.png?raw=true',
-    ckb:{title:'هەڵکێشانی ددان',desc:'کێشانەوەی ددان بە شێوەیە پزیشکی.'},
+    ckb:{title:'کێشانەوەی ددان',desc:'کێشانەوەی ددان بە شێوەیە پزیشکی.'},
     ar:{title:'خلع الأسنان',desc:'خلع الأسنان طبياً.'},
     en:{title:'Extraction',desc:'Professional tooth extraction.'},
-    keys:['extraction','remove','tooth','dental','ددان','هەڵکێشان','خلع','سن','أسنان'] },
+    keys:['extraction','remove','tooth','dental','ددان','کێشانەوە','خلع','سن','أسنان'] },
 
   { id:'d5', section:'dental', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/teeth-dental-implant.webp?raw=true',
-    ckb:{title:'چاندنەوەی ددان',desc:'چاندنەوەی ددان بە باشترین براندی جیهانی.'},
-    ar:{title:'زراعة الأسنان',desc:'زراعة الأسنان بأفضل الماركات العالمية.'},
-    en:{title:'Dental Implant',desc:'Tooth implantation with best global brands.'},
-    keys:['implant','dental','tooth','crown','زراعة','ددان','چاندنەوە','أسنان','تاج'] },
+    ckb:{title:'دانە دان',desc:'دانەنانی ددان بە تەکنەلۆژیای نوێ.'},
+    ar:{title:'زراعة الأسنان',desc:'زراعة الأسنان بتقنية حديثة.'},
+    en:{title:'Dental Implant',desc:'Modern tooth implantation.'},
+    keys:['implant','dental','tooth','crown','زراعة','ددان','دانە','أسنان','تاج'] },
 
   { id:'d6', section:'dental', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/teeth-consultation.webp?raw=true',
     ckb:{title:'ڕاوێژکاری ددان',desc:'شیکاری و پلانی چارەسەری.'},
@@ -255,10 +284,10 @@ const serviceDict = [
     keys:['veneer','porcelain','smile','design','teeth','ڤینیر','ددان','فينير','أسنان','تصميم'] },
 
   { id:'d11', section:'dental', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/teeth-braces.webp.png?raw=true',
-    ckb:{title:'تێل دانان',desc:'ڕاستکردنەوەی ددان.'},
-    ar:{title:'تركيب التقويم',desc:'تقويم وتصحيح الأسنان.'},
+    ckb:{title:'برەیس',desc:'ڕاستکردنەوەی ددان.'},
+    ar:{title:'تقويم الأسنان',desc:'تقويم وتصحيح الأسنان.'},
     en:{title:'Braces',desc:'Teeth alignment and correction.'},
-    keys:['braces','orthodontic','align','teeth','metal','clear','تێل','ددان','تقويم','أسنان','اصلاح'] },
+    keys:['braces','orthodontic','align','teeth','metal','clear','برەیس','ددان','تقويم','أسنان','اصلاح'] },
 
   { id:'d12', section:'dental', img:'https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/teeth-hollywood-smile.webp.png?raw=true',
     ckb:{title:'هۆلیوود سمایل',desc:'پێکەنینێکی ڕوون و گونجاو.'},
@@ -284,7 +313,7 @@ const SECTION_ANCHORS = { women:'#women', men:'#men', dental:'#dental' };
 /* ── SEARCH ENGINE ───────────────────────────────────── */
 function normalizeStr(s) {
   return (s || '').toLowerCase()
-    .replace(/[\u064B-\u065F]/g, '')
+    .replace(/[\u064B-\u065F]/g, '')   // Arabic diacritics
     .replace(/[أإآ]/g, 'ا')
     .replace(/ة/g, 'ه')
     .replace(/[ىي]/g, 'ي')
@@ -302,19 +331,27 @@ function scoreService(svc, q, lang) {
   const desc  = normalizeStr(svc[lang]?.desc  || svc.en.desc);
   const allKeys = svc.keys.map(normalizeStr).join(' ');
 
+  // Exact title match
   if (title === nq) score += 20;
+  // Title contains query
   else if (title.includes(nq)) score += 14;
+  // Title word starts with query
   else if (title.split(' ').some(w => w.startsWith(nq))) score += 10;
 
+  // Description match
   if (desc.includes(nq)) score += 6;
+
+  // Keyword / tag match
   if (allKeys.includes(nq)) score += 8;
   else if (allKeys.split(' ').some(w => w.startsWith(nq))) score += 5;
 
+  // Cross-language: try all languages
   ['ckb','ar','en'].forEach(lng => {
     const t = normalizeStr(svc[lng]?.title || '');
     if (t.includes(nq)) score += 4;
   });
 
+  // Fuzzy: each word of query found in combined text
   const combined = [title, desc, allKeys].join(' ');
   const words = nq.split(' ').filter(Boolean);
   if (words.length > 1) {
@@ -322,6 +359,7 @@ function scoreService(svc, q, lang) {
     score += matched.length * 2;
   }
 
+  // Very fuzzy: character-level substring match (min 3 chars)
   if (score === 0 && nq.length >= 3) {
     if (combined.includes(nq.slice(0, 3))) score += 1;
   }
@@ -334,11 +372,13 @@ function searchServices(query, lang) {
   const tokens = query.trim().split(/\s+/);
 
   return serviceDict.map(svc => {
+    // Score against each token, take best
     let maxScore = 0;
     tokens.forEach(token => {
       const s = scoreService(svc, token, lang);
       if (s > maxScore) maxScore = s;
     });
+    // If multi-token, also score full phrase
     if (tokens.length > 1) {
       const phraseScore = scoreService(svc, query, lang);
       if (phraseScore > maxScore) maxScore = phraseScore;
@@ -354,14 +394,18 @@ function searchServices(query, lang) {
 /* ── RENDER SEARCH RESULTS ───────────────────────────── */
 function renderSearchResults(results, lang) {
   const container = document.getElementById('searchResults');
+  const hints = document.getElementById('searchHints');
   if (!container) return;
 
   if (!results.length) {
+    hints && (hints.style.display = 'none');
     container.innerHTML = `<p class="search-empty" data-key="searchNoResults">${
       lang === 'ar' ? 'لا توجد نتائج' : lang === 'en' ? 'No results found' : 'ئەنجامێک نەدۆزرایەوە'
     }</p>`;
     return;
   }
+
+  hints && (hints.style.display = 'none');
 
   const labels = SECTION_LABELS[lang] || SECTION_LABELS.ckb;
   const count = lang === 'ar'
@@ -390,6 +434,7 @@ function renderSearchResults(results, lang) {
       }).join('')}
     </div>`;
 
+  // Close overlay when a card is clicked
   container.querySelectorAll('[data-search-card]').forEach(card => {
     card.addEventListener('click', () => closeSearch());
   });
@@ -401,9 +446,11 @@ let searchDebounce = null;
 function openSearch() {
   const overlay = document.getElementById('searchOverlay');
   const input   = document.getElementById('searchInput');
+  const hints   = document.getElementById('searchHints');
   if (!overlay) return;
   overlay.classList.add('active');
   document.body.classList.add('search-open');
+  hints && (hints.style.display = '');
   document.getElementById('searchResults').innerHTML = '';
   setTimeout(() => input && input.focus(), 80);
 }
@@ -415,30 +462,48 @@ function closeSearch() {
   document.body.classList.remove('search-open');
   const input = document.getElementById('searchInput');
   if (input) input.value = '';
+  const hints = document.getElementById('searchHints');
+  if (hints) hints.style.display = '';
   document.getElementById('searchResults').innerHTML = '';
 }
 
 function initSearch() {
   const toggleBtn  = document.getElementById('searchToggle');
+  const heroTrigger= document.getElementById('heroSearchTrigger');
   const closeBtn   = document.getElementById('searchClose');
   const input      = document.getElementById('searchInput');
   const overlay    = document.getElementById('searchOverlay');
 
-  toggleBtn?.addEventListener('click', openSearch);
+  [toggleBtn, heroTrigger].forEach(btn => btn?.addEventListener('click', openSearch));
   closeBtn?.addEventListener('click', closeSearch);
 
+  // Close on overlay backdrop click
   overlay?.addEventListener('click', e => {
     if (e.target === overlay) closeSearch();
   });
 
+  // Close on Escape
   window.addEventListener('keydown', e => {
     if (e.key === 'Escape' && overlay?.classList.contains('active')) closeSearch();
   });
 
+  // Search hints
+  document.getElementById('searchHints')?.querySelectorAll('span').forEach(span => {
+    span.addEventListener('click', () => {
+      if (!input) return;
+      input.value = span.textContent.trim();
+      input.dispatchEvent(new Event('input'));
+      input.focus();
+    });
+  });
+
+  // Live search
   input?.addEventListener('input', () => {
     clearTimeout(searchDebounce);
     const q = input.value.trim();
     if (!q) {
+      const hints = document.getElementById('searchHints');
+      if (hints) hints.style.display = '';
       document.getElementById('searchResults').innerHTML = '';
       return;
     }
@@ -448,6 +513,7 @@ function initSearch() {
     }, 180);
   });
 
+  // Re-run search on language change
   window.addEventListener('sinuha:languagechange', () => {
     if (!overlay?.classList.contains('active')) return;
     const q = input?.value.trim();
@@ -455,10 +521,11 @@ function initSearch() {
       const results = searchServices(q, currentLang);
       renderSearchResults(results, currentLang);
     }
+    // Update placeholder
     const placeholders = {
-      ckb: 'خزمەتگوزاری بگەرێ...',
-      ar: 'ابحث عن خدمة...',
-      en: 'Search a service...'
+      ckb: 'خزمەتگوزاری بگەرێ... (لیزەر، بۆتۆکس، ددان...)',
+      ar: 'ابحث عن خدمة... (ليزر، بوتوكس، أسنان...)',
+      en: 'Search a service... (laser, botox, dental...)'
     };
     if (input) input.placeholder = placeholders[currentLang] || placeholders.ckb;
   });
@@ -475,19 +542,22 @@ const translations = {
         navContact: "پەیوەندی", navContactCta: "پەیوەندی",
         heroLabel: "لە جوانییەوە بۆ چاودێری شاهانە",
         heroTitle: "سینوهه ، شکۆی شاهانە ، جوانی مۆدێرن",
-        heroLocation: "هەولێر، حي ژيان",
+        heroLocation: "هەولێر گەڕەکی ژیان",
         heroDesc: "جوانکاریی پێشکەوتوو، چاودێری پزیشکی، متمانەی پریمیم.",
-        heroCtaBook: "نۆرە بگرم", heroCtaExplore: "خزمەتگوزاریەکان",
+        heroCtaBook: "نۆرە بکە", heroCtaExplore: "خزمەتگوزاریەکان",
         heroCtaWhatsapp: "واتساپ",
+        heroSearchCta: "خزمەتگوزاری بگەرێ... (لیزەر، بۆتۆکس، ددان...)",
         searchPlaceholder: "خزمەتگوزاری بگەرێ...",
         searchHint1:"لیزەر", searchHint2:"بۆتۆکس", searchHint3:"PRP",
         searchHint4:"ددان", searchHint5:"هایدرۆفەیشەڵ", searchHint6:"فیلەر",
+        heroFloat1:"چاودێری پریمیم", heroFloat2:"جوانی مۆدێرن",
+        heroFloat3:"تەکنەلۆژیای پێشکەوتوو", heroFloat4:"سەنتەری ئێستێتیکی شاهانە",
         trust1Title:"ستافی شارەزا", trust1Desc:"چاودێری پڕۆفێشناڵ",
         trust2Title:"تەکنەلۆژیای پریمیم", trust2Desc:"ئامێری نوێ و دڵنیا",
         trust3Title:"سەلامەت و کاریگەر", trust3Desc:"ستانداردی بەرز",
         trust4Title:"ئەنجامی سروشتی", trust4Desc:"جوانییەکەت بە ناسکی",
         aboutLabel:"دەربارەی سینوهه",
-        aboutTitle:"سینوهه، شکۆی شاهانە ، جوانی مۆدێرن",
+        aboutTitle:"فەزایەکی شاهانە، بە ڕێکاری پزیشکی و ئەنجامی سروشتی",
         aboutP1:"سینوهه بەشیوەیەکی پرۆفیشناڵ وزانستی ،جوانکاری پێست ، وراوێژکاری پزیشکیت پێشکەش دەکات",
         aboutP2:"سینوهه سەنتەرێکی پێشەنگ و متمانەپێکراوە بۆ گۆڕینی پێست، زەردەخەنە و بەخشینی متمانەیی بە خۆت",
         aboutCta:"پەیوەندی بکە",
@@ -499,6 +569,7 @@ const translations = {
         catWomen:"ئافرەتان", catWomenDesc:"پێست، جوانکاری، هایدرۆفەیشەڵ و چاودێری تایبەت",
         catMen:"پیاوان", catMenDesc:"لیزەر، PRPی قژ و چاودێری تایبەت بە پیاوان",
         catDental:"ددان", catDentalDesc:"چاودێری ددان، هۆلیوود سمایل، و ڕاوێژکاری",
+        catAll:"هەموو خزمەتگوزارییەکان", catAllDesc:"هەموو چارەسەرەکان لە یەک لیستی پاک",
         womenLabel:"خزمەتگوزارییەکانی ئافرەتان",
         womenTitle:"چارەسەری پێشکەوتوو بۆ ئافرەتان",
         womenNote:"لیستی تەواوی خزمەتگوزارییە پریمیمەکان بۆ ئافرەتان.",
@@ -511,25 +582,26 @@ const translations = {
         techLabel:"تەکنەلۆژیا",
         techTitle:"ئامێر و ڕێکارەکان بە وردی هەڵبژێردراون",
         techNote:"تەکنەلۆژیا لە سینوهه وەک بەشێک لە ڕێکاری جوانکاری بەکاردێت: پاک، دڵنیا و بە پلانی گونجاو.",
-        t1Title:"لەیزەرکان",t1Desc:"ئامێری پێشکەوتووی لەیزەر.",
-        t2Title:"نۆرتێکس",t2Desc:"ئامێری پێشکەوتوو.",
-        t3Title:"ئومێکس ئالێکساندرایت هایبرێد",t3Desc:"لەیزەری هایبرێدی پێشکەوتوو.",
-        t4Title:"کاندێلا لادانی موو",t4Desc:"سڕینەوەی موو بە کاندێلا.",
-        t5Title:"دێکا لادانی مووی ئیتاڵی",t5Desc:"سڕینەوەی موو بە دێکا.",
-        t6Title:"ڕۆبۆت X مایکرۆ SEMENSE",t6Desc:"تەکنەلۆژیای مایکرۆ.",
-        t7Title:"فراکشنال لەیزەر CO2",t7Desc:"نوێبوونەوەی پێست.",
-        t8Title:"مۆرفیۆس 8",t8Desc:"لادانی ئاسەواری زیپکە و هاندانی کۆلاجین.",
-        t9Title:"سیکرێت RF",t9Desc:"مایکرۆنیدلینگی RF.",
-        t10Title:"HIFU",t10Desc:"توند کردنی پێست.",
-        t11Title:"کاندێلا سڕینەوەی تاتۆ",t11Desc:"سڕینەوەی تاتۆ.",
-        t12Title:"پلاسماجێت",t12Desc:"چارەسەری پێست.",
-        t13Title:"دێرماپێن",t13Desc:"تەکسچەری پێست.",
+        t1Title:"ئێگزۆسۆم",t1Desc:"نوێبوونەوەی پێست.", t2Title:"مێسۆتێراپی",t2Desc:"خۆراکی پێست و قژ.",
+        t3Title:"فراکشنال لیزەر CO2",t3Desc:"ئاسەواری ئەکنە.", t4Title:"HIFU",t4Desc:"هەڵگرتنی پێست.",
+        t5Title:"لایپۆلایسیس",t5Desc:"تەواوکردنی چەوری.", t6Title:"مۆرفیوس 8",t6Desc:"کۆلاژن و هەڵگرتن.",
+        t7Title:"سیکرێت RF",t7Desc:"مایکرۆنیدلینگ.", t8Title:"کاربۆن پێست",t8Desc:"پاككردنەوە.",
+        t9Title:"کیمیاوی پێست",t9Desc:"لابردنی مردووەکان.", t10Title:"پۆلۆگین",t10Desc:"هەڵگرتنی پێست.",
+        t11Title:"مایکرۆنیدلینگ",t11Desc:"تەکسچەری پێست.", t12Title:"NCTF 135",t12Desc:"تازەکردنەوە.",
+        t13Title:"پڕۆفایلۆ",t13Desc:"هیدراتە و هەڵگرتن.", t14Title:"نۆرتێکس",t14Desc:"ئامێری پێشکەوتوو.",
+        t15Title:"ئومێکس",t15Desc:"ئالێکساندرایت هایبرێد.", t16Title:"کاندێلا",t16Desc:"سڕینەوەی قژ.",
+        t17Title:"دێکا",t17Desc:"سڕینەوەی قژی ئیتاڵی.", t18Title:"ڕۆبۆت X",t18Desc:"مایکرۆ SEMENSE.",
+        t19Title:"فراکشنال CO2",t19Desc:"نوێبوونەوەی پێست.", t20Title:"مۆرفیوس 8",t20Desc:"RF هەڵگرتن.",
+        t21Title:"سیکرێت RF",t21Desc:"مایکرۆنیدلینگ.", t22Title:"HIFU",t22Desc:"هەڵگرتنی پێست.",
+        t23Title:"کاندێلا تاتۆ",t23Desc:"سڕینەوەی تاتۆ.", t24Title:"پلاسماجێت",t24Desc:"چارەسەری پێست.",
         reviewsLabel:"ئەنجامەکان", reviewsTitle:"هەستێکی باش، ئەنجامێکی دڵنیا",
+        test1Text:"فەزاکە ئارام و ستافەکە زۆر شارەزا بوو. ئەنجامەکەم زۆر سروشتی دەرچوو.",
+        test1Initial:"س", test1Name:"سارا م.", test1Role:"کلیێنی دڵخۆش",
         test2Text:"بۆ قژم PRPم کرد، ڕاوێژکارییەکە ڕوون و ئەزموونەکە زۆر پاک بوو.",
         test2Initial:"م", test2Name:"محمد ر.", test2Role:"کلیێنی دڵخۆش",
         test3Text:"دوای هایدرۆفەیشەڵ پێستم ڕوونتر و تازەتر بوو. زۆر پێم باش بوو.",
         test3Initial:"ل", test3Name:"لەیلا ع.", test3Role:"کلیێنی دڵخۆش",
-        test4Text:"شوێنەکە تەواو هەستێکی جیاوازی هەیە",
+        test4Text:"شوێنەکە هەستێکی پریمیمی هەیە، بەڵام ئەنجامەکان هێشتا زۆر سروشتی و ناسکن.",
         test4Initial:"ن", test4Name:"نەرگس ح.", test4Role:"کلیێنی دڵخۆش",
         test5Text:"بۆ لیزەری پیاوان هاتم. کاتەکە ڕێکخراو بوو و ستافەکە هەموو هەنگاوێکی بە ڕوونی باس کرد.",
         test5Initial:"ه", test5Name:"هێمن ک.", test5Role:"کلیێنی دڵخۆش",
@@ -547,10 +619,10 @@ const translations = {
         contactDesc:"تیمەکەمان بەخێرایی و بە شێوەیەکی ڕێکخراو وەڵامت دەدات.",
         contactPhone:"تەلەفۆن", contactSecondPhone:"ژمارەی دووەم",
         contactLocation:"شوێن", contactMap:"بینین لە گووگڵ مەپ",
-        footerDesc:"سەنتەری جوانکاری وپزیشکی وئێستیکی پێشکەوتوو.",
+        footerDesc:"سەنتەری جوانکاری و پزیشکی ئێستێتیکی پێشکەوتوو.",
         footerQuick:"لینکی خێرا", footerServices:"خزمەتگوزارییە پریمیمەکان",
         footerContact:"پەیوەندی",
-        footerCopy:"© 2026 سەنتەری جوانکاری سینوهه. هەموو مافەکان پارێزراون.",
+        footerCopy:"© 2025 سەنتەری جوانکاری سینوهه. هەموو مافەکان پارێزراون.",
         svcW23:"بۆتۆکس", svcW21:"فیلەر", svcM8:"لیزەری پیاوان", svcW14:"هایدرۆفەیشەڵ"
     },
     ar: {
@@ -560,20 +632,23 @@ const translations = {
         navFAQ:"الأسئلة", navContact:"التواصل", navContactCta:"تواصل",
         heroLabel:"حيث يلتقي الجمال بالعناية الراقية",
         heroTitle:"سينوهه ، فخامة ملكية ، جمال عصري",
-        heroLocation:"أربيل ، حي زيان",
+        heroLocation:"أربيل ، كركي زيان",
         heroDesc:"تجميل متقدم، رعاية طبية، ثقة فاخرة.",
-        heroCtaBook:"احجز موعدي", heroCtaExplore:"اكتشف الخدمات", heroCtaWhatsapp:"واتساب",
+        heroCtaBook:"احجز الآن", heroCtaExplore:"اكتشف الخدمات", heroCtaWhatsapp:"واتساب",
+        heroSearchCta:"ابحث عن خدمة... (ليزر، بوتوكس، أسنان...)",
         searchPlaceholder:"ابحث عن خدمة...",
         searchHint1:"ليزر", searchHint2:"بوتوكس", searchHint3:"PRP",
         searchHint4:"أسنان", searchHint5:"هيدروفيشل", searchHint6:"فيلر",
+        heroFloat1:"عناية فاخرة", heroFloat2:"جمال عصري",
+        heroFloat3:"تقنيات متقدمة", heroFloat4:"مركز تجميل ملكي",
         trust1Title:"فريق مختص", trust1Desc:"رعاية احترافية",
         trust2Title:"تقنيات فاخرة", trust2Desc:"أجهزة حديثة وآمنة",
         trust3Title:"آمن وفعال", trust3Desc:"معايير عالية",
         trust4Title:"نتائج طبيعية", trust4Desc:"جمالك بلمسة ناعمة",
         aboutLabel:"عن سينوهه",
-        aboutTitle:"سينوهه ، فخامة ملكية ، جمال عصري",
-        aboutP1:"تقدم سينوهه خدمات تجميل البشرة والاستشارات الطبية بأسلوب احترافي وعلمي.",
-        aboutP2:"سينوهه مركز رائد وموثوق لتجديد البشرة، تحسين الابتسامة ومنح الثقة بالنفس.",
+        aboutTitle:"فضاء راقٍ بأساليب طبية ونتائج طبيعية",
+        aboutP1:"تقدم سينوهه تجميل البشرة والاستشارة الطبية بأسلوب احترافي وعلمي",
+        aboutP2:"سينوها مركز رائد وموثوق لتجديد البشرة والابتسامة ومنح الثقة بالنفس",
         aboutCta:"تواصل معنا",
         feat1:"تقنيات متقدمة", feat2:"فريق مختص",
         feat3:"فضاء فاخر", feat4:"نتائج طبيعية",
@@ -582,6 +657,7 @@ const translations = {
         catWomen:"النساء", catWomenDesc:"البشرة، التجميل، الهيدروفيشل والعناية الخاصة",
         catMen:"الرجال", catMenDesc:"ليزر، PRP للشعر وعناية خاصة بالرجال",
         catDental:"الأسنان", catDentalDesc:"عناية الأسنان، ابتسامة هوليوود، والاستشارة",
+        catAll:"جميع الخدمات", catAllDesc:"كل العلاجات في قائمة واحدة نظيفة",
         womenLabel:"خدمات النساء", womenTitle:"علاجات متقدمة للنساء",
         womenNote:"قائمة كاملة بالخدمات الفاخرة للنساء.",
         menLabel:"خدمات الرجال", menTitle:"علاجات متقدمة للرجال",
@@ -590,25 +666,26 @@ const translations = {
         dentalNote:"قائمة كاملة بخدمات الأسنان الفاخرة.",
         techLabel:"التقنيات", techTitle:"أجهزة وإجراءات مختارة بعناية",
         techNote:"في سينوها تُستخدم التقنية كجزء من خطة جمالية هادئة.",
-        t1Title:"ليزركان",t1Desc:"أحدث أجهزة الليزر.",
-        t2Title:"نورتكس",t2Desc:"جهاز متقدم.",
-        t3Title:"أوميكس ألكساندريت هايبرد",t3Desc:"ليزر هايبرد متقدم.",
-        t4Title:"كانديلا إزالة الشعر",t4Desc:"إزالة الشعر بكانديلا.",
-        t5Title:"ديكا إزالة شعر إيطالي",t5Desc:"إزالة الشعر بديكا.",
-        t6Title:"روبوت X مايكرو SEMENSE",t6Desc:"تقنية مايكرو.",
-        t7Title:"فريكشنال ليزر CO2",t7Desc:"تجديد البشرة.",
-        t8Title:"مورفيوس 8",t8Desc:"إزالة آثار حب الشباب وتحفيز الكولاجين.",
-        t9Title:"سيكريت RF",t9Desc:"ميكرونيدلينج RF.",
-        t10Title:"HIFU",t10Desc:"شد البشرة.",
-        t11Title:"كانديلا إزالة الوشم",t11Desc:"إزالة الوشم.",
-        t12Title:"بلازماجيت",t12Desc:"علاج البشرة.",
-        t13Title:"ديرمابين",t13Desc:"ملمس البشرة.",
+        t1Title:"إكسوزوم",t1Desc:"تجديد البشرة.", t2Title:"ميزوثيرابي",t2Desc:"تغذية البشرة والشعر.",
+        t3Title:"فريكشنال ليزر CO2",t3Desc:"آثار حب الشباب.", t4Title:"HIFU",t4Desc:"شد البشرة.",
+        t5Title:"ليبوليزيس",t5Desc:"تذويب الدهون.", t6Title:"مورفيوس 8",t6Desc:"كولاجين وشد.",
+        t7Title:"سيكريت RF",t7Desc:"ميكرونيدلينج.", t8Title:"كربون بيلينج",t8Desc:"تنظيف.",
+        t9Title:"تقشير كيميائي",t9Desc:"إزالة الخلايا الميتة.", t10Title:"بولوجين",t10Desc:"شد البشرة.",
+        t11Title:"ميكرونيدلينج",t11Desc:"ملمس البشرة.", t12Title:"NCTF 135",t12Desc:"تجديد.",
+        t13Title:"بروفايلو",t13Desc:"ترطيب وشد.", t14Title:"نورتكس",t14Desc:"جهاز متقدم.",
+        t15Title:"أوميكس",t15Desc:"ألكساندريت هايبرد.", t16Title:"كانديلا",t16Desc:"إزالة الشعر.",
+        t17Title:"ديكا",t17Desc:"إزالة شعر إيطالي.", t18Title:"روبوت X",t18Desc:"مايكرو SEMENSE.",
+        t19Title:"فريكشنال CO2",t19Desc:"تجديد البشرة.", t20Title:"مورفيوس 8",t20Desc:"RF شد.",
+        t21Title:"سيكريت RF",t21Desc:"ميكرونيدلينج.", t22Title:"HIFU",t22Desc:"شد البشرة.",
+        t23Title:"كانديلا تاتو",t23Desc:"إزالة الوشم.", t24Title:"بلازماجيت",t24Desc:"علاج البشرة.",
         reviewsLabel:"النتائج", reviewsTitle:"شعور جيد ونتيجة موثوقة",
+        test1Text:"المكان هادئ والفريق مختص جداً. النتيجة ظهرت طبيعية وجميلة.",
+        test1Initial:"س", test1Name:"سارة م.", test1Role:"عميلة سعيدة",
         test2Text:"جربت PRP للشعر، الاستشارة كانت واضحة والتجربة نظيفة جداً.",
         test2Initial:"م", test2Name:"محمد ر.", test2Role:"عميل سعيد",
         test3Text:"بعد الهيدروفيشل أصبحت بشرتي أنقى وأكثر نضارة. تجربة ممتازة.",
         test3Initial:"ل", test3Name:"ليلى ع.", test3Role:"عميلة سعيدة",
-        test4Text:"المكان يعطي شعوراً مختلفاً ومميزاً",
+        test4Text:"المكان فاخر، لكن النتائج بقيت طبيعية وناعمة جداً.",
         test4Initial:"ن", test4Name:"نرجس ح.", test4Role:"عميلة سعيدة",
         test5Text:"أتيت لليزر الخاص بالرجال. الموعد كان منظماً والفريق شرح كل خطوة بوضوح.",
         test5Initial:"هـ", test5Name:"هيمن ك.", test5Role:"عميل سعيد",
@@ -626,7 +703,7 @@ const translations = {
         contactDesc:"فريقنا يرد عليك بسرعة وبطريقة منظمة.",
         contactPhone:"الهاتف", contactSecondPhone:"رقم ثان",
         contactLocation:"الموقع", contactMap:"عرض على خرائط جوجل",
-        footerDesc:"مركز متطور للتجميل والطب والخدمات التجميلية الحديثة.",
+        footerDesc:"مركز تجميل وطب تجميلي متقدم.",
         footerQuick:"روابط سريعة", footerServices:"خدمات فاخرة",
         footerContact:"التواصل",
         footerCopy:"© 2026 مركز تجميل سينوهه. جميع الحقوق محفوظة.",
@@ -639,18 +716,21 @@ const translations = {
         navFAQ:"FAQ", navContact:"Contact", navContactCta:"Contact",
         heroLabel:"Where beauty meets royal care",
         heroTitle:"Sinuha, Royal Glory, Modern Beauty",
-        heroLocation:"Erbil, Hay Zian",
+        heroLocation:"Erbil, Karki Zian",
         heroDesc:"Advanced beauty, medical care, premium confidence.",
         heroCtaBook:"Book Now", heroCtaExplore:"Explore Services", heroCtaWhatsapp:"WhatsApp",
+        heroSearchCta:"Search a service... (laser, botox, dental...)",
         searchPlaceholder:"Search a service...",
         searchHint1:"Laser", searchHint2:"Botox", searchHint3:"PRP",
         searchHint4:"Dental", searchHint5:"Hydrofacial", searchHint6:"Filler",
+        heroFloat1:"Premium Care", heroFloat2:"Modern Beauty",
+        heroFloat3:"Advanced Technology", heroFloat4:"Luxury Aesthetic Center",
         trust1Title:"Expert Team", trust1Desc:"Professional care",
         trust2Title:"Premium Technology", trust2Desc:"Modern safe devices",
         trust3Title:"Safe & Effective", trust3Desc:"High standards",
         trust4Title:"Natural Results", trust4Desc:"Soft refined beauty",
         aboutLabel:"About Sinuha",
-        aboutTitle:"Sinuha, Royal Glory, Modern Beauty",
+        aboutTitle:"A luxurious space with medical methods and natural results",
         aboutP1:"Sinuha offers professional and scientific skin care and medical consultation",
         aboutP2:"Sinuha is a leading trusted center for skin transformation, smiles, and self-confidence",
         aboutCta:"Contact us",
@@ -661,6 +741,7 @@ const translations = {
         catWomen:"Women", catWomenDesc:"Skin, beauty, hydrofacial and personal care",
         catMen:"Men", catMenDesc:"Laser, PRP hair and dedicated men's care",
         catDental:"Dental", catDentalDesc:"Dental care, Hollywood smile, and consultation",
+        catAll:"All Services", catAllDesc:"Every treatment in one clean list",
         womenLabel:"Women's Services", womenTitle:"Advanced Treatments for Women",
         womenNote:"Complete list of premium services for women.",
         menLabel:"Men's Services", menTitle:"Advanced Treatments for Men",
@@ -669,25 +750,26 @@ const translations = {
         dentalNote:"Complete list of premium dental services.",
         techLabel:"Technology", techTitle:"Devices and procedures chosen with care",
         techNote:"Technology at Sinuha supports calm aesthetic planning.",
-        t1Title:"Laserkan",t1Desc:"Advanced laser device.",
-        t2Title:"Northex",t2Desc:"Advanced device.",
-        t3Title:"Umex Alexandrite Hybrid",t3Desc:"Advanced hybrid laser.",
-        t4Title:"Candela Hair Removal",t4Desc:"Hair removal with Candela.",
-        t5Title:"Deka Italic Hair Removal",t5Desc:"Hair removal with Deka.",
-        t6Title:"Robot X Micro SEMENSE",t6Desc:"Micro technology.",
-        t7Title:"Fractional Laser CO2",t7Desc:"Skin renewal.",
-        t8Title:"Morpheous 8",t8Desc:"Acne scar removal and collagen stimulation.",
-        t9Title:"Secret RF",t9Desc:"RF microneedling.",
-        t10Title:"HIFU",t10Desc:"Skin tightening.",
-        t11Title:"Candela Tattoo Removal",t11Desc:"Tattoo removal.",
-        t12Title:"Plasmaget",t12Desc:"Skin treatment.",
-        t13Title:"Dermapen",t13Desc:"Skin texture.",
+        t1Title:"Exosome",t1Desc:"Skin regeneration.", t2Title:"Mesotherapy",t2Desc:"Skin and hair nourishment.",
+        t3Title:"Fractional Laser CO2",t3Desc:"Acne scars.", t4Title:"HIFU",t4Desc:"Skin lifting.",
+        t5Title:"Lipolysis",t5Desc:"Fat dissolving.", t6Title:"Morpheus 8",t6Desc:"Collagen and tightening.",
+        t7Title:"Secret RF",t7Desc:"Microneedling.", t8Title:"Carbon Peeling",t8Desc:"Cleansing.",
+        t9Title:"Chemical Peeling",t9Desc:"Dead cell removal.", t10Title:"Pologen",t10Desc:"Skin tightening.",
+        t11Title:"Microneedling",t11Desc:"Skin texture.", t12Title:"NCTF 135",t12Desc:"Revitalization.",
+        t13Title:"Profhilo",t13Desc:"Hydration and lift.", t14Title:"Northex",t14Desc:"Advanced device.",
+        t15Title:"Umex",t15Desc:"Alexandrite hybrid.", t16Title:"Candela",t16Desc:"Hair removal.",
+        t17Title:"Deka",t17Desc:"Italian hair removal.", t18Title:"Robot X",t18Desc:"Micro SEMENSE.",
+        t19Title:"Fractional CO2",t19Desc:"Skin renewal.", t20Title:"Morpheus 8",t20Desc:"RF tightening.",
+        t21Title:"Secret RF",t21Desc:"Microneedling.", t22Title:"HIFU",t22Desc:"Skin lifting.",
+        t23Title:"Candela Tattoo",t23Desc:"Tattoo removal.", t24Title:"Plasmaget",t24Desc:"Skin treatment.",
         reviewsLabel:"Results", reviewsTitle:"Good feeling, trusted results",
+        test1Text:"The space was calm and the team was very skilled. My result looked natural and beautiful.",
+        test1Initial:"S", test1Name:"Sara M.", test1Role:"Happy client",
         test2Text:"I tried PRP for hair. The consultation was clear and the whole experience felt very clean.",
         test2Initial:"M", test2Name:"Mohammed R.", test2Role:"Happy client",
         test3Text:"After Hydrofacial my skin looked clearer and fresher. A beautiful experience.",
         test3Initial:"L", test3Name:"Layla A.", test3Role:"Happy client",
-        test4Text:"The place gives a completely different and special feeling",
+        test4Text:"The place feels premium, but the results still look very soft and natural.",
         test4Initial:"N", test4Name:"Narges H.", test4Role:"Happy client",
         test5Text:"I came for men's laser. The appointment was organized and the team explained each step clearly.",
         test5Initial:"H", test5Name:"Hemin K.", test5Role:"Happy client",
@@ -705,7 +787,7 @@ const translations = {
         contactDesc:"Our team replies quickly and keeps everything simple and organized.",
         contactPhone:"Phone", contactSecondPhone:"Second number",
         contactLocation:"Location", contactMap:"View on Google Maps",
-        footerDesc:"Advanced center for beauty, medicine and modern aesthetic services.",
+        footerDesc:"Advanced beauty and aesthetic medical center.",
         footerQuick:"Quick links", footerServices:"Premium services",
         footerContact:"Contact",
         footerCopy:"© 2026 Sinuha Beauty Center. All rights reserved.",
@@ -713,13 +795,10 @@ const translations = {
     }
 };
 
-/* Section label helpers */
-const SECTION_LABELS = {
-  ckb: { women:'ئافرەتان', men:'پیاوان', dental:'ددان' },
-  ar:  { women:'النساء', men:'الرجال', dental:'الأسنان' },
-  en:  { women:'Women', men:'Men', dental:'Dental' }
-};
-const SECTION_ANCHORS = { women:'#women', men:'#men', dental:'#dental' };
+/* ── IMAGE ARRAYS (for service grid render) ─────────── */
+const womenImages = serviceDict.filter(s=>s.section==='women').map(s=>s.img);
+const menImages   = serviceDict.filter(s=>s.section==='men').map(s=>s.img);
+const dentalImages= serviceDict.filter(s=>s.section==='dental').map(s=>s.img);
 
 /* ── LANGUAGE STATE ─────────────────────────────────── */
 let currentLang = localStorage.getItem('sinuhaLang') || 'ckb';
@@ -739,7 +818,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     initTechScroll();
     initSearch();
-    initLightbox();
 });
 
 /* ── LOADING ────────────────────────────────────────── */
@@ -806,18 +884,6 @@ function initLanguage() {
     setLang(currentLang);
 }
 
-function updateWhatsAppLinks() {
-    const msgs = {
-        ckb: 'سڵاو، چۆن نۆرە بگرم',
-        ar: 'مرحباً، كيف يمكنني حجز موعد؟',
-        en: 'Hello, how can I book an appointment?'
-    };
-    const msg = encodeURIComponent(msgs[currentLang] || msgs.ckb);
-    document.querySelectorAll('a[href^="https://wa.me/9647717007560"]').forEach(a => {
-        a.href = `https://wa.me/9647717007560?text=${msg}`;
-    });
-}
-
 function setLang(lang) {
     const t = translations[lang] || translations.ckb;
     currentLang = lang;
@@ -833,13 +899,14 @@ function setLang(lang) {
         const key = el.dataset.keyPlaceholder;
         if (Object.prototype.hasOwnProperty.call(t, key)) el.setAttribute('placeholder', t[key]);
     });
+    // Search input placeholder
     const si = document.getElementById('searchInput');
     if (si && t.searchPlaceholder) si.placeholder = t.searchPlaceholder;
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.lang === lang);
     });
+    // Re-render service grids in new language
     renderServiceGrids();
-    updateWhatsAppLinks();
     window.dispatchEvent(new CustomEvent('sinuha:languagechange'));
 }
 
@@ -863,6 +930,7 @@ function initReveal() {
 
 /* ── SERVICE GRIDS ───────────────────────────────────── */
 function renderServiceCard(svc, lang) {
+    const t = translations[lang] || translations.ckb;
     const labels = SECTION_LABELS[lang] || SECTION_LABELS.ckb;
     const title  = svc[lang]?.title || svc.en.title;
     const desc   = svc[lang]?.desc  || svc.en.desc;
@@ -925,7 +993,7 @@ function initTech() {
     const container = document.getElementById('techScroll');
     if (!container) return;
     let html = '';
-    for (let i = 1; i <= 13; i++) {
+    for (let i = 1; i <= 24; i++) {
         html += `
           <article class="tech-card reveal-item">
             <span class="tech-icon" aria-hidden="true">
@@ -1031,28 +1099,4 @@ function initSmoothScroll() {
     };
     updateActiveLink();
     window.addEventListener('scroll', updateActiveLink, { passive: true });
-}
-
-/* ── LIGHTBOX ────────────────────────────────────────── */
-function initLightbox() {
-    const box = document.createElement('div');
-    box.className = 'lightbox';
-    box.id = 'lightbox';
-    box.innerHTML = '<button class="lightbox-close" aria-label="Close">&times;</button><img src="" alt="">';
-    document.body.appendChild(box);
-    const img = box.querySelector('img');
-    const closeBtn = box.querySelector('.lightbox-close');
-    const close = () => box.classList.remove('active');
-    closeBtn.addEventListener('click', close);
-    box.addEventListener('click', e => { if (e.target === box) close(); });
-    window.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
-
-    document.addEventListener('click', e => {
-        const cardImg = e.target.closest('.service-card img');
-        if (cardImg) {
-            img.src = cardImg.src;
-            img.alt = cardImg.alt;
-            box.classList.add('active');
-        }
-    });
 }
