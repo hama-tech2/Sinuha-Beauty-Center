@@ -6,13 +6,20 @@
     <meta name="description" content="Sinuha Beauty Center - Premium aesthetic, beauty and dental clinic in Erbil.">
     <meta name="theme-color" content="#080604">
     <title data-key="siteTitle">سینوهه سەنتەر</title>
+    <link rel="icon" type="image/png" href="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/favicon.png.jpg?raw=true">
+    <link rel="shortcut icon" href="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/favicon.png.jpg?raw=true">
+    <link rel="apple-touch-icon" href="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/favicon.png.jpg?raw=true">
     <link rel="preload" href="fonts.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- LOADING -->
     <div class="loading-screen" id="loadingScreen">
         <div class="loading-inner">
-            <div class="brand-mark" aria-hidden="true">S</div>
+            <div class="brand-mark" aria-hidden="true" style="overflow:hidden">
+                <img src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/sinuha-logo3-background.png.png?raw=true" alt="سینوهه" style="width:100%;height:100%;object-fit:cover;display:block">
+            </div>
             <div class="loading-logo" data-key="siteTitle">سینوهه سەنتەر</div>
             <div class="loading-track"><span class="loading-fill"></span></div>
         </div>
@@ -20,33 +27,36 @@
 
     <div class="scroll-track" aria-hidden="true"><div class="scroll-fill" id="scrollFill"></div></div>
 
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+        <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    </div>
+
     <!-- SEARCH OVERLAY -->
-    <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Search services">
+    <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Search">
         <div class="search-inner">
             <div class="search-bar-wrap">
                 <svg class="search-bar-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-                <input type="search" class="search-input" id="searchInput" data-key-placeholder="searchPlaceholder" placeholder="خزمەتگوزاری بگەرێ..." autocomplete="off">
+                <input type="search" class="search-input" id="searchInput" placeholder="خزمەتگوزاری بگەرێ..." autocomplete="off">
                 <button class="search-close" id="searchClose" type="button" aria-label="Close search">
                     <svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
                 </button>
             </div>
             <div class="search-hints" id="searchHints">
-                <span data-key="searchHint1">لیزەر</span>
-                <span data-key="searchHint2">بۆتۆکس</span>
-                <span data-key="searchHint3">PRP</span>
-                <span data-key="searchHint4">ددان</span>
-                <span data-key="searchHint5">هایدرۆفەیشەڵ</span>
-                <span data-key="searchHint6">فیلەر</span>
+                <span>لیزەر</span><span>بۆتۆکس</span><span>PRP</span>
+                <span>ددان</span><span>هایدرۆفەیشەڵ</span><span>فیلەر</span>
             </div>
             <div class="search-results" id="searchResults" aria-live="polite"></div>
         </div>
     </div>
 
+    <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="#home" class="nav-logo" aria-label="Sinuha Center">
-                <span class="brand-mark" aria-hidden="true" style="overflow:hidden">
-                    <img src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/sinuha-logo3-background.png.png?raw=true" alt="Sinuha Center logo" loading="eager" style="width:100%;height:100%;object-fit:cover;display:block">
+                <span class="brand-mark" style="overflow:hidden">
+                    <img src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/sinuha-logo3-background.png.png?raw=true" alt="سینوهه" loading="eager" style="width:100%;height:100%;object-fit:cover;display:block">
                 </span>
                 <span>
                     <strong data-key="siteTitle">سینوهه سەنتەر</strong>
@@ -75,7 +85,7 @@
                         <button class="lang-btn" type="button" data-lang="ar">AR</button>
                         <button class="lang-btn" type="button" data-lang="en">EN</button>
                     </div>
-                    <button class="search-toggle" id="searchToggle" type="button" aria-label="Search services">
+                    <button class="search-toggle" id="searchToggle" type="button" aria-label="Search">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
                     </button>
                     <a href="#contact" class="nav-contact" data-key="navContactCta">پەیوەندی</a>
@@ -85,75 +95,63 @@
     </nav>
 
     <main>
+
+        <!-- HERO -->
         <section class="hero" id="home">
             <div class="hero-media">
-                <video autoplay muted loop playsinline preload="metadata" poster="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/sinuha-cinematic-hero.jpg.png?raw=true">
-                    <source src="https://github.com/hama-tech2/Sinuha-Beauty-Center/raw/refs/heads/main/sinuha-hero-bg-v3.mp4" type="video/mp4">
+                <video autoplay muted loop playsinline preload="metadata"
+                    poster="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/sinuha-cinematic-hero.jpg.png?raw=true">
+                    <source src="https://github.com/hama-tech2/Sinuha-Beauty-Center/raw/refs/heads/main/sinuha-hero-bg-v1.mp4" type="video/mp4">
                 </video>
             </div>
             <div class="hero-overlay" aria-hidden="true"></div>
-            <div class="hero-ambient" aria-hidden="true">
-                <span></span><span></span><span></span>
-            </div>
+            <div class="hero-ambient" aria-hidden="true"><span></span><span></span><span></span></div>
 
             <div class="container hero-inner">
                 <div class="hero-copy">
                     <span class="hero-eyebrow reveal-item" data-key="heroLabel">لە جوانییەوە بۆ چاودێری شاهانە</span>
-                    <h1 class="hero-title reveal-item" data-key="heroTitle">سینوهه ، شکۆی شاهانە ، جوانی مۆدێرن</h1>
-                    <p class="hero-kicker reveal-item" data-key="heroLocation">هەولێر گەڕەکی ژیان</p>
-                    <p class="hero-desc reveal-item" data-key="heroDesc">Modern beauty, advanced care, premium confidence.</p>
+                    <h1 class="hero-title reveal-item" data-key="heroTitle">سینوهه، شکۆی شاهانە ، جوانی مۆدێرن</h1>
+                    <p class="hero-kicker reveal-item" data-key="heroLocation">هەولێر — حي ژيان</p>
+                    <p class="hero-desc reveal-item" data-key="heroDesc">جوانکاریی پێشکەوتوو، چاودێری پزیشکی، متمانەی پریمیم.</p>
                     <div class="hero-actions reveal-item">
-                        <a href="#contact" class="btn btn-primary" data-key="heroCtaBook">نۆرە بکە</a>
-                        <a href="#women" class="btn btn-glass" data-key="heroCtaExplore">خزمەتگوزاریەکان ببینە</a>
-                        <a href="https://wa.me/9647717007560?text=%D8%B3%DB%95%D9%84%D8%A7%D9%85%D8%8C%20%D8%AF%DB%95%D9%85%DB%95%D9%88%DB%8C%D9%9B%20%D8%A8%D8%B2%D8%A7%D9%86%D9%85%20%DA%86%DB%86%D9%86%20%D9%86%DB%86%D8%B1%DB%95%20%D8%A8%DA%A9%DB%95%D9%85%D8%9F" target="_blank" rel="noopener" class="btn btn-glass" data-key="heroCtaWhatsapp">واتساپ</a>
+                        <a href="https://wa.me/9647717007560?text=سڵاو%D8%8C%20چۆن%20نۆرە%20بگرم" target="_blank" rel="noopener" class="btn btn-primary" data-key="heroCtaBook">نۆرە بگرم</a>
+                        <a href="#women" class="btn btn-glass" data-key="heroCtaExplore">خزمەتگوزاریەکان</a>
+                        <a href="https://wa.me/9647717007560?text=سڵاو%D8%8C%20چۆن%20نۆرە%20بگرم" target="_blank" rel="noopener" class="btn btn-glass" data-key="heroCtaWhatsapp">واتساپ</a>
                     </div>
-                    <!-- Hero Search -->
-                    <button class="hero-search-trigger reveal-item" id="heroSearchTrigger" type="button">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-                        <span data-key="heroSearchCta">خزمەتگوزارییەکان بگەرێ...</span>
-                    </button>
                 </div>
-
             </div>
 
             <div class="container hero-trust-wrap">
                 <div class="hero-trust reveal-item">
                     <div class="trust-item">
-                        <span class="trust-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24"><path d="M12 3 9 9l-6 1 4.5 4.4L6.5 21 12 17.8 17.5 21l-1-6.6L21 10l-6-1-3-6Z"/></svg>
-                        </span>
+                        <span class="trust-icon"><svg viewBox="0 0 24 24"><path d="M12 3 9 9l-6 1 4.5 4.4L6.5 21 12 17.8 17.5 21l-1-6.6L21 10l-6-1-3-6Z"/></svg></span>
                         <span><strong data-key="trust1Title">ستافی شارەزا</strong><small data-key="trust1Desc">چاودێری پڕۆفێشناڵ</small></span>
                     </div>
                     <div class="trust-item">
-                        <span class="trust-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24"><path d="m12 3 8 5-8 13L4 8l8-5Z"/><path d="M4 8h16M8 8l4 13 4-13"/></svg>
-                        </span>
+                        <span class="trust-icon"><svg viewBox="0 0 24 24"><path d="m12 3 8 5-8 13L4 8l8-5Z"/><path d="M4 8h16M8 8l4 13 4-13"/></svg></span>
                         <span><strong data-key="trust2Title">تەکنەلۆژیای پریمیم</strong><small data-key="trust2Desc">ئامێری نوێ و دڵنیا</small></span>
                     </div>
                     <div class="trust-item">
-                        <span class="trust-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24"><path d="M12 3 20 7v6c0 5-3.5 7.5-8 8-4.5-.5-8-3-8-8V7l8-4Z"/><path d="m8.5 12.5 2.2 2.2 4.8-5"/></svg>
-                        </span>
+                        <span class="trust-icon"><svg viewBox="0 0 24 24"><path d="M12 3 20 7v6c0 5-3.5 7.5-8 8-4.5-.5-8-3-8-8V7l8-4Z"/><path d="m8.5 12.5 2.2 2.2 4.8-5"/></svg></span>
                         <span><strong data-key="trust3Title">سەلامەت و کاریگەر</strong><small data-key="trust3Desc">ستانداردی بەرز</small></span>
                     </div>
                     <div class="trust-item">
-                        <span class="trust-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24"><path d="M12 21s7-4 7-11a7 7 0 0 0-14 0c0 7 7 11 7 11Z"/><path d="M9 10c1.5 1.2 4.5 1.2 6 0"/></svg>
-                        </span>
+                        <span class="trust-icon"><svg viewBox="0 0 24 24"><path d="M12 21s7-4 7-11a7 7 0 0 0-14 0c0 7 7 11 7 11Z"/><path d="M9 10c1.5 1.2 4.5 1.2 6 0"/></svg></span>
                         <span><strong data-key="trust4Title">ئەنجامی سروشتی</strong><small data-key="trust4Desc">جوانییەکەت بە ناسکی</small></span>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- ABOUT -->
         <section class="about section section-split" id="about">
             <div class="container about-grid">
                 <div class="about-visual reveal-item">
-                    <img class="about-main-img" src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/sinuha-welcome-staff2.jpg.png?raw=true" alt="Sinuha welcome area" loading="lazy">
+                    <img class="about-main-img" src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/sinuha-welcome-staff.jpg?raw=true" alt="سینوهه سەنتەر" loading="lazy">
                 </div>
                 <div class="about-copy reveal-item">
                     <span class="section-eyebrow" data-key="aboutLabel">دەربارەی سینوهه</span>
-                    <h2 class="section-title" data-key="aboutTitle">فەزایەکی شاهانە، بە ڕێکاری پزیشکی و ئەنجامی سروشتی</h2>
+                    <h2 class="section-title" data-key="aboutTitle">سینوهه، شکۆی شاهانە ، جوانی مۆدێرن</h2>
                     <p data-key="aboutP1">سینوهه بەشیوەیەکی پرۆفیشناڵ وزانستی ،جوانکاری پێست ، وراوێژکاری پزیشکیت پێشکەش دەکات</p>
                     <p data-key="aboutP2">سینوهه سەنتەرێکی پێشەنگ و متمانەپێکراوە بۆ گۆڕینی پێست، زەردەخەنە و بەخشینی متمانەیی بە خۆت</p>
                     <div class="about-points">
@@ -167,16 +165,17 @@
             </div>
         </section>
 
+        <!-- CATEGORIES -->
         <section class="categories section section-warm" id="categories">
             <div class="container">
                 <header class="section-header reveal-item">
                     <span class="section-eyebrow" data-key="catLabel">بەشەکان</span>
                     <h2 class="section-title" data-key="catTitle">ڕێگای خێرا بۆ هەڵبژاردنی چاودێری گونجاو</h2>
-                    <p class="section-note" data-key="catNote">بەشەکان بە شێوەیەکی ڕێکخراو، کورت و پریمیم بۆ ئەوەی لە مۆبایل زۆر خێرا بگەیتە خزمەتگوزارییەکە.</p>
+                    <p class="section-note" data-key="catNote">بەشەکان بە شێوەیەکی ڕێکخراو بۆ ئەوەی زۆر خێرا بگەیتە خزمەتگوزارییەکە.</p>
                 </header>
                 <div class="categories-grid">
                     <a href="#women" class="category-card category-feature reveal-item">
-                        <img src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/category-women-cover.jpg.jpeg?raw=true" alt="Women services" loading="lazy">
+                        <img src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/category-women-cover.jpg.jpeg?raw=true" alt="ئافرەتان" loading="lazy">
                         <span class="category-shade"></span>
                         <span class="category-index">01</span>
                         <span class="category-text">
@@ -185,7 +184,7 @@
                         </span>
                     </a>
                     <a href="#men" class="category-card reveal-item">
-                        <img src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/category-men-cover.jpg.jpeg?raw=true" alt="Men services" loading="lazy">
+                        <img src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/category-men-cover.jpg.jpeg?raw=true" alt="پیاوان" loading="lazy">
                         <span class="category-shade"></span>
                         <span class="category-index">02</span>
                         <span class="category-text">
@@ -194,7 +193,7 @@
                         </span>
                     </a>
                     <a href="#dental" class="category-card reveal-item">
-                        <img src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/teeth-luxury-care.webp?raw=true" alt="Dental services" loading="lazy">
+                        <img src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/teeth-luxury-care.webp?raw=true" alt="ددان" loading="lazy">
                         <span class="category-shade"></span>
                         <span class="category-index">03</span>
                         <span class="category-text">
@@ -202,11 +201,11 @@
                             <small data-key="catDentalDesc">چاودێری ددان، هۆلیوود سمایل، و ڕاوێژکاری</small>
                         </span>
                     </a>
-
                 </div>
             </div>
         </section>
 
+        <!-- WOMEN SERVICES -->
         <section class="services section" id="women">
             <div class="container">
                 <header class="section-header section-header-row reveal-item">
@@ -220,6 +219,7 @@
             </div>
         </section>
 
+        <!-- MEN SERVICES -->
         <section class="services section section-warm" id="men">
             <div class="container">
                 <header class="section-header section-header-row reveal-item">
@@ -233,6 +233,7 @@
             </div>
         </section>
 
+        <!-- DENTAL SERVICES -->
         <section class="services section" id="dental">
             <div class="container">
                 <header class="section-header section-header-row reveal-item">
@@ -246,6 +247,7 @@
             </div>
         </section>
 
+        <!-- TECHNOLOGY -->
         <section class="technology section section-warm" id="technology">
             <div class="container">
                 <header class="section-header section-header-row reveal-item">
@@ -253,7 +255,7 @@
                         <span class="section-eyebrow" data-key="techLabel">تەکنەلۆژیا</span>
                         <h2 class="section-title" data-key="techTitle">ئامێر و ڕێکارەکان بە وردی هەڵبژێردراون</h2>
                     </div>
-                    <p class="section-note" data-key="techNote">تەکنەلۆژیا لە سینوهه وەک بەشێک لە ڕێکاری جوانکاری بەکاردێت: پاک، دڵنیا و بە پلانی گونجاو.</p>
+                    <p class="section-note" data-key="techNote">تەکنەلۆژیا لە سینوهه وەک بەشێک لە ڕێکاری جوانکاری بەکاردێت.</p>
                 </header>
                 <div class="tech-scroll-wrapper reveal-item">
                     <div class="tech-scroll" id="techScroll"></div>
@@ -261,6 +263,7 @@
             </div>
         </section>
 
+        <!-- REVIEWS -->
         <section class="reviews section" id="reviews">
             <div class="container reviews-shell">
                 <header class="section-header section-header-row reveal-item">
@@ -268,21 +271,13 @@
                         <span class="section-eyebrow" data-key="reviewsLabel">ئەنجامەکان</span>
                         <h2 class="section-title" data-key="reviewsTitle">هەستێکی باش، ئەنجامێکی دڵنیا</h2>
                     </div>
-                    <div class="review-controls" aria-label="Review slider controls">
-                        <button class="review-control" type="button" data-review-prev aria-label="Previous review">‹</button>
-                        <button class="review-control" type="button" data-review-next aria-label="Next review">›</button>
+                    <div class="review-controls">
+                        <button class="review-control" type="button" data-review-prev aria-label="Previous">‹</button>
+                        <button class="review-control" type="button" data-review-next aria-label="Next">›</button>
                     </div>
                 </header>
                 <div class="reviews-carousel reveal-item" data-review-carousel>
                     <div class="reviews-track" data-review-track>
-                        <article class="review-card">
-                            <span class="review-stars" aria-label="5 stars">★★★★★</span>
-                            <p data-key="test1Text">فەزاکە ئارام و ستافەکە زۆر شارەزا بوو. ئەنجامەکەم زۆر سروشتی دەرچوو.</p>
-                            <div class="review-person">
-                                <span class="review-avatar" data-key="test1Initial">س</span>
-                                <span><strong data-key="test1Name">سارا م.</strong><small data-key="test1Role">کلیێنی دڵخۆش</small></span>
-                            </div>
-                        </article>
                         <article class="review-card">
                             <span class="review-stars" aria-label="5 stars">★★★★★</span>
                             <p data-key="test2Text">بۆ قژم PRPم کرد، ڕاوێژکارییەکە ڕوون و ئەزموونەکە زۆر پاک بوو.</p>
@@ -301,7 +296,7 @@
                         </article>
                         <article class="review-card">
                             <span class="review-stars" aria-label="5 stars">★★★★★</span>
-                            <p data-key="test4Text">شوێنەکە هەستێکی پریمیمی هەیە، بەڵام ئەنجامەکان هێشتا زۆر سروشتی و ناسکن.</p>
+                            <p data-key="test4Text">شوێنەکە تەواو هەستێکی جیاوازی هەیە، ئەنجامەکان هێشتا زۆر سروشتی و ناسکن.</p>
                             <div class="review-person">
                                 <span class="review-avatar" data-key="test4Initial">ن</span>
                                 <span><strong data-key="test4Name">نەرگس ح.</strong><small data-key="test4Role">کلیێنی دڵخۆش</small></span>
@@ -320,6 +315,7 @@
             </div>
         </section>
 
+        <!-- FAQ -->
         <section class="faq section" id="faq">
             <div class="container">
                 <header class="section-header reveal-item">
@@ -330,15 +326,16 @@
             </div>
         </section>
 
+        <!-- BOOKING -->
         <section class="booking section section-warm" id="booking">
             <div class="container">
                 <div class="booking-premium reveal-item">
                     <div class="booking-copy">
                         <span class="section-eyebrow" data-key="bookingLabel">نۆرە و ڕاوێژکاری</span>
-                        <h2 class="section-title" data-key="bookingTitle">چۆن نۆرە بکەم؟</h2>
+                        <h2 class="section-title" data-key="bookingTitle">چۆن نۆرە بگرم؟</h2>
                         <p data-key="bookingDesc">پەیوەندیمان پێوە بکە بۆ ڕاوێژکاری یان نۆرە.</p>
                         <div class="booking-actions">
-                            <a href="https://wa.me/9647717007560?text=%D8%B3%DB%95%D9%84%D8%A7%D9%85%D8%8C%20دەمەوێ بزانم چۆن نۆرە بکەم؟" target="_blank" rel="noopener" class="btn btn-primary" data-key="bookingWhatsapp">واتساپ</a>
+                            <a href="https://wa.me/9647717007560?text=سڵاو%D8%8C%20چۆن%20نۆرە%20بگرم" target="_blank" rel="noopener" class="btn btn-primary" data-key="bookingWhatsapp">واتساپ</a>
                             <a href="#contact" class="btn btn-glass" data-key="bookingContact">پەیوەندی</a>
                         </div>
                     </div>
@@ -346,6 +343,7 @@
             </div>
         </section>
 
+        <!-- CONTACT -->
         <section class="contact section" id="contact">
             <div class="container">
                 <div class="contact-premium reveal-item">
@@ -353,38 +351,32 @@
                         <span class="section-eyebrow" data-key="contactLabel">پەیوەندی</span>
                         <h2 class="section-title" data-key="contactTitle">بۆ ڕاوێژکاری و نۆرە، بە ئاسانی پەیوەندی بکە</h2>
                         <p data-key="contactDesc">تیمەکەمان بەخێرایی و بە شێوەیەکی ڕێکخراو وەڵامت دەدات.</p>
-                        <div class="social-strip" aria-label="Social links">
-                            <a href="https://wa.me/9647717007560?text=%D8%B3%DB%95%D9%84%D8%A7%D9%85%D8%8C%20%D8%AF%DB%95%D9%85%DB%95%D9%88%DB%8C%D9%9B%20%D8%A8%D8%B2%D8%A7%D9%86%D9%85%20%DA%86%DB%86%D9%86%20%D9%86%DB%86%D8%B1%DB%95%20%D8%A8%DA%A9%DB%95%D9%85%D8%9F" target="_blank" rel="noopener" aria-label="WhatsApp">
-                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 19.5 6 15.8A8 8 0 1 1 9.1 18l-4.6 1.5Z"/><path d="M9.5 8.7c.2-.4.4-.4.7-.4h.4c.2 0 .4 0 .5.4l.7 1.7c.1.3.1.5-.1.7l-.4.5c.6 1 1.4 1.8 2.5 2.4l.6-.6c.2-.2.4-.2.7-.1l1.6.7c.4.2.4.4.4.7v.4c0 .3-.1.5-.4.7-.4.3-1 .5-1.8.4-2.7-.3-5.9-3.2-6.5-5.9-.2-.8 0-1.4.3-1.8Z"/></svg>
+                        <div class="social-strip">
+                            <a href="https://wa.me/9647717007560?text=سڵاو%D8%8C%20چۆن%20نۆرە%20بگرم" target="_blank" rel="noopener" aria-label="WhatsApp">
+                                <svg viewBox="0 0 24 24"><path d="M4.5 19.5 6 15.8A8 8 0 1 1 9.1 18l-4.6 1.5Z"/><path d="M9.5 8.7c.2-.4.4-.4.7-.4h.4c.2 0 .4 0 .5.4l.7 1.7c.1.3.1.5-.1.7l-.4.5c.6 1 1.4 1.8 2.5 2.4l.6-.6c.2-.2.4-.2.7-.1l1.6.7c.4.2.4.4.4.7v.4c0 .3-.1.5-.4.7-.4.3-1 .5-1.8.4-2.7-.3-5.9-3.2-6.5-5.9-.2-.8 0-1.4.3-1.8Z"/></svg>
                                 <span>WhatsApp</span>
                             </a>
                             <a href="https://www.instagram.com/sinuha_podcast?igsh=NDN2dnZ6aDNmMTJz" target="_blank" rel="noopener" aria-label="Instagram">
-                                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.4"/><path d="M16.8 7.2h.01"/></svg>
+                                <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.4"/><path d="M16.8 7.2h.01"/></svg>
                                 <span>Instagram</span>
                             </a>
-                            <a href="https://www.facebook.com/profile.php?id=100093399768374&locale=ur_PK" target="_blank" rel="noopener" aria-label="Facebook">
-                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 8h-2a2 2 0 0 0-2 2v2H9v3h2v6h3v-6h2.2l.8-3h-3v-1.5c0-.8.2-1.5 1.4-1.5H17V6.2C16.6 6.1 15.9 6 15 6Z"/></svg>
+                            <a href="https://www.facebook.com/profile.php?id=100093399768374" target="_blank" rel="noopener" aria-label="Facebook">
+                                <svg viewBox="0 0 24 24"><path d="M15 8h-2a2 2 0 0 0-2 2v2H9v3h2v6h3v-6h2.2l.8-3h-3v-1.5c0-.8.2-1.5 1.4-1.5H17V6.2C16.6 6.1 15.9 6 15 6Z"/></svg>
                                 <span>Facebook</span>
                             </a>
                         </div>
                     </div>
                     <div class="contact-lines">
                         <a href="tel:07717007560" class="contact-line">
-                            <span class="contact-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9Z"/></svg>
-                            </span>
+                            <span class="contact-icon"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9Z"/></svg></span>
                             <span><small data-key="contactPhone">تەلەفۆن</small><strong>07717007560</strong></span>
                         </a>
                         <a href="tel:07506895434" class="contact-line">
-                            <span class="contact-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.5 3 3.7 5.2 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.4 2.7.6 4.1.6.7 0 1.3.6 1.3 1.3v3.5c0 .7-.6 1.3-1.3 1.3C10.4 22 2 13.6 2 3.3 2 2.6 2.6 2 3.3 2h3.5c.7 0 1.3.6 1.3 1.3 0 1.4.2 2.8.6 4.1.1.4 0 .9-.3 1.2l-1.8 2.2Z"/></svg>
-                            </span>
+                            <span class="contact-icon"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.5 3 3.7 5.2 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.4 2.7.6 4.1.6.7 0 1.3.6 1.3 1.3v3.5c0 .7-.6 1.3-1.3 1.3C10.4 22 2 13.6 2 3.3 2 2.6 2.6 2 3.3 2h3.5c.7 0 1.3.6 1.3 1.3 0 1.4.2 2.8.6 4.1.1.4 0 .9-.3 1.2l-1.8 2.2Z"/></svg></span>
                             <span><small data-key="contactSecondPhone">ژمارەی دووەم</small><strong>07506895434</strong></span>
                         </a>
-                        <a href="https://maps.app.goo.gl/ePbn7GFe8JEibMTP6" target="_blank" rel="noopener" class="contact-map" aria-label="Open Sinuha Center location on Google Maps">
-                            <span class="map-pin" aria-hidden="true">
-                                <svg viewBox="0 0 24 24"><path d="M12 21s6-4.7 6-11a6 6 0 0 0-12 0c0 6.3 6 11 6 11Z"/><circle cx="12" cy="10" r="2"/></svg>
-                            </span>
+                        <a href="https://maps.app.goo.gl/ePbn7GFe8JEibMTP6" target="_blank" rel="noopener" class="contact-map" aria-label="Google Maps">
+                            <span class="map-pin"><svg viewBox="0 0 24 24"><path d="M12 21s6-4.7 6-11a6 6 0 0 0-12 0c0 6.3 6 11 6 11Z"/><circle cx="12" cy="10" r="2"/></svg></span>
                             <span><small data-key="contactLocation">شوێن</small><strong data-key="contactMap">بینین لە گووگڵ مەپ</strong></span>
                         </a>
                     </div>
@@ -397,12 +389,12 @@
         <div class="container footer-inner">
             <div class="footer-brand">
                 <a href="#home" class="footer-logo">
-                    <span class="brand-mark" aria-hidden="true" style="overflow:hidden">
-                        <img src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/sinuha-logo3-background.png.png?raw=true" alt="Sinuha Center logo" style="width:100%;height:100%;object-fit:cover;display:block">
+                    <span class="brand-mark" style="overflow:hidden">
+                        <img src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/sinuha-logo3-background.png.png?raw=true" alt="سینوهه" style="width:100%;height:100%;object-fit:cover;display:block">
                     </span>
                     <span data-key="siteTitle">سینوهه سەنتەر</span>
                 </a>
-                <p data-key="footerDesc">سەنتەری جوانکاری و پزیشکی ئێستێتیکی پێشکەوتوو.</p>
+                <p data-key="footerDesc">سەنتەری جوانکاری وپزیشکی وئێستیکی پێشکەوتوو</p>
             </div>
             <div class="footer-column">
                 <strong data-key="footerQuick">لینکی خێرا</strong>
@@ -414,22 +406,22 @@
             </div>
             <div class="footer-column">
                 <strong data-key="footerServices">خزمەتگوزارییە پریمیمەکان</strong>
-                <a href="#women" data-key="svcW23">بۆتۆکس</a>
-                <a href="#women" data-key="svcW21">فیلەر</a>
-                <a href="#men" data-key="svcM8">لیزەری پیاوان</a>
-                <a href="#women" data-key="svcW14">هایدرۆفەیشەڵ</a>
+                <a href="#women">بۆتۆکس</a>
+                <a href="#women">فیلەر</a>
+                <a href="#men">لیزەری پیاوان</a>
+                <a href="#women">هایدرۆفەیشەڵ</a>
             </div>
-            <div class="footer-column footer-contact">
+            <div class="footer-column">
                 <strong data-key="footerContact">پەیوەندی</strong>
                 <a href="tel:07717007560">07717007560</a>
                 <a href="tel:07506895434">07506895434</a>
                 <a href="https://maps.app.goo.gl/ePbn7GFe8JEibMTP6" target="_blank" rel="noopener" data-key="contactMap">بینین لە گووگڵ مەپ</a>
             </div>
         </div>
-        <div class="container footer-copy" data-key="footerCopy">© 2025 سینوهه سەنتەر. هەموو مافەکان پارێزراون.</div>
+        <div class="container footer-copy" data-key="footerCopy">© 2025 سەنتەری جوانکاری سینوهه. هەموو مافەکان پارێزراون.</div>
     </footer>
 
-    <a href="https://wa.me/9647717007560?text=%D8%B3%DB%95%D9%84%D8%A7%D9%85%D8%8C%20دەمەوێ بزانم چۆن نۆرە بکەم؟" target="_blank" rel="noopener" class="sticky-cta" aria-label="WhatsApp">
+    <a href="https://wa.me/9647717007560?text=سڵاو%D8%8C%20چۆن%20نۆرە%20بگرم" target="_blank" rel="noopener" class="sticky-cta" aria-label="WhatsApp">
         <svg viewBox="0 0 24 24"><path d="M4.5 19.5 6 15.8A8 8 0 1 1 9.1 18l-4.6 1.5Z"/><path d="M9.5 8.7c.2-.4.4-.4.7-.4h.4c.2 0 .4 0 .5.4l.7 1.7c.1.3.1.5-.1.7l-.4.5c.6 1 1.4 1.8 2.5 2.4l.6-.6c.2-.2.4-.2.7-.1l1.6.7c.4.2.4.4.4.7v.4c0 .3-.1.5-.4.7-.4.3-1 .5-1.8.4-2.7-.3-5.9-3.2-6.5-5.9-.2-.8 0-1.4.3-1.8Z"/></svg>
     </a>
 
