@@ -882,3 +882,100 @@ button{border:0;padding:0;background:none;color:inherit;font:inherit;cursor:poin
     .hero-copy { padding-top: 40px; }
     .hero-inner { padding: 72px 0 200px !important; }
 }
+
+/* ══ HERO TEXT: PUSH DOWN TO SHOULDER AREA (MOBILE) ══ */
+@media(max-width:680px) {
+    /* Move ALL hero content lower so face is fully visible */
+    .hero-inner {
+        padding: 52px 0 190px !important;
+        align-items: flex-end !important;
+    }
+    .hero-copy {
+        padding-top: 0 !important;
+        padding-bottom: 16px;
+        /* Push text block down — sits at shoulder level */
+        margin-top: auto;
+    }
+    /* Title: smaller + strong glow shadow */
+    .hero-title {
+        font-size: clamp(1.55rem, 7.8vw, 2.3rem) !important;
+        line-height: 1.12 !important;
+        margin-top: 8px !important;
+        text-shadow:
+            0 0 40px rgba(217,170,80,.75),
+            0 3px 28px rgba(0,0,0,.98),
+            0 1px 4px rgba(0,0,0,1),
+            0 0 5px rgba(255,210,90,.25) !important;
+    }
+    /* Eyebrow: pill background for readability */
+    .hero-eyebrow {
+        background: rgba(0,0,0,.38) !important;
+        backdrop-filter: blur(6px) !important;
+        padding: 3px 12px !important;
+        border-radius: 999px !important;
+        text-shadow: 0 0 14px rgba(217,170,80,.5), 0 1px 8px rgba(0,0,0,.9) !important;
+    }
+    /* Location + desc: dark pill background */
+    .hero-kicker {
+        display: inline-block;
+        background: rgba(0,0,0,.32);
+        padding: 2px 10px;
+        border-radius: 6px;
+        color: rgba(255,248,228,.98) !important;
+        text-shadow: 0 2px 12px rgba(0,0,0,1) !important;
+        font-size: .88rem !important;
+    }
+    .hero-desc {
+        background: rgba(0,0,0,.3) !important;
+        backdrop-filter: blur(4px) !important;
+        padding: 6px 12px !important;
+        border-radius: 8px !important;
+        color: rgba(255,242,215,.97) !important;
+        text-shadow: 0 2px 12px rgba(0,0,0,1) !important;
+        font-size: .82rem !important;
+        line-height: 1.62 !important;
+    }
+    /* Buttons: stacked, full width feel */
+    .hero-actions {
+        margin-top: 20px !important;
+        gap: 9px !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        width: 100%;
+    }
+    [dir="ltr"] .hero-actions { align-items: stretch !important; }
+    .btn-primary, .btn-glass {
+        width: 100% !important;
+        min-height: 46px !important;
+        font-size: .84rem !important;
+        justify-content: center !important;
+        box-shadow: 0 4px 22px rgba(0,0,0,.6) !important;
+    }
+    /* Search bar full width */
+    .hero-search-bar {
+        width: 100% !important;
+        min-width: unset !important;
+        margin-top: 10px !important;
+        justify-content: center !important;
+        background: rgba(8,5,3,.55) !important;
+    }
+    /* Overlay: show face clearly, darken bottom only */
+    .hero-overlay {
+        background:
+            linear-gradient(180deg,
+                rgba(4,2,1,.18) 0%,
+                rgba(4,2,1,.06) 25%,
+                rgba(4,2,1,.22) 48%,
+                rgba(8,5,3,.88) 70%,
+                rgba(9,6,3,.99) 100%) !important;
+    }
+}
+
+/* ══ TABLET HERO: also push down ══ */
+@media(max-width:1020px) and (min-width:681px) {
+    .hero-inner {
+        padding: 80px 0 160px !important;
+        align-items: flex-end !important;
+    }
+    .hero-copy { padding-bottom: 20px; }
+}
