@@ -438,7 +438,7 @@ const translations = {
     footerDesc:'سەنتەری جوانکاری وپزیشکی وئێستیکی پێشکەوتوو',
     footerQuick:'لینکی خێرا', footerServices:'خزمەتگوزارییە پریمیمەکان',
     footerContact:'پەیوەندی',
-    footerCopy:'© 2026 سەنتەری جوانکاری سینوهه. هەموو مافەکان پارێزراون.'
+    footerCopy:'© 2025 سەنتەری جوانکاری سینوهه. هەموو مافەکان پارێزراون.'
   },
   ar:{
     siteTitle:'مركز تجميل سينوهه', navBrand:'سينوهه', siteSub:'Beauty Center',
@@ -498,7 +498,7 @@ const translations = {
     footerDesc:'مركز متطور للتجميل والطب والخدمات التجميلية الحديثة',
     footerQuick:'روابط سريعة', footerServices:'خدمات فاخرة',
     footerContact:'التواصل',
-    footerCopy:'© 2026 مركز تجميل سينوهه. جميع الحقوق محفوظة.'
+    footerCopy:'© 2025 مركز تجميل سينوهه. جميع الحقوق محفوظة.'
   },
   en:{
     siteTitle:'Sinuha Beauty Center', navBrand:'Sinuha', siteSub:'Beauty Center',
@@ -558,7 +558,7 @@ const translations = {
     footerDesc:'Advanced center for beauty, medicine and modern aesthetic services',
     footerQuick:'Quick links', footerServices:'Premium services',
     footerContact:'Contact',
-    footerCopy:'© 2026 Sinuha Beauty Center. All rights reserved.'
+    footerCopy:'© 2025 Sinuha Beauty Center. All rights reserved.'
   }
 };
 
