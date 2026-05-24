@@ -839,10 +839,10 @@ button{border:0;padding:0;background:none;color:inherit;font:inherit;cursor:poin
    ══════════════════════════════════════════════════════════════ */
 @media(max-width:680px){
 
-    /* VIDEO: shift so face stays visible in upper half */
+    /* VIDEO: original position — shows woman face on right side */
     .hero-media video,
     .hero-media img {
-        object-position:58% center !important;
+        object-position:62% center !important;
     }
 
     /* OVERLAY: keep top 44% crystal-clear for the face,
