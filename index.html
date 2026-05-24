@@ -64,7 +64,7 @@
                 </span>
                 <span>
                     <strong data-key="navBrand">سینوهه</strong>
-                    <small data-key="siteSub">سەنتەری جوانکاری سینوهه</small>
+                    <small data-key="siteSub">سەنتەری جوانکاری</small>
                 </span>
             </a>
             <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false">
@@ -111,8 +111,9 @@
         <section class="hero" id="home">
             <div class="hero-media">
                 <video autoplay muted loop playsinline preload="metadata"
-                    poster="https://github.com/hama-tech2/Sinuha-Beauty-Center/raw/refs/heads/main/sinuha-second-hero-bg.mp4.mp4">
-                    <source src="https://github.com/hama-tech2/Sinuha-Beauty-Center/raw/refs/heads/main/sinuha-second-hero-bg.mp4.mp4" type="video/mp4">
+                    poster="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/sinuha-cinematic-hero.jpg.png?raw=true">
+                    <source src="https://github.com/hama-tech2/Sinuha-Beauty-Center/raw/refs/heads/main/sinuha-luxury-clinic-hero-6s-cinematic.mp4" type="video/mp4">
+                    <source src="https://github.com/hama-tech2/Sinuha-Beauty-Center/raw/refs/heads/main/sinuha-hero-bg-v1.mp4" type="video/mp4">
                 </video>
             </div>
             <div class="hero-overlay" aria-hidden="true"></div>
@@ -163,7 +164,7 @@
         <section class="about section section-split" id="about">
             <div class="container about-grid">
                 <div class="about-visual reveal-item">
-                    <img class="about-main-img" src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/sinuha-welcome-staff4.jpg.png?raw=true" alt="سینوهه سەنتەر" loading="lazy">
+                    <img class="about-main-img" src="https://github.com/hama-tech2/Sinuha-Beauty-Center/blob/main/sinuha-welcome-staff.jpg?raw=true" alt="سینوهه سەنتەر" loading="lazy">
                 </div>
                 <div class="about-copy reveal-item">
                     <span class="section-eyebrow" data-key="aboutLabel">دەربارەی سینوهه</span>
@@ -173,7 +174,7 @@
                     <div class="about-points">
                         <span data-key="feat1">تەکنەلۆژیای پێشکەوتوو</span>
                         <span data-key="feat2">ستافی شارەزا</span>
-                        <span data-key="feat3">فەزای پریمیم</span>
+                        <span data-key="feat3">متمانەی تەواو</span>
                         <span data-key="feat4">ئەنجامی سروشتی</span>
                     </div>
                     <a href="#contact" class="text-link" data-key="aboutCta">پەیوەندی بکە</a>
@@ -442,60 +443,5 @@
     </a>
 
     <script src="script.js"></script>
-
-    <!-- ── Brand localisation patch ──────────────────────────────────────
-         Placed AFTER script.js so it always runs last.
-         Uses setTimeout(0) on both the initial load call AND every
-         lang-btn click, ensuring our brand values overwrite whatever
-         script.js sets, without touching any other translation key.
-    ─────────────────────────────────────────────────────────────────── -->
-    <script>
-      (function () {
-        var BRAND = {
-          ckb: { name: 'سینوهه',  sub: 'سەنتەری جوانکاری سینوهه'  },
-          ar:  { name: 'سينوها', sub: 'مركز سينوها للتجميل'       },
-          en:  { name: 'Sinuha',  sub: 'Sinuha Beauty Center'       }
-        };
-
-        function applyBrand(lang) {
-          var t = BRAND[lang] || BRAND['ckb'];
-          document.querySelectorAll('[data-key="navBrand"]')
-            .forEach(function (el) { el.textContent = t.name; });
-          document.querySelectorAll('[data-key="siteSub"]')
-            .forEach(function (el) { el.textContent = t.sub; });
-          document.querySelectorAll('[data-key="siteTitle"]')
-            .forEach(function (el) { el.textContent = t.name; });
-        }
-
-        function init() {
-          /* Attach after-click overwrite to every language button */
-          document.querySelectorAll('.lang-btn').forEach(function (btn) {
-            btn.addEventListener('click', function () {
-              var lang = this.getAttribute('data-lang');
-              setTimeout(function () { applyBrand(lang); }, 0);
-            });
-          });
-
-          /*
-           * Apply Kurdish branding on initial page load.
-           * setTimeout(0) fires AFTER script.js's own DOMContentLoaded
-           * handlers finish, so we always get the final word.
-           */
-          setTimeout(function () {
-            var activeLang = 'ckb';
-            var activeBtn = document.querySelector('.lang-btn.active');
-            if (activeBtn) activeLang = activeBtn.getAttribute('data-lang') || 'ckb';
-            applyBrand(activeLang);
-          }, 0);
-        }
-
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', init);
-        } else {
-          init();
-        }
-      })();
-    </script>
-
 </body>
 </html>
