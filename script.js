@@ -381,13 +381,13 @@ const SECTION_ANCHORS = {women:'#women',men:'#men',dental:'#dental'};
    ───────────────────────────────────────────── */
 const translations = {
   ckb:{
-    siteTitle:'سەنتەری جوانکاری سینوهه', navBrand:'سینوهه', siteSub:'سەنتەری جوانکاری سینوهه', siteSubLatin:'Beauty Center',
+    siteTitle:'سەنتەری جوانکاری سینوهه', navBrand:'سینوهه', siteSub:'سەنتەری جوانکاری سینوهه', siteSubLatin:'BEAUTY CENTER SINUHA',
     navHome:'ماڵەوە', navAbout:'دەربارە', navWomen:'ئافرەتان', navMen:'پیاوان',
     navDental:'ددان', navTech:'تەکنەلۆژیا', navReviews:'ئەنجامەکان',
     navFAQ:'پرسیارەکان', navContact:'پەیوەندی', navContactCta:'پەیوەندی',
     heroLabel:'لە جوانییەوە بۆ چاودێری شاهانە',
     heroTitle:'سینوهه، شکۆی شاهانە ، جوانی مۆدێرن',
-    heroLocation:'هەولێر — حي ژيان',
+    heroLocation:'هەولێر — گەڕەکی ژیان',
     heroDesc:'جوانکاریی پێشکەوتوو، چاودێری پزیشکی، متمانەی پریمیم.',
     heroCtaBook:'نۆرە بگرم', heroCtaExplore:'خزمەتگوزاریەکان', heroCtaWhatsapp:'واتساپ',
     trust1Title:'ستافی شارەزا', trust1Desc:'چاودێری پڕۆفێشناڵ',
@@ -438,16 +438,16 @@ const translations = {
     footerDesc:'سەنتەری جوانکاری وپزیشکی وئێستیکی پێشکەوتوو',
     footerQuick:'لینکی خێرا', footerServices:'خزمەتگوزارییە پریمیمەکان',
     footerContact:'پەیوەندی',
-    footerCopy:'© 2026 سەنتەری جوانکاری سینوهه. هەموو مافەکان پارێزراون.'
+    footerCopy:'© 2025 سەنتەری جوانکاری سینوهه. هەموو مافەکان پارێزراون.'
   },
   ar:{
-    siteTitle:'مركز تجميل سينوهه', navBrand:'سينوهه', siteSub:'مركز التجميل سينوهه', siteSubLatin:'Beauty Center',
+    siteTitle:'مركز تجميل سينوهه', navBrand:'سينوهه', siteSub:'مركز التجميل سينوهه', siteSubLatin:'BEAUTY CENTER SINUHA',
     navHome:'الرئيسية', navAbout:'من نحن', navWomen:'النساء', navMen:'الرجال',
     navDental:'الأسنان', navTech:'التقنيات', navReviews:'النتائج',
     navFAQ:'الأسئلة', navContact:'التواصل', navContactCta:'تواصل',
     heroLabel:'حيث يلتقي الجمال بالعناية الراقية',
     heroTitle:'سينوهه ، فخامة ملكية ، جمال عصري',
-    heroLocation:'أربيل — حي ژيان',
+    heroLocation:'أربيل — حي ژیان',
     heroDesc:'تجميل متقدم، رعاية طبية، ثقة فاخرة.',
     heroCtaBook:'احجز موعدي', heroCtaExplore:'اكتشف الخدمات', heroCtaWhatsapp:'واتساب',
     trust1Title:'فريق مختص', trust1Desc:'رعاية احترافية',
@@ -498,16 +498,16 @@ const translations = {
     footerDesc:'مركز متطور للتجميل والطب والخدمات التجميلية الحديثة',
     footerQuick:'روابط سريعة', footerServices:'خدمات فاخرة',
     footerContact:'التواصل',
-    footerCopy:'© 2026 مركز تجميل سينوهه. جميع الحقوق محفوظة.'
+    footerCopy:'© 2025 مركز تجميل سينوهه. جميع الحقوق محفوظة.'
   },
   en:{
-    siteTitle:'Sinuha Beauty Center', navBrand:'Sinuha', siteSub:'Beauty Center Sinuha', siteSubLatin:'',
+    siteTitle:'Sinuha Beauty Center', navBrand:'Sinuha', siteSub:'SINUHA BEAUTY CENTER SINUHA', siteSubLatin:'',
     navHome:'Home', navAbout:'About', navWomen:'Women', navMen:'Men',
     navDental:'Dental', navTech:'Technologies', navReviews:'Results',
     navFAQ:'FAQ', navContact:'Contact', navContactCta:'Contact',
     heroLabel:'Where beauty meets royal care',
     heroTitle:'Sinuha, Royal Glory, Modern Beauty',
-    heroLocation:'Erbil — Hayy Zyan',
+    heroLocation:'Erbil — Zhyan Dist',
     heroDesc:'Advanced beauty, medical care, premium confidence.',
     heroCtaBook:'Book Now', heroCtaExplore:'Explore Services', heroCtaWhatsapp:'WhatsApp',
     trust1Title:'Expert Team', trust1Desc:'Professional care',
@@ -558,7 +558,7 @@ const translations = {
     footerDesc:'Advanced center for beauty, medicine and modern aesthetic services',
     footerQuick:'Quick links', footerServices:'Premium services',
     footerContact:'Contact',
-    footerCopy:'© 2026 Sinuha Beauty Center. All rights reserved.'
+    footerCopy:'© 2025 Sinuha Beauty Center. All rights reserved.'
   }
 };
 
@@ -737,7 +737,7 @@ function setLang(lang){
   const t=translations[lang]||translations.ckb;
   currentLang=lang;localStorage.setItem('sinuhaLang',lang);
   document.documentElement.lang=lang;
-  document.documentElement.dir=lang==='en'?'ltr':'rtl';
+  document.documentElement.dir='rtl';
   document.title=t.siteTitle;
   document.querySelectorAll('[data-key]').forEach(el=>{const key=el.dataset.key;if(Object.prototype.hasOwnProperty.call(t,key))el.textContent=t[key];});
   const si=document.getElementById('searchInput');
