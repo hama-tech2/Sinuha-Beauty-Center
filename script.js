@@ -381,13 +381,13 @@ const SECTION_ANCHORS = {women:'#women',men:'#men',dental:'#dental'};
    ───────────────────────────────────────────── */
 const translations = {
   ckb:{
-    siteTitle:'سەنتەری جوانکاری سینوهه', navBrand:'سینوهه', siteSub:'Beauty Center',
+    siteTitle:'سەنتەری جوانکاری سینوهه', navBrand:'سینوهه', siteSub:'سەنتەری جوانکاری',
     navHome:'ماڵەوە', navAbout:'دەربارە', navWomen:'ئافرەتان', navMen:'پیاوان',
     navDental:'ددان', navTech:'تەکنەلۆژیا', navReviews:'ئەنجامەکان',
     navFAQ:'پرسیارەکان', navContact:'پەیوەندی', navContactCta:'پەیوەندی',
     heroLabel:'لە جوانییەوە بۆ چاودێری شاهانە',
     heroTitle:'سینوهه، شکۆی شاهانە ، جوانی مۆدێرن',
-    heroLocation:'هەولێر — گەڕەکی ژيان',
+    heroLocation:'هەولێر — حي ژيان',
     heroDesc:'جوانکاریی پێشکەوتوو، چاودێری پزیشکی، متمانەی پریمیم.',
     heroCtaBook:'نۆرە بگرم', heroCtaExplore:'خزمەتگوزاریەکان', heroCtaWhatsapp:'واتساپ',
     trust1Title:'ستافی شارەزا', trust1Desc:'چاودێری پڕۆفێشناڵ',
@@ -399,7 +399,7 @@ const translations = {
     aboutP1:'سینوهه بەشیوەیەکی پرۆفیشناڵ وزانستی ،جوانکاری پێست ، وراوێژکاری پزیشکیت پێشکەش دەکات',
     aboutP2:'سینوهه سەنتەرێکی پێشەنگ و متمانەپێکراوە بۆ گۆڕینی پێست، زەردەخەنە و بەخشینی متمانەیی بە خۆت',
     aboutCta:'پەیوەندی بکە',
-    feat1:'تەکنەلۆژیای پێشکەوتوو', feat2:'ستافی شارەزا', feat3:'فەزای پریمیم', feat4:'ئەنجامی سروشتی',
+    feat1:'تەکنەلۆژیای پێشکەوتوو', feat2:'ستافی شارەزا', feat3:'متمانەی تەواو', feat4:'ئەنجامی سروشتی',
     catLabel:'بەشەکان', catTitle:'ڕێگای خێرا بۆ هەڵبژاردنی چاودێری گونجاو',
     catNote:'بەشەکان بە شێوەیەکی ڕێکخراو بۆ ئەوەی زۆر خێرا بگەیتە خزمەتگوزارییەکە.',
     catWomen:'ئافرەتان', catWomenDesc:'پێست، جوانکاری، هایدرۆفەیشەڵ و چاودێری تایبەت',
@@ -438,10 +438,10 @@ const translations = {
     footerDesc:'سەنتەری جوانکاری وپزیشکی وئێستیکی پێشکەوتوو',
     footerQuick:'لینکی خێرا', footerServices:'خزمەتگوزارییە پریمیمەکان',
     footerContact:'پەیوەندی',
-    footerCopy:'© 2025 سەنتەری جوانکاری سینوهه. هەموو مافەکان پارێزراون.'
+    footerCopy:'© 2026 سەنتەری جوانکاری سینوهه. هەموو مافەکان پارێزراون.'
   },
   ar:{
-    siteTitle:'مركز تجميل سينوهه', navBrand:'سينوهه', siteSub:'Beauty Center',
+    siteTitle:'مركز تجميل سينوهه', navBrand:'سينوهه', siteSub:'مركز التجميل',
     navHome:'الرئيسية', navAbout:'من نحن', navWomen:'النساء', navMen:'الرجال',
     navDental:'الأسنان', navTech:'التقنيات', navReviews:'النتائج',
     navFAQ:'الأسئلة', navContact:'التواصل', navContactCta:'تواصل',
@@ -498,7 +498,7 @@ const translations = {
     footerDesc:'مركز متطور للتجميل والطب والخدمات التجميلية الحديثة',
     footerQuick:'روابط سريعة', footerServices:'خدمات فاخرة',
     footerContact:'التواصل',
-    footerCopy:'© 2025 مركز تجميل سينوهه. جميع الحقوق محفوظة.'
+    footerCopy:'© 2026 مركز تجميل سينوهه. جميع الحقوق محفوظة.'
   },
   en:{
     siteTitle:'Sinuha Beauty Center', navBrand:'Sinuha', siteSub:'Beauty Center',
@@ -507,7 +507,7 @@ const translations = {
     navFAQ:'FAQ', navContact:'Contact', navContactCta:'Contact',
     heroLabel:'Where beauty meets royal care',
     heroTitle:'Sinuha, Royal Glory, Modern Beauty',
-    heroLocation:'Erbil — Zhyan District',
+    heroLocation:'Erbil — Hayy Zyan',
     heroDesc:'Advanced beauty, medical care, premium confidence.',
     heroCtaBook:'Book Now', heroCtaExplore:'Explore Services', heroCtaWhatsapp:'WhatsApp',
     trust1Title:'Expert Team', trust1Desc:'Professional care',
@@ -558,7 +558,7 @@ const translations = {
     footerDesc:'Advanced center for beauty, medicine and modern aesthetic services',
     footerQuick:'Quick links', footerServices:'Premium services',
     footerContact:'Contact',
-    footerCopy:'© 2025 Sinuha Beauty Center. All rights reserved.'
+    footerCopy:'© 2026 Sinuha Beauty Center. All rights reserved.'
   }
 };
 
