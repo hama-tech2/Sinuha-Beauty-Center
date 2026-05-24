@@ -381,7 +381,7 @@ const SECTION_ANCHORS = {women:'#women',men:'#men',dental:'#dental'};
    ───────────────────────────────────────────── */
 const translations = {
   ckb:{
-    siteTitle:'سەنتەری جوانکاری سینوهه', navBrand:'سینوهه', siteSub:'سەنتەری جوانکاری',
+    siteTitle:'سەنتەری جوانکاری سینوهه', navBrand:'سینوهه', siteSub:'سەنتەری جوانکاری سینوهه', siteSubLatin:'Beauty Center',
     navHome:'ماڵەوە', navAbout:'دەربارە', navWomen:'ئافرەتان', navMen:'پیاوان',
     navDental:'ددان', navTech:'تەکنەلۆژیا', navReviews:'ئەنجامەکان',
     navFAQ:'پرسیارەکان', navContact:'پەیوەندی', navContactCta:'پەیوەندی',
@@ -441,7 +441,7 @@ const translations = {
     footerCopy:'© 2026 سەنتەری جوانکاری سینوهه. هەموو مافەکان پارێزراون.'
   },
   ar:{
-    siteTitle:'مركز تجميل سينوهه', navBrand:'سينوهه', siteSub:'مركز التجميل',
+    siteTitle:'مركز تجميل سينوهه', navBrand:'سينوهه', siteSub:'مركز التجميل سينوهه', siteSubLatin:'Beauty Center',
     navHome:'الرئيسية', navAbout:'من نحن', navWomen:'النساء', navMen:'الرجال',
     navDental:'الأسنان', navTech:'التقنيات', navReviews:'النتائج',
     navFAQ:'الأسئلة', navContact:'التواصل', navContactCta:'تواصل',
@@ -501,7 +501,7 @@ const translations = {
     footerCopy:'© 2026 مركز تجميل سينوهه. جميع الحقوق محفوظة.'
   },
   en:{
-    siteTitle:'Sinuha Beauty Center', navBrand:'Sinuha', siteSub:'Beauty Center',
+    siteTitle:'Sinuha Beauty Center', navBrand:'Sinuha', siteSub:'Beauty Center Sinuha', siteSubLatin:'',
     navHome:'Home', navAbout:'About', navWomen:'Women', navMen:'Men',
     navDental:'Dental', navTech:'Technologies', navReviews:'Results',
     navFAQ:'FAQ', navContact:'Contact', navContactCta:'Contact',
