@@ -913,3 +913,49 @@ function initSmoothScroll(){
   };
   updateActive();window.addEventListener('scroll',updateActive,{passive:true});
 }
+
+/* ─────────────────────────────────────────────
+   EMOTIONAL SECTION OBSERVER
+   Adds .visible to sections + .in-view to .section elements
+   ───────────────────────────────────────────── */
+(function initEmotionalObserver(){
+  if(!('IntersectionObserver' in window))return;
+
+  /* Add .visible to: reviews-shell, contact-premium, about-visual,
+     about-copy, contact-copy, booking-premium, footer */
+  const emotionalTargets = [
+    '.reviews-shell',
+    '.contact-premium',
+    '.contact-copy',
+    '.about-visual',
+    '.about-copy',
+    '.booking-premium',
+    '.footer'
+  ];
+
+  const obsEmotion = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        obsEmotion.unobserve(e.target);
+      }
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -30px 0px'});
+
+  document.addEventListener('DOMContentLoaded',()=>{
+    emotionalTargets.forEach(sel=>{
+      document.querySelectorAll(sel).forEach(el=>obsEmotion.observe(el));
+    });
+
+    /* Section line animation — add .in-view to .section elements */
+    const obsSection = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.classList.add('in-view');
+          obsSection.unobserve(e.target);
+        }
+      });
+    },{threshold:0.05});
+    document.querySelectorAll('.section').forEach(s=>obsSection.observe(s));
+  });
+})();
