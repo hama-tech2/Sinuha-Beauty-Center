@@ -243,8 +243,8 @@ button{border:0;padding:0;background:none;color:inherit;font:inherit;cursor:poin
 .hero-ambient span:nth-child(2){right:10%;bottom:2%;width:18rem;height:18rem;animation-delay:-6s}
 .hero-ambient span:nth-child(3){left:34%;top:-12rem;width:22rem;height:22rem;animation-delay:-10s}
 
-.hero-inner{width:min(100% - 40px,var(--container));padding:106px 0 122px;display:grid;grid-template-columns:1fr;align-items:center}
-.hero-copy{width:min(720px,100%);margin-right:0;margin-left:auto;text-align:right}
+.hero-inner{width:100%;box-sizing:border-box;padding:106px 40px 122px;display:grid;grid-template-columns:1fr;align-items:center}
+.hero-copy{width:min(640px,100%);margin-right:0;margin-left:auto;text-align:right}
 [dir="ltr"] .hero-copy{margin-right:auto;margin-left:0;text-align:left}
 .hero-eyebrow,.section-eyebrow{display:inline-block;color:var(--gold-soft);font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;text-shadow:0 0 16px rgba(217,179,111,.24)}
 
@@ -807,3 +807,220 @@ button{border:0;padding:0;background:none;color:inherit;font:inherit;cursor:poin
     .review-card{direction:rtl;text-align:right}
 }
 .about-main-img{aspect-ratio:4/3;object-position:center 44%}
+
+/* ══════════════════════════════════════════════════════════
+   EMOTIONAL ANIMATIONS — reviews, contact, about, booking
+   ══════════════════════════════════════════════════════════ */
+
+/* ── Floating gold dust particles (review + contact bg) ── */
+@keyframes floatDust {
+    0%   { transform:translateY(0)   translateX(0)   scale(1);   opacity:0; }
+    15%  { opacity:.55; }
+    85%  { opacity:.38; }
+    100% { transform:translateY(-80px) translateX(18px) scale(.7); opacity:0; }
+}
+@keyframes floatDust2 {
+    0%   { transform:translateY(0)   translateX(0)   scale(.8); opacity:0; }
+    20%  { opacity:.4; }
+    80%  { opacity:.28; }
+    100% { transform:translateY(-60px) translateX(-14px) scale(.5); opacity:0; }
+}
+
+/* Reviews section — living glow orbs */
+.reviews{position:relative;overflow:hidden}
+.reviews::after {
+    content:'';
+    position:absolute;inset:0;pointer-events:none;z-index:0;
+    background:
+        radial-gradient(ellipse 55% 35% at 18% 62%, rgba(217,179,111,.07) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 28% at 82% 28%, rgba(217,179,111,.06) 0%, transparent 55%);
+    animation:reviewAmbient 9s ease-in-out infinite alternate;
+}
+@keyframes reviewAmbient {
+    0%   { opacity:.7; transform:scale(1)   rotate(0deg); }
+    100% { opacity:1;  transform:scale(1.06) rotate(1.5deg); }
+}
+
+/* Review cards — breathing border */
+@keyframes reviewBreath {
+    0%,100% { box-shadow:0 12px 34px rgba(0,0,0,.16),0 0 0 rgba(217,179,111,0); }
+    50%     { box-shadow:0 12px 34px rgba(0,0,0,.16),0 0 22px rgba(217,179,111,.1); }
+}
+.review-card.visible {
+    animation:reviewBreath 5s ease-in-out infinite;
+}
+.review-card.visible:hover {
+    animation:none;
+}
+
+/* Stars pulse */
+@keyframes starPulse {
+    0%,100% { text-shadow:none; }
+    50%     { text-shadow:0 0 14px rgba(217,179,111,.55); }
+}
+.review-stars { animation:starPulse 3.5s ease-in-out infinite; }
+
+/* ── ABOUT section — image atmosphere ── */
+@keyframes aboutGlow {
+    0%,100% { box-shadow:0 18px 48px rgba(0,0,0,.24), 0 0 0   rgba(217,179,111,0); }
+    50%     { box-shadow:0 22px 60px rgba(0,0,0,.30), 0 0 36px rgba(217,179,111,.1); }
+}
+.about-visual.visible img {
+    animation:aboutGlow 7s ease-in-out infinite;
+}
+
+/* About section gold divider line */
+.about-copy .section-title::after {
+    content:'';
+    display:block;
+    width:0;
+    height:1px;
+    background:linear-gradient(90deg,var(--gold-soft),transparent);
+    margin-top:8px;
+    transition:width 1.2s cubic-bezier(0.16,1,0.3,1) .3s;
+}
+.about-copy.visible .section-title::after { width:80%; }
+
+/* ── CONTACT section ── */
+.contact{position:relative;overflow:hidden}
+.contact::before {
+    content:'';
+    position:absolute;
+    inset:0;pointer-events:none;z-index:0;
+    background:
+        radial-gradient(ellipse 60% 40% at 10% 90%, rgba(217,179,111,.09) 0%, transparent 55%),
+        radial-gradient(ellipse 45% 35% at 90% 10%, rgba(177,112,55,.08)  0%, transparent 50%);
+    animation:contactAmbient 11s ease-in-out infinite alternate;
+}
+@keyframes contactAmbient {
+    0%   { opacity:.6; transform:scale(1);    }
+    100% { opacity:1;  transform:scale(1.08); }
+}
+
+/* Contact lines — staggered slide in */
+.contact-line,.contact-map {
+    opacity:0;
+    transform:translateX(18px);
+    transition:opacity .7s cubic-bezier(0.16,1,0.3,1), transform .7s cubic-bezier(0.16,1,0.3,1),
+               border-color .3s, box-shadow .35s;
+}
+[dir="ltr"] .contact-line,[dir="ltr"] .contact-map {
+    transform:translateX(-18px);
+}
+.contact-premium.visible .contact-line:nth-child(1),
+.contact-premium.visible .contact-map:nth-child(1) { opacity:1;transform:translateX(0);transition-delay:.1s; }
+.contact-premium.visible .contact-line:nth-child(2),
+.contact-premium.visible .contact-map:nth-child(2) { opacity:1;transform:translateX(0);transition-delay:.22s; }
+.contact-premium.visible .contact-map:last-child    { opacity:1;transform:translateX(0);transition-delay:.34s; }
+/* fallback — ensure all are visible once parent visible */
+.contact-premium.visible .contact-line,
+.contact-premium.visible .contact-map { opacity:1;transform:translateX(0); }
+
+/* Animated border sweep on contact-premium */
+@keyframes borderSweep {
+    0%   { background-position:0% 50%;   }
+    50%  { background-position:100% 50%; }
+    100% { background-position:0% 50%;   }
+}
+.contact-premium {
+    background-size:200% 200%;
+    animation:contactPremiumPulse 10s ease-in-out infinite;
+}
+@keyframes contactPremiumPulse {
+    0%,100% {
+        box-shadow:0 22px 54px rgba(0,0,0,.28),
+                   0 0 0   rgba(217,179,111,0);
+    }
+    50% {
+        box-shadow:0 22px 54px rgba(0,0,0,.28),
+                   0 0 40px rgba(217,179,111,.08);
+    }
+}
+
+/* Social links — staggered entrance */
+.social-strip a {
+    opacity:0;transform:translateY(10px);
+    transition:opacity .55s cubic-bezier(0.16,1,0.3,1),
+               transform .55s cubic-bezier(0.16,1,0.3,1),
+               background .25s, box-shadow .3s, border-color .25s;
+}
+.contact-copy.visible .social-strip a:nth-child(1){opacity:1;transform:translateY(0);transition-delay:.05s}
+.contact-copy.visible .social-strip a:nth-child(2){opacity:1;transform:translateY(0);transition-delay:.15s}
+.contact-copy.visible .social-strip a:nth-child(3){opacity:1;transform:translateY(0);transition-delay:.25s}
+
+/* ── BOOKING section — pulsing CTA glow ── */
+@keyframes bookingCtaPulse {
+    0%,100% { box-shadow:0 22px 54px rgba(0,0,0,.28), 0 0 0   rgba(217,179,111,0); }
+    50%     { box-shadow:0 22px 54px rgba(0,0,0,.28), 0 0 52px rgba(217,179,111,.12); }
+}
+.booking-premium.visible {
+    animation:bookingCtaPulse 6s ease-in-out infinite;
+}
+
+/* ── FAQ item — warm glow on open ── */
+@keyframes faqOpenGlow {
+    0%   { box-shadow:0 8px 28px rgba(0,0,0,.14); }
+    40%  { box-shadow:0 8px 28px rgba(0,0,0,.14), 0 0 28px rgba(217,179,111,.1); }
+    100% { box-shadow:0 8px 28px rgba(0,0,0,.14), 0 0 18px rgba(217,179,111,.06); }
+}
+.faq-item.open {
+    animation:faqOpenGlow .5s ease forwards;
+}
+
+/* ── Category cards — subtle bottom shimmer on hover ── */
+.category-card::after {
+    content:'';
+    position:absolute;bottom:0;left:0;right:0;height:2px;z-index:2;
+    background:linear-gradient(90deg,transparent,var(--gold-soft),transparent);
+    transform:scaleX(0);
+    transition:transform .5s cubic-bezier(0.16,1,0.3,1);
+}
+.category-card:hover::after { transform:scaleX(1); }
+
+/* ── Service card — top glow line on hover ── */
+.service-card::before {
+    content:'';
+    position:absolute;top:0;left:0;right:0;height:1px;z-index:1;
+    background:linear-gradient(90deg,transparent,rgba(217,179,111,.6),transparent);
+    transform:scaleX(0);
+    transition:transform .5s cubic-bezier(0.16,1,0.3,1);
+    pointer-events:none;
+}
+.service-card:hover::before { transform:scaleX(1); }
+
+/* ── SECTION transitions — animated gold separator ── */
+.section::before {
+    animation:sectionLineReveal 1.2s cubic-bezier(0.16,1,0.3,1) both;
+    animation-play-state:paused;
+}
+.section.in-view::before {
+    animation-play-state:running;
+}
+@keyframes sectionLineReveal {
+    from { opacity:0;transform:translateX(-50%) scaleX(0); }
+    to   { opacity:1;transform:translateX(-50%) scaleX(1); }
+}
+
+/* ── FOOTER — soft fade up ── */
+.footer-column {
+    opacity:0;transform:translateY(14px);
+    transition:opacity .7s cubic-bezier(0.16,1,0.3,1),transform .7s cubic-bezier(0.16,1,0.3,1);
+}
+.footer.visible .footer-column:nth-child(1){opacity:1;transform:translateY(0);transition-delay:.05s}
+.footer.visible .footer-column:nth-child(2){opacity:1;transform:translateY(0);transition-delay:.14s}
+.footer.visible .footer-column:nth-child(3){opacity:1;transform:translateY(0);transition-delay:.23s}
+.footer.visible .footer-column:nth-child(4){opacity:1;transform:translateY(0);transition-delay:.32s}
+.footer-brand{opacity:0;transform:translateY(14px);transition:opacity .7s cubic-bezier(0.16,1,0.3,1),transform .7s}
+.footer.visible .footer-brand{opacity:1;transform:translateY(0)}
+
+/* Reduce motion: disable all emotional animations */
+@media(prefers-reduced-motion:reduce){
+    .reviews::after,.contact::before,
+    .review-card.visible,.review-stars,
+    .about-visual.visible img,
+    .booking-premium.visible,
+    .contact-premium,
+    .faq-item.open{animation:none!important}
+    .contact-line,.contact-map,
+    .social-strip a,.footer-column,.footer-brand{opacity:1!important;transform:none!important}
+}
