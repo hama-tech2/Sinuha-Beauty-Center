@@ -179,7 +179,7 @@ button{border:0;padding:0;background:none;color:inherit;font:inherit;cursor:poin
 .hero{min-height:100svh;position:relative;display:grid;align-items:center;overflow:hidden;isolation:isolate}
 .hero-media,.hero-media img,.hero-media video,.hero-overlay{position:absolute;inset:0}
 .hero-media{z-index:-4;background:#120d08}
-.hero-media img,.hero-media video{width:100%;height:100%;object-fit:cover;object-position:20% center}
+.hero-media img,.hero-media video{width:100%;height:100%;object-fit:cover;object-position:40% center}
 .hero-overlay{
     z-index:-3;
     background:
@@ -839,11 +839,8 @@ button{border:0;padding:0;background:none;color:inherit;font:inherit;cursor:poin
    ══════════════════════════════════════════════════════════════ */
 @media(max-width:680px){
 
-    /* VIDEO: original position — shows woman face on right side */
-    .hero-media video,
-    .hero-media img {
-        object-position:62% center !important;
-    }
+    /* VIDEO: NOT overridden here — line 400 sets 22% center which
+       correctly shows the woman's face on the left of the video. */
 
     /* OVERLAY: keep top 44% crystal-clear for the face,
        fade in dark only from 62% downward               */
