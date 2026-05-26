@@ -67,9 +67,9 @@ button{border:0;padding:0;background:none;color:inherit;font:inherit;cursor:poin
 /* ── CINEMATIC KEYFRAMES ── */
 @keyframes load{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @keyframes ambientFloat{0%,100%{transform:translate3d(0,0,0);opacity:.72}50%{transform:translate3d(22px,-18px,0);opacity:.95}}
-@keyframes pulseWA{0%,100%{box-shadow:0 8px 24px rgba(0,0,0,.3),0 0 0 0 rgba(37,211,102,.4)}50%{box-shadow:0 8px 24px rgba(0,0,0,.3),0 0 0 11px rgba(37,211,102,0)}}
+@keyframes pulseWA{0%,100%{transform:scale(1) translateZ(0)}50%{transform:scale(1.06) translateZ(0)}}
 @keyframes techAutoScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-@keyframes shDotBreath{0%,100%{box-shadow:0 0 0 0 rgba(255,226,164,.5)}50%{box-shadow:0 0 0 9px rgba(255,226,164,0)}}
+@keyframes shDotBreath{0%,100%{transform:scale(1) translateZ(0);opacity:.9}50%{transform:scale(1.5) translateZ(0);opacity:0}}
 @keyframes shMouseWheel{0%{transform:translateX(-50%) translateY(0);opacity:1}100%{transform:translateX(-50%) translateY(9px);opacity:0}}
 
 /* Cinematic button shimmer */
@@ -84,15 +84,8 @@ button{border:0;padding:0;background:none;color:inherit;font:inherit;cursor:poin
 }
 /* Subtle gold pulse on hero title */
 @keyframes sinuhaGoldPulse {
-    0%,100% { text-shadow:
-        0 0 1px rgba(255,244,214,.78),
-        0 0 26px rgba(217,179,111,.26),
-        0 18px 54px rgba(0,0,0,.42); }
-    50% { text-shadow:
-        0 0 1px rgba(255,244,214,.90),
-        0 0 42px rgba(217,179,111,.42),
-        0 0 80px rgba(217,179,111,.18),
-        0 18px 54px rgba(0,0,0,.42); }
+    0%,100% { opacity:.92; transform:translateZ(0) }
+    50%     { opacity:1;   transform:translateZ(0) }
 }
 /* Section eyebrow line reveal */
 @keyframes eyebrowReveal {
@@ -681,7 +674,7 @@ button{border:0;padding:0;background:none;color:inherit;font:inherit;cursor:poin
 
 /* ══ ALWAYS RTL ══ */
 [dir="rtl"] .hero-copy{margin-right:0;margin-left:auto;text-align:right}
-[dir="rtl"] .hero-actions{justify-content:flex-end;padding-right:0}
+[dir="rtl"] .hero-actions{justify-content:flex-start;padding-right:0}
 [dir="rtl"] .hero-desc{margin-right:0;margin-left:auto}
 
 /* ══════════════════════════════════════════════════════════════
@@ -808,219 +801,198 @@ button{border:0;padding:0;background:none;color:inherit;font:inherit;cursor:poin
 }
 .about-main-img{aspect-ratio:4/3;object-position:center 44%}
 
+
 /* ══════════════════════════════════════════════════════════
-   EMOTIONAL ANIMATIONS — reviews, contact, about, booking
+   EMOTIONAL ANIMATIONS — GPU-SAFE (transform + opacity ONLY)
+   NO box-shadow / text-shadow / background animations
    ══════════════════════════════════════════════════════════ */
 
-/* ── Floating gold dust particles (review + contact bg) ── */
-@keyframes floatDust {
-    0%   { transform:translateY(0)   translateX(0)   scale(1);   opacity:0; }
-    15%  { opacity:.55; }
-    85%  { opacity:.38; }
-    100% { transform:translateY(-80px) translateX(18px) scale(.7); opacity:0; }
-}
-@keyframes floatDust2 {
-    0%   { transform:translateY(0)   translateX(0)   scale(.8); opacity:0; }
-    20%  { opacity:.4; }
-    80%  { opacity:.28; }
-    100% { transform:translateY(-60px) translateX(-14px) scale(.5); opacity:0; }
+/* ── PERFORMANCE: promote animated layers to GPU ── */
+.review-card,
+.about-visual img,
+.booking-premium,
+.contact-premium,
+.hero-ambient span,
+.category-card,
+.service-card {
+    will-change: transform, opacity;
+    transform: translateZ(0);
 }
 
-/* Reviews section — living glow orbs */
+/* ── Reviews: ambient orb uses ONLY opacity + transform ── */
 .reviews{position:relative;overflow:hidden}
-.reviews::after {
-    content:'';
-    position:absolute;inset:0;pointer-events:none;z-index:0;
+.reviews::after{
+    content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
     background:
-        radial-gradient(ellipse 55% 35% at 18% 62%, rgba(217,179,111,.07) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 28% at 82% 28%, rgba(217,179,111,.06) 0%, transparent 55%);
-    animation:reviewAmbient 9s ease-in-out infinite alternate;
+        radial-gradient(ellipse 55% 35% at 18% 62%,rgba(217,179,111,.07) 0%,transparent 60%),
+        radial-gradient(ellipse 40% 28% at 82% 28%,rgba(217,179,111,.06) 0%,transparent 55%);
+    animation:reviewAmbient 10s ease-in-out infinite alternate;
+    will-change:opacity,transform;
 }
-@keyframes reviewAmbient {
-    0%   { opacity:.7; transform:scale(1)   rotate(0deg); }
-    100% { opacity:1;  transform:scale(1.06) rotate(1.5deg); }
-}
-
-/* Review cards — breathing border */
-@keyframes reviewBreath {
-    0%,100% { box-shadow:0 12px 34px rgba(0,0,0,.16),0 0 0 rgba(217,179,111,0); }
-    50%     { box-shadow:0 12px 34px rgba(0,0,0,.16),0 0 22px rgba(217,179,111,.1); }
-}
-.review-card.visible {
-    animation:reviewBreath 5s ease-in-out infinite;
-}
-.review-card.visible:hover {
-    animation:none;
+@keyframes reviewAmbient{
+    0%   {opacity:.6;transform:translateZ(0) scale(1)}
+    100% {opacity:1; transform:translateZ(0) scale(1.04)}
 }
 
-/* Stars pulse */
-@keyframes starPulse {
-    0%,100% { text-shadow:none; }
-    50%     { text-shadow:0 0 14px rgba(217,179,111,.55); }
+/* Review cards — subtle Y float, NO box-shadow animation ── */
+@keyframes reviewFloat{
+    0%,100%{transform:translateY(0) translateZ(0)}
+    50%    {transform:translateY(-4px) translateZ(0)}
 }
-.review-stars { animation:starPulse 3.5s ease-in-out infinite; }
+.review-card.visible{
+    animation:reviewFloat 6s ease-in-out infinite;
+}
+.review-card.visible:hover{animation:none}
 
-/* ── ABOUT section — image atmosphere ── */
-@keyframes aboutGlow {
-    0%,100% { box-shadow:0 18px 48px rgba(0,0,0,.24), 0 0 0   rgba(217,179,111,0); }
-    50%     { box-shadow:0 22px 60px rgba(0,0,0,.30), 0 0 36px rgba(217,179,111,.1); }
+/* Stars — opacity pulse only (no text-shadow) ── */
+@keyframes starOpacity{
+    0%,100%{opacity:.85}
+    50%    {opacity:1}
 }
-.about-visual.visible img {
-    animation:aboutGlow 7s ease-in-out infinite;
+.review-stars{animation:starOpacity 3s ease-in-out infinite}
+
+/* ── About — image gentle float ── */
+@keyframes aboutFloat{
+    0%,100%{transform:translateY(0) translateZ(0) scale(1)}
+    50%    {transform:translateY(-5px) translateZ(0) scale(1.005)}
+}
+.about-visual.visible img{
+    animation:aboutFloat 8s ease-in-out infinite;
 }
 
-/* About section gold divider line */
-.about-copy .section-title::after {
+/* About gold underline — width transition (layout-safe: uses scaleX) ── */
+.about-copy .section-title{position:relative}
+.about-copy .section-title::after{
     content:'';
     display:block;
-    width:0;
     height:1px;
     background:linear-gradient(90deg,var(--gold-soft),transparent);
     margin-top:8px;
-    transition:width 1.2s cubic-bezier(0.16,1,0.3,1) .3s;
+    transform-origin:right;
+    transform:scaleX(0);
+    transition:transform 1.1s cubic-bezier(0.16,1,0.3,1) .3s;
 }
-.about-copy.visible .section-title::after { width:80%; }
+[dir="ltr"] .about-copy .section-title::after{transform-origin:left}
+.about-copy.visible .section-title::after{transform:scaleX(1)}
 
-/* ── CONTACT section ── */
+/* ── Contact: ambient — opacity + transform only ── */
 .contact{position:relative;overflow:hidden}
-.contact::before {
-    content:'';
-    position:absolute;
-    inset:0;pointer-events:none;z-index:0;
+.contact::before{
+    content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
     background:
-        radial-gradient(ellipse 60% 40% at 10% 90%, rgba(217,179,111,.09) 0%, transparent 55%),
-        radial-gradient(ellipse 45% 35% at 90% 10%, rgba(177,112,55,.08)  0%, transparent 50%);
-    animation:contactAmbient 11s ease-in-out infinite alternate;
+        radial-gradient(ellipse 60% 40% at 10% 90%,rgba(217,179,111,.09) 0%,transparent 55%),
+        radial-gradient(ellipse 45% 35% at 90% 10%,rgba(177,112,55,.08) 0%,transparent 50%);
+    animation:contactAmbient 12s ease-in-out infinite alternate;
+    will-change:opacity,transform;
 }
-@keyframes contactAmbient {
-    0%   { opacity:.6; transform:scale(1);    }
-    100% { opacity:1;  transform:scale(1.08); }
+@keyframes contactAmbient{
+    0%  {opacity:.55;transform:translateZ(0) scale(1)}
+    100%{opacity:1;  transform:translateZ(0) scale(1.05)}
 }
 
-/* Contact lines — staggered slide in */
-.contact-line,.contact-map {
+/* Contact lines — staggered slide in (transform + opacity only) ── */
+.contact-line,.contact-map{
     opacity:0;
-    transform:translateX(18px);
-    transition:opacity .7s cubic-bezier(0.16,1,0.3,1), transform .7s cubic-bezier(0.16,1,0.3,1),
-               border-color .3s, box-shadow .35s;
+    transform:translateX(16px) translateZ(0);
+    transition:opacity .65s cubic-bezier(0.16,1,0.3,1),
+               transform .65s cubic-bezier(0.16,1,0.3,1),
+               border-color .3s;
+    will-change:transform,opacity;
 }
-[dir="ltr"] .contact-line,[dir="ltr"] .contact-map {
-    transform:translateX(-18px);
-}
-.contact-premium.visible .contact-line:nth-child(1),
-.contact-premium.visible .contact-map:nth-child(1) { opacity:1;transform:translateX(0);transition-delay:.1s; }
-.contact-premium.visible .contact-line:nth-child(2),
-.contact-premium.visible .contact-map:nth-child(2) { opacity:1;transform:translateX(0);transition-delay:.22s; }
-.contact-premium.visible .contact-map:last-child    { opacity:1;transform:translateX(0);transition-delay:.34s; }
-/* fallback — ensure all are visible once parent visible */
+[dir="ltr"] .contact-line,[dir="ltr"] .contact-map{transform:translateX(-16px) translateZ(0)}
 .contact-premium.visible .contact-line,
-.contact-premium.visible .contact-map { opacity:1;transform:translateX(0); }
+.contact-premium.visible .contact-map{opacity:1;transform:translateX(0) translateZ(0)}
+.contact-premium.visible .contact-line:nth-child(1){transition-delay:.08s}
+.contact-premium.visible .contact-line:nth-child(2){transition-delay:.18s}
+.contact-premium.visible .contact-map         {transition-delay:.28s}
 
-/* Animated border sweep on contact-premium */
-@keyframes borderSweep {
-    0%   { background-position:0% 50%;   }
-    50%  { background-position:100% 50%; }
-    100% { background-position:0% 50%;   }
-}
-.contact-premium {
-    background-size:200% 200%;
-    animation:contactPremiumPulse 10s ease-in-out infinite;
-}
-@keyframes contactPremiumPulse {
-    0%,100% {
-        box-shadow:0 22px 54px rgba(0,0,0,.28),
-                   0 0 0   rgba(217,179,111,0);
-    }
-    50% {
-        box-shadow:0 22px 54px rgba(0,0,0,.28),
-                   0 0 40px rgba(217,179,111,.08);
-    }
-}
+/* contact-premium: NO box-shadow animation, just static shadow ── */
+.contact-premium{box-shadow:0 22px 54px rgba(0,0,0,.28)}
 
-/* Social links — staggered entrance */
-.social-strip a {
-    opacity:0;transform:translateY(10px);
-    transition:opacity .55s cubic-bezier(0.16,1,0.3,1),
-               transform .55s cubic-bezier(0.16,1,0.3,1),
-               background .25s, box-shadow .3s, border-color .25s;
+/* Social links — staggered opacity+translateY ── */
+.social-strip a{
+    opacity:0;transform:translateY(8px) translateZ(0);
+    transition:opacity .5s cubic-bezier(0.16,1,0.3,1),
+               transform .5s cubic-bezier(0.16,1,0.3,1),
+               background .25s,border-color .25s;
+    will-change:transform,opacity;
 }
-.contact-copy.visible .social-strip a:nth-child(1){opacity:1;transform:translateY(0);transition-delay:.05s}
-.contact-copy.visible .social-strip a:nth-child(2){opacity:1;transform:translateY(0);transition-delay:.15s}
-.contact-copy.visible .social-strip a:nth-child(3){opacity:1;transform:translateY(0);transition-delay:.25s}
+.contact-copy.visible .social-strip a:nth-child(1){opacity:1;transform:translateY(0) translateZ(0);transition-delay:.05s}
+.contact-copy.visible .social-strip a:nth-child(2){opacity:1;transform:translateY(0) translateZ(0);transition-delay:.14s}
+.contact-copy.visible .social-strip a:nth-child(3){opacity:1;transform:translateY(0) translateZ(0);transition-delay:.23s}
 
-/* ── BOOKING section — pulsing CTA glow ── */
-@keyframes bookingCtaPulse {
-    0%,100% { box-shadow:0 22px 54px rgba(0,0,0,.28), 0 0 0   rgba(217,179,111,0); }
-    50%     { box-shadow:0 22px 54px rgba(0,0,0,.28), 0 0 52px rgba(217,179,111,.12); }
+/* ── Booking: subtle scale pulse (transform only, no box-shadow anim) ── */
+@keyframes bookingPulse{
+    0%,100%{transform:scale(1) translateZ(0)}
+    50%    {transform:scale(1.008) translateZ(0)}
 }
-.booking-premium.visible {
-    animation:bookingCtaPulse 6s ease-in-out infinite;
-}
+.booking-premium.visible{animation:bookingPulse 7s ease-in-out infinite}
 
-/* ── FAQ item — warm glow on open ── */
-@keyframes faqOpenGlow {
-    0%   { box-shadow:0 8px 28px rgba(0,0,0,.14); }
-    40%  { box-shadow:0 8px 28px rgba(0,0,0,.14), 0 0 28px rgba(217,179,111,.1); }
-    100% { box-shadow:0 8px 28px rgba(0,0,0,.14), 0 0 18px rgba(217,179,111,.06); }
-}
-.faq-item.open {
-    animation:faqOpenGlow .5s ease forwards;
-}
+/* ── FAQ open: border-color transition only (no box-shadow anim) ── */
+.faq-item{transition:border-color .35s}
+.faq-item.open{border-color:rgba(230,188,112,.42)}
 
-/* ── Category cards — subtle bottom shimmer on hover ── */
-.category-card::after {
-    content:'';
-    position:absolute;bottom:0;left:0;right:0;height:2px;z-index:2;
+/* ── Category cards: bottom line scaleX (transform only) ── */
+.category-card::after{
+    content:'';position:absolute;bottom:0;left:0;right:0;height:2px;z-index:2;
     background:linear-gradient(90deg,transparent,var(--gold-soft),transparent);
     transform:scaleX(0);
     transition:transform .5s cubic-bezier(0.16,1,0.3,1);
+    will-change:transform;
 }
-.category-card:hover::after { transform:scaleX(1); }
+.category-card:hover::after{transform:scaleX(1)}
 
-/* ── Service card — top glow line on hover ── */
-.service-card::before {
-    content:'';
-    position:absolute;top:0;left:0;right:0;height:1px;z-index:1;
+/* ── Service card: top line scaleX (transform only) ── */
+.service-card{position:relative}
+.service-card::before{
+    content:'';position:absolute;top:0;left:0;right:0;height:1px;z-index:1;
     background:linear-gradient(90deg,transparent,rgba(217,179,111,.6),transparent);
     transform:scaleX(0);
     transition:transform .5s cubic-bezier(0.16,1,0.3,1);
     pointer-events:none;
+    will-change:transform;
 }
-.service-card:hover::before { transform:scaleX(1); }
+.service-card:hover::before{transform:scaleX(1)}
 
-/* ── SECTION transitions — animated gold separator ── */
-.section::before {
-    animation:sectionLineReveal 1.2s cubic-bezier(0.16,1,0.3,1) both;
-    animation-play-state:paused;
+/* ── Section separator line: scaleX reveal ── */
+.section::before{
+    transform-origin:center;
+    animation:sectionLine 1.1s cubic-bezier(0.16,1,0.3,1) both paused;
 }
-.section.in-view::before {
-    animation-play-state:running;
-}
-@keyframes sectionLineReveal {
-    from { opacity:0;transform:translateX(-50%) scaleX(0); }
-    to   { opacity:1;transform:translateX(-50%) scaleX(1); }
+.section.in-view::before{animation-play-state:running}
+@keyframes sectionLine{
+    from{opacity:0;transform:translateX(-50%) scaleX(0)}
+    to  {opacity:1;transform:translateX(-50%) scaleX(1)}
 }
 
-/* ── FOOTER — soft fade up ── */
-.footer-column {
-    opacity:0;transform:translateY(14px);
-    transition:opacity .7s cubic-bezier(0.16,1,0.3,1),transform .7s cubic-bezier(0.16,1,0.3,1);
+/* ── Footer columns: staggered fade-up ── */
+.footer-column{
+    opacity:0;transform:translateY(12px) translateZ(0);
+    transition:opacity .65s cubic-bezier(0.16,1,0.3,1),
+               transform .65s cubic-bezier(0.16,1,0.3,1);
+    will-change:transform,opacity;
 }
-.footer.visible .footer-column:nth-child(1){opacity:1;transform:translateY(0);transition-delay:.05s}
-.footer.visible .footer-column:nth-child(2){opacity:1;transform:translateY(0);transition-delay:.14s}
-.footer.visible .footer-column:nth-child(3){opacity:1;transform:translateY(0);transition-delay:.23s}
-.footer.visible .footer-column:nth-child(4){opacity:1;transform:translateY(0);transition-delay:.32s}
-.footer-brand{opacity:0;transform:translateY(14px);transition:opacity .7s cubic-bezier(0.16,1,0.3,1),transform .7s}
-.footer.visible .footer-brand{opacity:1;transform:translateY(0)}
+.footer.visible .footer-column:nth-child(1){opacity:1;transform:translateY(0) translateZ(0);transition-delay:.04s}
+.footer.visible .footer-column:nth-child(2){opacity:1;transform:translateY(0) translateZ(0);transition-delay:.12s}
+.footer.visible .footer-column:nth-child(3){opacity:1;transform:translateY(0) translateZ(0);transition-delay:.20s}
+.footer.visible .footer-column:nth-child(4){opacity:1;transform:translateY(0) translateZ(0);transition-delay:.28s}
+.footer-brand{
+    opacity:0;transform:translateY(12px) translateZ(0);
+    transition:opacity .65s cubic-bezier(0.16,1,0.3,1),transform .65s;
+    will-change:transform,opacity;
+}
+.footer.visible .footer-brand{opacity:1;transform:translateY(0) translateZ(0)}
 
-/* Reduce motion: disable all emotional animations */
+/* ── Disable all animation for prefers-reduced-motion ── */
 @media(prefers-reduced-motion:reduce){
     .reviews::after,.contact::before,
     .review-card.visible,.review-stars,
     .about-visual.visible img,
     .booking-premium.visible,
-    .contact-premium,
     .faq-item.open{animation:none!important}
     .contact-line,.contact-map,
-    .social-strip a,.footer-column,.footer-brand{opacity:1!important;transform:none!important}
+    .social-strip a,.footer-column,.footer-brand{
+        opacity:1!important;transform:none!important
+    }
+    .hero-title{animation:none!important}
 }
